@@ -44,5 +44,8 @@ namespace EntityLayer
         [Required, Phone]
         public string PhoneNumberOfNextOfKin { get; set; }
         public string AddressOfNextOfKin { get; set; }
+
+        [Required]
+        public string Signature { get; set; }
     }
 }

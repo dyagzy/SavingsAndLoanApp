@@ -32,6 +32,12 @@ namespace EntityLayer
         public string Address { get; set; }
         public string Occupation { get; set; }
 
+        [Required]
+        public string AccountType { get; set; }
+        //A drop down is created here with the various account options (Savings, Loan, Wallet account, & dom account)
+        public string AccountHolder { get; set; }
+        //A drop down is created for account holder options(individual, cooperate or student)
+
         [Required, MinLength(3), MaxLength(40)]
         public string NameOfNextOfKin { get; set; }
 

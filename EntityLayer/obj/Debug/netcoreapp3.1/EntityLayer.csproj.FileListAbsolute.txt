@@ -1,0 +1,9 @@
+C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\EntityLayer\bin\Debug\netcoreapp3.1\EntityLayer.deps.json
+C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\EntityLayer\bin\Debug\netcoreapp3.1\EntityLayer.dll
+C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\EntityLayer\bin\Debug\netcoreapp3.1\EntityLayer.pdb
+C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.csprojAssemblyReference.cache
+C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.AssemblyInfoInputs.cache
+C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.AssemblyInfo.cs
+C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.dll
+C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.pdb

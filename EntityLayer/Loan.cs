@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EntityLayer
 {
-    public class Loan //inherit from customer profile class
+    public class Loan : CustomerProfile
     {
         public int CustomerId { get; set; }
         public float Tenure { get; set; }
@@ -22,6 +22,7 @@ namespace EntityLayer
         public LoanType LoanType { get; set; }
         public TenureType TenureType { get; set; }
         public PaymentMethod PaymentMethod { get; set; }
+        public CustomerProfile CustomerProfile { get; set; }
 
     }
 }

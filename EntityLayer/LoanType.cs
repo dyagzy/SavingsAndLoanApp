@@ -4,11 +4,14 @@ using System.Text;
 
 namespace EntityLayer
 {
-    public enum LoanType
+    public class LoanType
     {
-        CarLoan,
-        Housing,
-        Health,
-        Cash
+        public string CarLoan { get; set; }
+        public string Housing { get; set; }
+        public string Cash { get; set; }
+
+
+        
+        
     }
 }

@@ -4,12 +4,13 @@ using System.Text;
 
 namespace EntityLayer
 {
-    public enum TenureType
+    public class TenureType
     {
-        Days,
-        Weeks,
-        Month,
-        Year
+        public DateTime Days { get; set; }
+        public DateTime Weeks { get; set; }
+        public DateTime Month { get; set; }
+        public DateTime Year { get; set; }
+       
 
             
     }

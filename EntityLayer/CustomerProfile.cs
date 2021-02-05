@@ -38,5 +38,8 @@ namespace EntityLayer
         [Required, Phone]
         public string PhoneNumberOfNextOfKin { get; set; }
         public string AddressOfNextOfKin { get; set; }
+
+        //Navigation property
+        public Loan Loan { get; set; }
     }
 }

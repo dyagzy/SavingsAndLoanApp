@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EntityLayer
 {
-    public class FixedDeposit
+    public class FixedDeposit : CustomerProfile
     {
         
         public decimal Principal { get; set; }

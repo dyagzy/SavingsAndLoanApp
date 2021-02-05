@@ -4,7 +4,12 @@ using System.Text;
 
 namespace EntityLayer
 {
-    class SavingsInterestCalculator
+    public class SavingsInterestCalculator
     {
+        public decimal Interest(int InterestRate, decimal AvailableBalance)
+        {
+            var interestToReturn = ((decimal)InterestRate) / 100 * AvailableBalance;
+            return interestToReturn;
+        }
     }
 }

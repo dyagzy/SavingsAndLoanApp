@@ -27,3 +27,5 @@ C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\AdyMfb\obj\Debug\net5.0\AdyMf
 C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\AdyMfb\obj\Debug\net5.0\ref\AdyMfb.dll
 C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\AdyMfb\obj\Debug\net5.0\AdyMfb.pdb
 C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\AdyMfb\obj\Debug\net5.0\AdyMfb.genruntimeconfig.cache
+C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\AdyMfb\bin\Debug\net5.0\EntityLayer.dll
+C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\AdyMfb\bin\Debug\net5.0\EntityLayer.pdb

@@ -1,0 +1,17 @@
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\bin\Debug\netcoreapp3.1\testhost.exe
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\bin\Debug\netcoreapp3.1\testhost.dll
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\bin\Debug\netcoreapp3.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\bin\Debug\netcoreapp3.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\bin\Debug\netcoreapp3.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\bin\Debug\netcoreapp3.1\EntityLayer.deps.json
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\bin\Debug\netcoreapp3.1\EntityLayer.dll
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\bin\Debug\netcoreapp3.1\EntityLayer.pdb
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\bin\Debug\netcoreapp3.1\XUnitTestProject.dll
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\bin\Debug\netcoreapp3.1\XUnitTestProject.pdb
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.csprojAssemblyReference.cache
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.AssemblyInfoInputs.cache
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.AssemblyInfo.cs
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.csproj.CopyComplete
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.dll
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.pdb

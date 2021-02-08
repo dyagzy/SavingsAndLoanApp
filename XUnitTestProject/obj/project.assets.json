@@ -5627,11 +5627,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ChiamakaUzuegbu\\Source\\Repos\\MicroFinance\\XUnitTestProject\\XUnitTestProject.csproj",
+      "projectUniqueName": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\XUnitTestProject\\XUnitTestProject.csproj",
       "projectName": "XUnitTestProject",
-      "projectPath": "C:\\Users\\ChiamakaUzuegbu\\Source\\Repos\\MicroFinance\\XUnitTestProject\\XUnitTestProject.csproj",
+      "projectPath": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\XUnitTestProject\\XUnitTestProject.csproj",
       "packagesPath": "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ChiamakaUzuegbu\\Source\\Repos\\MicroFinance\\XUnitTestProject\\obj\\",
+      "outputPath": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\XUnitTestProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ChiamakaUzuegbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5699,5 +5699,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\XUnitTestProject\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ChiamakaUzuegbu\\Source\\Repos\\MicroFinance\\AdyMfb\\AdyMfb.csproj": {}
+    "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\AdyMfb\\AdyMfb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ChiamakaUzuegbu\\Source\\Repos\\MicroFinance\\AdyMfb\\AdyMfb.csproj": {
+    "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\AdyMfb\\AdyMfb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ChiamakaUzuegbu\\Source\\Repos\\MicroFinance\\AdyMfb\\AdyMfb.csproj",
+        "projectUniqueName": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\AdyMfb\\AdyMfb.csproj",
         "projectName": "AdyMfb",
-        "projectPath": "C:\\Users\\ChiamakaUzuegbu\\Source\\Repos\\MicroFinance\\AdyMfb\\AdyMfb.csproj",
+        "projectPath": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\AdyMfb\\AdyMfb.csproj",
         "packagesPath": "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ChiamakaUzuegbu\\Source\\Repos\\MicroFinance\\AdyMfb\\obj\\",
+        "outputPath": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\AdyMfb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ChiamakaUzuegbu\\AppData\\Roaming\\NuGet\\NuGet.Config",

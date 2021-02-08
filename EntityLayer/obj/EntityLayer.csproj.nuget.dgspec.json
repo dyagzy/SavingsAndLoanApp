@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ChiamakaUzuegbu\\Source\\Repos\\MicroFinance\\EntityLayer\\EntityLayer.csproj": {}
+    "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\EntityLayer\\EntityLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ChiamakaUzuegbu\\Source\\Repos\\MicroFinance\\EntityLayer\\EntityLayer.csproj": {
+    "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\EntityLayer\\EntityLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ChiamakaUzuegbu\\Source\\Repos\\MicroFinance\\EntityLayer\\EntityLayer.csproj",
+        "projectUniqueName": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\EntityLayer\\EntityLayer.csproj",
         "projectName": "EntityLayer",
-        "projectPath": "C:\\Users\\ChiamakaUzuegbu\\Source\\Repos\\MicroFinance\\EntityLayer\\EntityLayer.csproj",
+        "projectPath": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\EntityLayer\\EntityLayer.csproj",
         "packagesPath": "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ChiamakaUzuegbu\\Source\\Repos\\MicroFinance\\EntityLayer\\obj\\",
+        "outputPath": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\EntityLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ChiamakaUzuegbu\\AppData\\Roaming\\NuGet\\NuGet.Config",

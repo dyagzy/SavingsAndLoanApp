@@ -13,11 +13,8 @@
         "packagesPath": "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\XUnitTestProject\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\DanielOyagha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ChiamakaUzuegbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -79,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

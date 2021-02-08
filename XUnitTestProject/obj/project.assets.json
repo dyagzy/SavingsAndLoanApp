@@ -5622,7 +5622,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\": {}
+    "C:\\Users\\OlabayoBalogun\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -5633,9 +5634,13 @@
       "packagesPath": "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\XUnitTestProject\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ChiamakaUzuegbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\OlabayoBalogun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

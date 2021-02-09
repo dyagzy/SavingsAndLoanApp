@@ -33,9 +33,6 @@
             "projectReferences": {
               "C:\\Users\\DanielOyagha\\Documents\\MfbGrpProject\\adyapp\\EntityLayer\\EntityLayer.csproj": {
                 "projectPath": "C:\\Users\\DanielOyagha\\Documents\\MfbGrpProject\\adyapp\\EntityLayer\\EntityLayer.csproj"
-              },
-              "C:\\Users\\DanielOyagha\\Documents\\MfbGrpProject\\adyapp\\XUnitTestProject\\XUnitTestProject.csproj": {
-                "projectPath": "C:\\Users\\DanielOyagha\\Documents\\MfbGrpProject\\adyapp\\XUnitTestProject\\XUnitTestProject.csproj"
               }
             }
           }

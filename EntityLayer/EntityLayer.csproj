@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\XUnitTestProject\XUnitTestProject.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Savings\TransactionHistory\" />
   </ItemGroup>
 

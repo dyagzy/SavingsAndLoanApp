@@ -15,5 +15,11 @@ namespace EntityLayer
         public bool IsActive { get; set; }
         [Required]
         public int AccountOwnerID { get; set; }
+
+
+        /// <summary>
+        /// navigation property
+        /// </summary>
+        public CustomerProfile customerprofiles { get; set; }
     }
 }

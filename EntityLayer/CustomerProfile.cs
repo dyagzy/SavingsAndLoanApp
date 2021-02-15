@@ -47,5 +47,22 @@ namespace EntityLayer
 
         [Required]
         public string Signature { get; set; }
+
+
+        /// <summary>
+        /// Navigation property
+        /// </summary>
+        public SavingsAccount savings { get; set; }
+        public Loan loans { get; set; }
+        //waiting for classes to be created
+        
+        //public IEnumerable <DomAccount> DomAccounts { get; set; }
+        //public FixedDeposit fixeddeposits { get; set; }
+        //public RoundUpSavings RoundupSaving { get; set; } 
+        //public IEnumerable <BankDebit> BankDebits { get; set; }
+        //public IEnumerable<BankCredit> BankCredits { get; set; }
+
+
+        
     }
 }

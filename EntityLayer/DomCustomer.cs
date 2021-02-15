@@ -47,5 +47,6 @@ namespace EntityLayer
 
         [Required]
         public string[] Currencies { get; set; }
+        public CustomerProfile CustomerProfiles { get; set; }
     }
 }

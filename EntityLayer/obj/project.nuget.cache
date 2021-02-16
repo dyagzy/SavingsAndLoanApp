@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "TtOlUMpAuHFk+v7WsYtulojimmolHHbtx7WAHNo7+GchfR2RuGtGmnonsBjZqo+encExOBX4wLwT5ZbJzwDSbg==",
+  "dgSpecHash": "bmg+JOPCBkoCex6O4m2kTPK5NoMvJo8QXTeKOonu3j4nUam/zMMvvkLCxPEroaBcmplAqf8Wmqufu6PFoA18dQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyappmamma\\EntityLayer\\EntityLayer.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyappmamma\\EntityLayer\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

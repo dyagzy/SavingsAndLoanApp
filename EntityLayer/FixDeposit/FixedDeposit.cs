@@ -12,6 +12,9 @@ namespace EntityLayer.FixDeposit
         public decimal Rate { get; set; }
         public decimal AmountDue { get; set; }
         public decimal Interest { get; set; }
+        //Navigation
+
+        public CustomerProfile CustomerProfile  { get; set; }
 
 
     }

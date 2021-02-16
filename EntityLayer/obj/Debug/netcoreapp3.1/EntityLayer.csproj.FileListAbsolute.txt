@@ -1,0 +1,17 @@
+C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\EntityLayer\bin\Debug\netcoreapp3.1\EntityLayer.deps.json
+C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\EntityLayer\bin\Debug\netcoreapp3.1\EntityLayer.dll
+C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\EntityLayer\bin\Debug\netcoreapp3.1\EntityLayer.pdb
+C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.csprojAssemblyReference.cache
+C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.AssemblyInfoInputs.cache
+C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.AssemblyInfo.cs
+C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.dll
+C:\Users\ChiamakaUzuegbu\Source\Repos\MicroFinance\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.pdb
+C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\EntityLayer\bin\Debug\netcoreapp3.1\testhost.dll
+C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\EntityLayer\bin\Debug\netcoreapp3.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\EntityLayer\bin\Debug\netcoreapp3.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\EntityLayer\bin\Debug\netcoreapp3.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\EntityLayer\bin\Debug\netcoreapp3.1\testhost.exe
+C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\EntityLayer\bin\Debug\netcoreapp3.1\XUnitTestProject.dll
+C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\EntityLayer\bin\Debug\netcoreapp3.1\XUnitTestProject.pdb
+C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.csproj.CopyComplete

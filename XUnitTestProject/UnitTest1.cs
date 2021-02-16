@@ -1,5 +1,5 @@
 using System;
-using Xunit;
+using XUnitTestProject;
 
 namespace XUnitTestProject
 {

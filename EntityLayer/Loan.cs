@@ -7,7 +7,7 @@ namespace EntityLayer
     public class Loan : CustomerProfile
     {
         public int CustomerId { get; set; }
-        public float Tenure { get; set; }
+        public float Tenor { get; set; }
         
         public int NumberOfPayment { get; set; }
         public decimal InterestRate { get; set; }
@@ -15,7 +15,7 @@ namespace EntityLayer
         public string InterestType { get; set; }
         public DateTime RepaymentStartDate { get; set; }
 
-        //Navigation propeerties
+        //Navigation properties
 
         public RepayLoan RepayLoan { get; set; }
         public PaymentRecord PaymentRecord { get; set; }

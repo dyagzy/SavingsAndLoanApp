@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xunit;
+using XUnitTestProject;
 
 namespace XUnitTestProject.UnitTestforChiamaka
 {
    
     public class TestforDebitCardValidator
     {
-         [Fact]
+        public object Assert { get; private set; }
+
+        [Fact]
          private void ValidateDebitCardShouldThrowErrorWhenDebitCardValueIsNullOrInvalid()
          {
            
@@ -28,7 +30,7 @@ namespace XUnitTestProject.UnitTestforChiamaka
         [Fact]
         private void ValidateDebitCardShouldReturnTrueWhenCorrectDebitCardIsInputed()
         {
-            Assert.True(DebitCardValidator.ValidateDebitCard("4682190121149161") ==true);
+            Assert.True(DebitCardValidator.ValidateDebitCard("4682190121149161") == true);
         }
 
     }

@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Savings\TransactionHistory\" />
+    <Compile Remove="Savings\TransactionHistory\**" />
+    <EmbeddedResource Remove="Savings\TransactionHistory\**" />
+    <None Remove="Savings\TransactionHistory\**" />
   </ItemGroup>
 
 </Project>

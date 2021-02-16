@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EntityLayer.FixedDeposit
+namespace EntityLayer.FixDeposit
 {
     public class FixedDeposit 
     {

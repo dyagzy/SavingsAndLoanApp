@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EntityLayer
 {
-    class RoundUpSavings
+    public class RoundUpSaving
     {
         public int ID { get; set; }
         [Required, MaxLength(10), MinLength(10)]

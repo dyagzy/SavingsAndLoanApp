@@ -1,4 +1,6 @@
-﻿using EntityLayer.Loans;
+﻿using EntityLayer.BankProfitAndLoss;
+using EntityLayer.FixDeposit;
+using EntityLayer.Loans;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -53,15 +55,15 @@ namespace EntityLayer
         /// <summary>
         /// Navigation property
         /// </summary>
-        public SavingsAccount savings { get; set; }
-        public Loan loans { get; set; }
+        public SavingsAccount Savings { get; set; }
+        public Loan Loans { get; set; }
         //waiting for classes to be created
         
-        //public IEnumerable <DomAccount> DomAccounts { get; set; }
-        //public FixedDeposit fixeddeposits { get; set; }
-        //public RoundUpSavings RoundupSaving { get; set; } 
-        //public IEnumerable <BankDebit> BankDebits { get; set; }
-        //public IEnumerable<BankCredit> BankCredits { get; set; }
+        public IEnumerable <DomCustomer> DomCustomers { get; set; }
+        public FixedDeposit FixedDeposits { get; set; }
+        public RoundUpSaving RoundupSavings { get; set; } 
+        public IEnumerable <BankDebit> BankDebits { get; set; }
+        public IEnumerable<BankCredit> BankCredits { get; set; }
 
 
         

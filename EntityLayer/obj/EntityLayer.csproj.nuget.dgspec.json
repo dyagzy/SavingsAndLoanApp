@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyappmamma\\EntityLayer\\EntityLayer.csproj": {}
+    "C:\\Users\\OlabayoBalogun\\source\\repos\\adyappmamma\\EntityLayer\\EntityLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyappmamma\\EntityLayer\\EntityLayer.csproj": {
+    "C:\\Users\\OlabayoBalogun\\source\\repos\\adyappmamma\\EntityLayer\\EntityLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyappmamma\\EntityLayer\\EntityLayer.csproj",
+        "projectUniqueName": "C:\\Users\\OlabayoBalogun\\source\\repos\\adyappmamma\\EntityLayer\\EntityLayer.csproj",
         "projectName": "EntityLayer",
-        "projectPath": "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyappmamma\\EntityLayer\\EntityLayer.csproj",
+        "projectPath": "C:\\Users\\OlabayoBalogun\\source\\repos\\adyappmamma\\EntityLayer\\EntityLayer.csproj",
         "packagesPath": "C:\\Users\\OlabayoBalogun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyappmamma\\EntityLayer\\obj\\",
+        "outputPath": "C:\\Users\\OlabayoBalogun\\source\\repos\\adyappmamma\\EntityLayer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

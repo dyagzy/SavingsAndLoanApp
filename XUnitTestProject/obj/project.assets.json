@@ -5644,11 +5644,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyappmamma\\XUnitTestProject\\XUnitTestProject.csproj",
+      "projectUniqueName": "C:\\Users\\OlabayoBalogun\\source\\repos\\adyappmamma\\XUnitTestProject\\XUnitTestProject.csproj",
       "projectName": "XUnitTestProject",
-      "projectPath": "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyappmamma\\XUnitTestProject\\XUnitTestProject.csproj",
+      "projectPath": "C:\\Users\\OlabayoBalogun\\source\\repos\\adyappmamma\\XUnitTestProject\\XUnitTestProject.csproj",
       "packagesPath": "C:\\Users\\OlabayoBalogun\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyappmamma\\XUnitTestProject\\obj\\",
+      "outputPath": "C:\\Users\\OlabayoBalogun\\source\\repos\\adyappmamma\\XUnitTestProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -5669,8 +5669,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyappmamma\\EntityLayer\\EntityLayer.csproj": {
-              "projectPath": "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyappmamma\\EntityLayer\\EntityLayer.csproj"
+            "C:\\Users\\OlabayoBalogun\\source\\repos\\adyappmamma\\EntityLayer\\EntityLayer.csproj": {
+              "projectPath": "C:\\Users\\OlabayoBalogun\\source\\repos\\adyappmamma\\EntityLayer\\EntityLayer.csproj"
             }
           }
         }

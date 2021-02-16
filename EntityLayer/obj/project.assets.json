@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyappmamma\\EntityLayer\\EntityLayer.csproj",
+      "projectUniqueName": "C:\\Users\\OlabayoBalogun\\source\\repos\\adyappmamma\\EntityLayer\\EntityLayer.csproj",
       "projectName": "EntityLayer",
-      "projectPath": "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyappmamma\\EntityLayer\\EntityLayer.csproj",
+      "projectPath": "C:\\Users\\OlabayoBalogun\\source\\repos\\adyappmamma\\EntityLayer\\EntityLayer.csproj",
       "packagesPath": "C:\\Users\\OlabayoBalogun\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyappmamma\\EntityLayer\\obj\\",
+      "outputPath": "C:\\Users\\OlabayoBalogun\\source\\repos\\adyappmamma\\EntityLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -68,13 +68,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyappmamma\\EntityLayer\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

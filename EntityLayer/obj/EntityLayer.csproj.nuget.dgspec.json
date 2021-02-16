@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DanielOyagha\\Documents\\MfbGrpProject\\adyapp\\EntityLayer\\EntityLayer.csproj": {}
+    "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\EntityLayer\\EntityLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DanielOyagha\\Documents\\MfbGrpProject\\adyapp\\EntityLayer\\EntityLayer.csproj": {
+    "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\EntityLayer\\EntityLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DanielOyagha\\Documents\\MfbGrpProject\\adyapp\\EntityLayer\\EntityLayer.csproj",
+        "projectUniqueName": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\EntityLayer\\EntityLayer.csproj",
         "projectName": "EntityLayer",
-        "projectPath": "C:\\Users\\DanielOyagha\\Documents\\MfbGrpProject\\adyapp\\EntityLayer\\EntityLayer.csproj",
-        "packagesPath": "C:\\Users\\DanielOyagha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DanielOyagha\\Documents\\MfbGrpProject\\adyapp\\EntityLayer\\obj\\",
+        "projectPath": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\EntityLayer\\EntityLayer.csproj",
+        "packagesPath": "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\EntityLayer\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\DanielOyagha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ChiamakaUzuegbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

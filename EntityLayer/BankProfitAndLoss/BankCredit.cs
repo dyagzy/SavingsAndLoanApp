@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EntityLayer.BankProfitAndLoss
 {
-    class BankCredit
+   public class BankCredit
     {
     }
 }

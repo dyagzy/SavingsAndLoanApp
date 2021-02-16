@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EntityLayer.BankProfitAndLoss
 {
-    class BankDebit
+    public class BankDebit
     {
         public decimal BankDebitAmount { get; set; }
     }

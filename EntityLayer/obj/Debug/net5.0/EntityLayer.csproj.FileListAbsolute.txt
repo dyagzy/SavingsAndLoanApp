@@ -10,3 +10,11 @@ C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\EntityLayer\obj\Debug\net5.0\
 C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\EntityLayer\obj\Debug\net5.0\EntityLayer.dll
 C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\EntityLayer\obj\Debug\net5.0\ref\EntityLayer.dll
 C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\EntityLayer\obj\Debug\net5.0\EntityLayer.pdb
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\obj\Debug\net5.0\EntityLayer.csprojAssemblyReference.cache
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\obj\Debug\net5.0\EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\obj\Debug\net5.0\EntityLayer.AssemblyInfoInputs.cache
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\obj\Debug\net5.0\EntityLayer.AssemblyInfo.cs
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\obj\Debug\net5.0\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\obj\Debug\net5.0\EntityLayer.dll
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\obj\Debug\net5.0\ref\EntityLayer.dll
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\obj\Debug\net5.0\EntityLayer.pdb

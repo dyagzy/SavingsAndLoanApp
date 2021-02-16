@@ -100,3 +100,11 @@ C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\XUnitTestProject\obj\Debug\ne
 C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\XUnitTestProject\obj\Debug\net5.0\XUnitTestProject.genruntimeconfig.cache
 C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\XUnitTestProject\bin\Debug\net5.0\EntityLayer.dll
 C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\XUnitTestProject\bin\Debug\net5.0\EntityLayer.pdb
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\XUnitTestProject\obj\Debug\net5.0\XUnitTestProject.csprojAssemblyReference.cache
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\XUnitTestProject\obj\Debug\net5.0\XUnitTestProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\XUnitTestProject\obj\Debug\net5.0\XUnitTestProject.AssemblyInfoInputs.cache
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\XUnitTestProject\obj\Debug\net5.0\XUnitTestProject.AssemblyInfo.cs
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\XUnitTestProject\obj\Debug\net5.0\XUnitTestProject.csproj.CoreCompileInputs.cache
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\XUnitTestProject\obj\Debug\net5.0\XUnitTestProject.dll
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\XUnitTestProject\obj\Debug\net5.0\ref\XUnitTestProject.dll
+C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\XUnitTestProject\obj\Debug\net5.0\XUnitTestProject.pdb

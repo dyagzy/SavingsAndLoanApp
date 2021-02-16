@@ -1,0 +1,9 @@
+C:\Users\OlabayoBalogun\source\repos\adyapp\EntityLayer\bin\Debug\netcoreapp3.1\EntityLayer.deps.json
+C:\Users\OlabayoBalogun\source\repos\adyapp\EntityLayer\bin\Debug\netcoreapp3.1\EntityLayer.dll
+C:\Users\OlabayoBalogun\source\repos\adyapp\EntityLayer\bin\Debug\netcoreapp3.1\EntityLayer.pdb
+C:\Users\OlabayoBalogun\source\repos\adyapp\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.csprojAssemblyReference.cache
+C:\Users\OlabayoBalogun\source\repos\adyapp\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.AssemblyInfoInputs.cache
+C:\Users\OlabayoBalogun\source\repos\adyapp\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.AssemblyInfo.cs
+C:\Users\OlabayoBalogun\source\repos\adyapp\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\OlabayoBalogun\source\repos\adyapp\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.dll
+C:\Users\OlabayoBalogun\source\repos\adyapp\EntityLayer\obj\Debug\netcoreapp3.1\EntityLayer.pdb

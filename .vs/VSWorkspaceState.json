@@ -2,7 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\AdyMfb",
-    "\\EntityLayer"
+    "\\EntityLayer",
+    "\\EntityLayer\\BankProfitAndLoss"
   ],
+  "SelectedNode": "\\EntityLayer\\EntityLayer.csproj",
   "PreviewInSolutionExplorer": false
 }

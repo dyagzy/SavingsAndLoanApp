@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 
 namespace EntityLayer
 {
-    public class TransactionHistory : SavingsAccountModel
+    public class TransactionHistory : CustomerProfile
     {
         public DateTime TransactionHistorySearchPeriod { get; set; }
 
         public DateTime DateOfTransaction { get; set; }
 
-        public int TransactionAmount { get; set; }
+        public decimal TransactionAmount { get; set; }
 
         public string TransactionRecipientName { get; set; }
 
@@ -20,5 +20,7 @@ namespace EntityLayer
         public string TransactionComment { get; set; }
 
         public string TransactionType { get; set; }
+
+        public string TransactionID { get; set; }
     }
 }

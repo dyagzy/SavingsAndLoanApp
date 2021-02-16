@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyapp\\XUnitTestProject\\XUnitTestProject.csproj": {}
+    "C:\\Users\\OlabayoBalogun\\source\\repos\\adyapp\\XUnitTestProject\\XUnitTestProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyapp\\XUnitTestProject\\XUnitTestProject.csproj": {
+    "C:\\Users\\OlabayoBalogun\\source\\repos\\adyapp\\XUnitTestProject\\XUnitTestProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyapp\\XUnitTestProject\\XUnitTestProject.csproj",
+        "projectUniqueName": "C:\\Users\\OlabayoBalogun\\source\\repos\\adyapp\\XUnitTestProject\\XUnitTestProject.csproj",
         "projectName": "XUnitTestProject",
-        "projectPath": "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyapp\\XUnitTestProject\\XUnitTestProject.csproj",
+        "projectPath": "C:\\Users\\OlabayoBalogun\\source\\repos\\adyapp\\XUnitTestProject\\XUnitTestProject.csproj",
         "packagesPath": "C:\\Users\\OlabayoBalogun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyapp\\XUnitTestProject\\obj\\",
+        "outputPath": "C:\\Users\\OlabayoBalogun\\source\\repos\\adyapp\\XUnitTestProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -80,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

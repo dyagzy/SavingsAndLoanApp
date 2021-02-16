@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GgwclOtADXq0NgAJwIGEPvuolLl7YppqaT+DtlISZO+ExyfRRVlaT5ibQJpkwPCXwYLNLfrMOVg88qt4Op/4jw==",
+  "dgSpecHash": "py0jR96A/W+hm+c+kgAAklX2xIoAtHi6Q4IVdpEOAChWyUGpyFnsYxCEDPUzpGAdZpCvDxRP89DtfHgT6jARkQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ChiamakaUzuegbu\\Source\\Repos\\MicroFinance\\XUnitTestProject\\XUnitTestProject.csproj",
+  "projectFilePath": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\XUnitTestProject\\XUnitTestProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",
     "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\microsoft.codecoverage\\16.7.1\\microsoft.codecoverage.16.7.1.nupkg.sha512",

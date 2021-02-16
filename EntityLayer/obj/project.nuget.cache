@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vZWbttUTSdxefcFGVCai+EyBlBCNKkDVR176trMW4JxLXXusK3CwCYx+yqIraUFMOdHBGyYIUTiT07Tz90/b1Q==",
+  "dgSpecHash": "t39L9MFIcUy7fwZWT+YS1CburpPnAEK3yMPXNB3XHUaEVjYQnmfmp55Xz+3npI0BkMbHWzME5MtbQyuVA72k1w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ChiamakaUzuegbu\\Source\\Repos\\MicroFinance\\EntityLayer\\EntityLayer.csproj",
+  "projectFilePath": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\EntityLayer\\EntityLayer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

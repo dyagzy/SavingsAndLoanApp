@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\OloruntobiJunaid\\Documents\\Adyba\\Project\\master\\AdyMfb\\AdyMfb.csproj": {}
+    "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\AdyMfb\\AdyMfb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\OloruntobiJunaid\\Documents\\Adyba\\Project\\master\\AdyMfb\\AdyMfb.csproj": {
+    "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\AdyMfb\\AdyMfb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OloruntobiJunaid\\Documents\\Adyba\\Project\\master\\AdyMfb\\AdyMfb.csproj",
+        "projectUniqueName": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\AdyMfb\\AdyMfb.csproj",
         "projectName": "AdyMfb",
-        "projectPath": "C:\\Users\\OloruntobiJunaid\\Documents\\Adyba\\Project\\master\\AdyMfb\\AdyMfb.csproj",
-        "packagesPath": "C:\\Users\\OloruntobiJunaid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OloruntobiJunaid\\Documents\\Adyba\\Project\\master\\AdyMfb\\obj\\",
+        "projectPath": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\AdyMfb\\AdyMfb.csproj",
+        "packagesPath": "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\AdyMfb\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\OloruntobiJunaid\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\ChiamakaUzuegbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -32,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\OloruntobiJunaid\\Documents\\Adyba\\Project\\master\\EntityLayer\\EntityLayer.csproj": {
-                "projectPath": "C:\\Users\\OloruntobiJunaid\\Documents\\Adyba\\Project\\master\\EntityLayer\\EntityLayer.csproj"
+              "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\EntityLayer\\EntityLayer.csproj": {
+                "projectPath": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\EntityLayer\\EntityLayer.csproj"
               }
             }
           }
@@ -79,22 +75,18 @@
         }
       }
     },
-    "C:\\Users\\OloruntobiJunaid\\Documents\\Adyba\\Project\\master\\EntityLayer\\EntityLayer.csproj": {
+    "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\EntityLayer\\EntityLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\OloruntobiJunaid\\Documents\\Adyba\\Project\\master\\EntityLayer\\EntityLayer.csproj",
+        "projectUniqueName": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\EntityLayer\\EntityLayer.csproj",
         "projectName": "EntityLayer",
-        "projectPath": "C:\\Users\\OloruntobiJunaid\\Documents\\Adyba\\Project\\master\\EntityLayer\\EntityLayer.csproj",
-        "packagesPath": "C:\\Users\\OloruntobiJunaid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\OloruntobiJunaid\\Documents\\Adyba\\Project\\master\\EntityLayer\\obj\\",
+        "projectPath": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\EntityLayer\\EntityLayer.csproj",
+        "packagesPath": "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\EntityLayer\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\OloruntobiJunaid\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\ChiamakaUzuegbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"

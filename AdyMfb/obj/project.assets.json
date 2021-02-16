@@ -265,20 +265,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\": {}
+    "C:\\Users\\OlabayoBalogun\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ChiamakaUzuegbu\\Source\\Repos\\MicroFinance\\AdyMfb\\AdyMfb.csproj",
+      "projectUniqueName": "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyappmamma\\AdyMfb\\AdyMfb.csproj",
       "projectName": "AdyMfb",
-      "projectPath": "C:\\Users\\ChiamakaUzuegbu\\Source\\Repos\\MicroFinance\\AdyMfb\\AdyMfb.csproj",
-      "packagesPath": "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ChiamakaUzuegbu\\Source\\Repos\\MicroFinance\\AdyMfb\\obj\\",
+      "projectPath": "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyappmamma\\AdyMfb\\AdyMfb.csproj",
+      "packagesPath": "C:\\Users\\OlabayoBalogun\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\OlabayoBalogun\\Source\\Repos\\adyappmamma\\AdyMfb\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ChiamakaUzuegbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\OlabayoBalogun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -330,7 +335,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

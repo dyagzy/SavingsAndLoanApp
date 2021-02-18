@@ -22,3 +22,6 @@ C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\bin\Debug\net5.
 C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\bin\Debug\net5.0\EntityLayer.dll
 C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\bin\Debug\net5.0\ref\EntityLayer.dll
 C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\EntityLayer\bin\Debug\net5.0\EntityLayer.pdb
+C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\EntityLayer\bin\Debug\net5.0\EntityLayer.runtimeconfig.json
+C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\EntityLayer\bin\Debug\net5.0\EntityLayer.runtimeconfig.dev.json
+C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\EntityLayer\obj\Debug\net5.0\EntityLayer.genruntimeconfig.cache

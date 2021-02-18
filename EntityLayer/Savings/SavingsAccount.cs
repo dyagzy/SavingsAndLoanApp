@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EntityLayer.CustomerDetails;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -20,6 +21,6 @@ namespace EntityLayer
         /// <summary>
         /// navigation property
         /// </summary>
-        public CustomerProfile customerprofiles { get; set; }
+        //public CustomerProfile customerprofiles { get; set; }
     }
 }

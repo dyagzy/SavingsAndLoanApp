@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EntityLayer
 {
-    class CustomerWallet
+   public class CustomerWallet
     {
     }
 }

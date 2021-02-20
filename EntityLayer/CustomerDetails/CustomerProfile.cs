@@ -1,17 +1,19 @@
-﻿using EntityLayer.Loans;
+﻿using EntityLayer.BankProfitAndLoss;
+using EntityLayer.FixDeposit;
+using EntityLayer.Loans;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace EntityLayer
+namespace EntityLayer.CustomerDetails
 {
-    public abstract class CustomerProfile
+    public class CustomerProfile
     {
         [Required]
         public byte CustomerImage { get; set; }
         [Required]
-        public int ID { get; set; }
+        public int Id { get; set; }
         //        public Guid CustomerUniqueIdentity { get; set; }
         [Required, MinLength(3), MaxLength(40)]
         public string SurName { get; set; }
@@ -53,17 +55,18 @@ namespace EntityLayer
         /// <summary>
         /// Navigation property
         /// </summary>
-        public SavingsAccount savings { get; set; }
-        public Loan loans { get; set; }
-        //waiting for classes to be created
-        
-        //public IEnumerable <DomAccount> DomAccounts { get; set; }
-        //public FixedDeposit fixeddeposits { get; set; }
-        //public RoundUpSavings RoundupSaving { get; set; } 
-        //public IEnumerable <BankDebit> BankDebits { get; set; }
-        //public IEnumerable<BankCredit> BankCredits { get; set; }
+        //public SavingsAccount Savings { get; set; }
+        //public RoundUpSaving RoundupSavings { get; set; } 
+
+        //Navigation Properties
+        public Loan Loans { get; set; }
+        public IEnumerable <DomCustomer> DomCustomers { get; set; }
+        public  FixedDeposit FixedDeposits { get; set; }
+        public IEnumerable <BankDebit> BankDebits { get; set; }
+        public IEnumerable<BankCredit> BankCredits { get; set; }
+        public IEnumerable<DebitCardIssuance> DebitCardIssuances { get; set; }
+        public IEnumerable<CashDeposit> CashDeposits { get; set; }
 
 
-        
     }
 }

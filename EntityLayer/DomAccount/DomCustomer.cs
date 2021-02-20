@@ -1,16 +1,17 @@
-﻿using System;
+﻿using EntityLayer.CustomerDetails;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace EntityLayer
 {
-    public abstract class DomCustomer
+    public class DomCustomer
     {
         [Required]
         public byte CustomerImage { get; set; }
         [Required]
-        public int ID { get; set; }
+        public int Id { get; set; }
         //        public Guid CustomerUniqueIdentity { get; set; }
         [Required, MinLength(3), MaxLength(40)]
         public string SurName { get; set; }
@@ -46,7 +47,7 @@ namespace EntityLayer
         public string AddressOfNextOfKin { get; set; }
 
         [Required]
-        public string[] Currencies { get; set; }
+        public string Currencies { get; set; }
         public CustomerProfile CustomerProfiles { get; set; }
     }
 }

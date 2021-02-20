@@ -1,10 +1,11 @@
-﻿using System;
+﻿using EntityLayer.CustomerDetails;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace EntityLayer.BankProfitAndLoss
 {
-    class BankDebitCustomerProfile : CustomerProfile
+    public class BankDebitCustomerProfile
     {
         public DateTime TimeOfCustomerCredit { get; set; }
         public int CustomerCreditTransactionId { get; set; }

@@ -1,11 +1,12 @@
-﻿using System;
+﻿using EntityLayer.CustomerDetails;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace EntityLayer
 {
-    class RoundUpSavings
+    public class RoundUpSaving
     {
         public int ID { get; set; }
         [Required, MaxLength(10), MinLength(10)]
@@ -15,5 +16,7 @@ namespace EntityLayer
         public bool IsActive { get; set; }
         [Required]
         public int AccountOwnerID { get; set; }
+
+        //public CustomerProfile CustomerProfiles { get; set; }
     }
 }

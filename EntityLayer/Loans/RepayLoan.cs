@@ -7,7 +7,7 @@ namespace EntityLayer
 {
     public class RepayLoan
     {
-        public int AccountId { get; set; }
+        public int Id { get; set; }
   
         public DateTime RepaymentDate { get; set; }
         public decimal Amount { get; set; }
@@ -21,7 +21,8 @@ namespace EntityLayer
 
         //Navigation property
         public Loan Loan { get; set; }
-        public TenureType TenureType { get; set; }
+        public Tenor TenureType { get; set; }
+        public int LoanId { get; set; }
         public PaymentMethod PaymentMethod { get; set; }
 
     }

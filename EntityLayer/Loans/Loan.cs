@@ -19,12 +19,13 @@ namespace EntityLayer.Loans
 
         //Navigation properties
 
-        //public RepayLoan RepayLoan { get; set; }
-        //public PaymentRecord PaymentRecord { get; set; }
-       // public LoanType LoanType { get; set; }
-       // public TenureType TenureType { get; set; }
-        //public PaymentMethod PaymentMethod { get; set; }
-        //public CustomerProfile CustomerProfile { get; set; }
+        public RepayLoan RepayLoan { get; set; }
+        public PaymentRecord PaymentRecord { get; set; }
+        public LoanType LoanType { get; set; }
+        public Tenor TenureType { get; set; }
+        public PaymentMethod PaymentMethod { get; set; }
+        public CustomerProfile CustomerProfile { get; set; }
+        public int CustomerProfileId  { get; set; }
 
     }
 }

@@ -5,11 +5,8 @@ using System.Text;
 
 namespace EntityLayer.BankProfitAndLoss
 {
-    public class BankDebitCustomerProfile
+    public class BankDebitCustomerProfile: BankUtility
     {
-        public DateTime TimeOfCustomerCredit { get; set; }
-        public int CustomerCreditTransactionId { get; set; }
-        public string CustomerCreditComment { get; set; }
-        public decimal CustomerCreditAmount { get; set; }
+        public decimal DebitAmount { get; set; }
     }
 }

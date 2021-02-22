@@ -17,6 +17,12 @@ namespace EntityLayer
         [Required]
         public int AccountOwnerID { get; set; }
 
-        //public CustomerProfile CustomerProfiles { get; set; }
+        /// <summary>
+        /// Navigation properties
+        /// </summary>
+
+        public CustomerProfile CustomerProfiles { get; set; }
+        public int CustomerProfileId { get; set; }
+
     }
 }

@@ -18,8 +18,7 @@ namespace EntityLayer.FixDeposit
         public decimal Interest { get; set; }
 
         //navigation propertes
-       // public virtual CustomerProfile CustomerProfiles { get; set; }
-
-
+        public CustomerProfile CustomerProfiles { get; set; }
+        public int CustomerProfileId { get; set; }
     }
 }

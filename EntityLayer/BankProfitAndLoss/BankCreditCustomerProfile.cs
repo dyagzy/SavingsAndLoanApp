@@ -4,7 +4,9 @@ using System.Text;
 
 namespace EntityLayer.BankProfitAndLoss
 {
-  public  class BankCreditCustomerProfile
+  public  class BankCreditCustomerProfile: BankUtility
     {
+        public decimal CreditAmount { get; set; }
+    
     }
 }

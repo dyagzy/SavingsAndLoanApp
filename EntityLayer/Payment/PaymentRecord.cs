@@ -15,7 +15,8 @@ namespace EntityLayer
 
 
         //Navigation properties
-        //public Loan Loan { get; set; }
+        public Loan Loan { get; set; }
+        public int LoanId { get; set; }
 
 
     }

@@ -23,7 +23,7 @@ namespace EntityLayer.Loans
         public RepayLoan RepayLoan { get; set; }
         public PaymentRecord PaymentRecord { get; set; }
         public IEnumerable<LoanType> LoanType { get; set; }
-         public TenorType TenorType { get; set; }
+        public TenorType TenorType { get; set; }
         //public PaymentMethod PaymentMethod { get; set; }
         public int CustomerProfileId { get; set; }
         public CustomerProfile CustomerProfile { get; set; }

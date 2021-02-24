@@ -16,11 +16,18 @@ namespace EntityLayer.FixDeposit
         public decimal Rate { get; set; }
         public decimal AmountDue { get; set; }
         public decimal Interest { get; set; }
+<<<<<<< HEAD
      
         //Navigation properties
         public int CustomerProfileId { get; set; }
         public  CustomerProfile CustomerProfiles { get; set; }
 
 
+=======
+
+        //navigation propertes
+        public CustomerProfile CustomerProfiles { get; set; }
+        public int CustomerProfileId { get; set; }
+>>>>>>> 990fe90084514b7631032ab0f149a0dfd896ba32
     }
 }

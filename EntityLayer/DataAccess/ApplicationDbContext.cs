@@ -21,7 +21,7 @@ namespace EntityLayer.DataAccess
         public DbSet<CustomerProfile> CustomerProfiles { get; set; }
         public DbSet<BankCredit> BankCredits { get; set; }
         public DbSet<BankDebit> BankDebits { get; set; }
-       // public DbSet<BankCreditCustomerProfile> BankCreditCustomerProfiles { get; set; }
+        public DbSet<BankCreditCustomerProfile> BankCreditCustomerProfiles { get; set; }
         //public DbSet <BankDebitCustomerProfile> BankDebitCustomerProfiles { get; set; }
         public DbSet<FixedDeposit> FixedDeposits { get; set; }
         public DbSet<Loan> Loans { get; set; }

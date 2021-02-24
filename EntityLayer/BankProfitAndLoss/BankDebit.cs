@@ -5,12 +5,10 @@ using System.Text;
 
 namespace EntityLayer.BankProfitAndLoss
 {
-    public class BankDebit
+    public class BankDebit: BankUtility
     {
-        public decimal BankDebitAmount { get; set; }
-        public int Id { get; set; }
-        public DateTime DateOfTransaction { get; set; }
-        public decimal Amount { get; set; }
+        public decimal DebitAmount { get; set; }
+ 
 
         ///Navigation property
         public IEnumerable<CustomerProfile> CustomerProfiles { get; set; }

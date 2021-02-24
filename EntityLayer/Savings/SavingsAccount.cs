@@ -8,7 +8,7 @@ namespace EntityLayer
 {
   public  class SavingsAccount
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         [Required, MaxLength(10), MinLength(10)]
         public string AccountNumber { get; set; }
         [Required]
@@ -21,6 +21,7 @@ namespace EntityLayer
         /// <summary>
         /// navigation property
         /// </summary>
-        //public CustomerProfile customerprofiles { get; set; }
+        public CustomerProfile Customerprofiles { get; set; }
+        public int CustomerProfileId { get; set; }
     }
 }

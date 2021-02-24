@@ -55,6 +55,7 @@ namespace EntityLayer.CustomerDetails
         /// <summary>
         /// Navigation property
         /// </summary>
+<<<<<<< HEAD
         //public SavingsAccount Savings { get; set; }
         //public RoundUpSaving RoundupSavings { get; set; } 
 
@@ -63,6 +64,15 @@ namespace EntityLayer.CustomerDetails
         public IEnumerable <DomCustomer> DomCustomers { get; set; }
         public  FixedDeposit FixedDeposits { get; set; }
         public IEnumerable <BankDebit> BankDebits { get; set; }
+=======
+        public SavingsAccount SavingsAccounts { get; set; }
+        public Loan Loans { get; set; }
+        
+        public IEnumerable <DomCustomer> DomCustomers { get; set; }
+        public FixedDeposit FixedDeposits { get; set; }
+        public RoundUpSaving RoundupSavings { get; set; } 
+        public BankDebit BankDebits { get; set; }
+>>>>>>> 990fe90084514b7631032ab0f149a0dfd896ba32
         public IEnumerable<BankCredit> BankCredits { get; set; }
         public IEnumerable<DebitCardIssuance> DebitCardIssuances { get; set; }
         public IEnumerable<CashDeposit> CashDeposits { get; set; }

@@ -21,7 +21,6 @@ namespace EntityLayer
 
         //Navigation property
         public Loan Loan { get; set; }
-        public Tenor TenureType { get; set; }
         public int LoanId { get; set; }
         public PaymentMethod PaymentMethod { get; set; }
 

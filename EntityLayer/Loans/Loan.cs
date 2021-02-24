@@ -8,7 +8,8 @@ namespace EntityLayer.Loans
     public class Loan 
     {
         public int Id { get; set; }
-       
+        public decimal LoanAmount { get; set; }
+
         public float Tenor { get; set; }
         
         public int NumberOfPayment { get; set; }

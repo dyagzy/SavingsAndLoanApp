@@ -22,12 +22,11 @@ namespace EntityLayer.Loans
         //Navigation property
         public int LoadId { get; set; }
         public Loan Loan { get; set; }
-<<<<<<< HEAD:EntityLayer/Loans/RepayLoan.cs
-        public TenorType TenureType { get; set; }
-=======
+
         public Tenor TenureType { get; set; }
+
         public int LoanId { get; set; }
->>>>>>> 990fe90084514b7631032ab0f149a0dfd896ba32:EntityLayer/RepayLoan.cs
+
         public PaymentMethod PaymentMethod { get; set; }
 
     }

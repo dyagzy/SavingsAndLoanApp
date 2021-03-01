@@ -25,13 +25,18 @@ namespace EntityLayer.CustomerRepositoryServices
             throw new NotImplementedException();
         }
 
+        //public SavingsAccount DepositFunds(decimal amount)
+        //{
+        //    decimal initBal = 0;
+        //    decimal currentBal;
+        //    currentBal = initBal + amount;
+        //    //return CurrentBalance;
+
+        //}
+
         public SavingsAccount DepsoitFunds(decimal amount)
         {
-            decimal initBal = 0;
-            decimal currentBal;
-            currentBal = initBal + amount;
-            //return CurrentBalance;
-
+            throw new NotImplementedException();
         }
 
         public CustomerProfile GetAll()

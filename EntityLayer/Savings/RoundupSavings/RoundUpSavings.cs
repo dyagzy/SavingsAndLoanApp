@@ -8,7 +8,7 @@ namespace EntityLayer
 {
     public class RoundUpSaving
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         [Required, MaxLength(10), MinLength(10)]
         public string AccountNumber { get; set; }
         [Required]

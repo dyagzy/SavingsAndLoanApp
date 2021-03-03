@@ -16,6 +16,9 @@ namespace EntityLayer
         public bool IsActive { get; set; }
         [Required]
         public int AccountOwnerID { get; set; }
+        public decimal InitialBal { get; set; }
+
+        public decimal CurrentBalance { get; set; }
 
 
         /// <summary>

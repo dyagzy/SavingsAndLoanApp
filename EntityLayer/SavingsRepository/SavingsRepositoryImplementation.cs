@@ -1,5 +1,6 @@
 ﻿using EntityLayer.DataAccess;
 using EntityLayer.SavingsRepository.ISavingsRepositorys;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -37,7 +38,21 @@ namespace EntityLayer.SavingsRepository
 
         public async Task<List<SavingsAccount>> GetAll()
         {
-            var result = await _appDbContext.SavingsAccounts.ToListAsync();
+            List<SavingsAccount> result = new List<SavingsAccount>();
+            try
+            {
+                 result =  _appDbContext.SavingsAccounts.ToList();
+            }
+            catch(SqlException rx)
+            {
+                throw rx;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+           
             return result;
         }
 

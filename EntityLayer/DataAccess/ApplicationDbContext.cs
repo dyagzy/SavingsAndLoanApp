@@ -19,24 +19,16 @@ namespace EntityLayer.DataAccess
         }
 
         public DbSet<CustomerProfile> CustomerProfiles { get; set; }
-        public DbSet<BankCredit> BankCredits { get; set; }
-        public DbSet<BankDebit> BankDebits { get; set; }
-        public DbSet<BankCreditCustomerProfile> BankCreditCustomerProfiles { get; set; }
-        public DbSet <BankDebitCustomerProfile> BankDebitCustomerProfiles { get; set; }
+       
         public DbSet<FixedDeposit> FixedDeposits { get; set; }
         public DbSet<Loan> Loans { get; set; }
-        public DbSet <LoanCalculator> LoanCalculators { get; set; }
         public DbSet<LoanType> LoanTypes { get; set; }
         public DbSet<Tenor> Tenors { get; set; }
         public DbSet<PaymentRecord> PaymentRecords { get; set; }
         public DbSet<DebitCardIssuance> debitCardIssuances { get; set; }
-        public DbSet<DebitCardValidator> DebitCardValidators { get; set; }
         public DbSet<RoundUpSaving> RoundUpSavings { get; set; }
         public DbSet<CashDeposit> CashDeposits { get; set; }
         public DbSet<SavingsAccount> SavingsAccounts { get; set; }
-        public DbSet<AccountNumberGenerator> AccountNumberGenerators { get; set; }
-        public DbSet<SavingsInterestCalculator> SavingsInterestCalculators { get; set; }
-        public DbSet<CustomerWallet> CustomerWallets { get; set; }
         public DbSet<DomCustomer> DomCustomers { get; set; }
         public DbSet<TransactionHistory> TransactionHistories { get; set; }
 

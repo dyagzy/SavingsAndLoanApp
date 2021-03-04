@@ -27,7 +27,6 @@ namespace EntityLayer.DataAccess
         public DbSet<RoundUpSaving> RoundUpSavings { get; set; }
         public DbSet<CashDeposit> CashDeposits { get; set; }
         public DbSet<SavingsAccount> SavingsAccounts { get; set; }
-        public DbSet<AccountNumberGenerator> AccountNumberGenerators { get; set; }
         public DbSet<DomCustomer> DomCustomers { get; set; }
         public DbSet<TransactionHistory> TransactionHistories { get; set; }
 

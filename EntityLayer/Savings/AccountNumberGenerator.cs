@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EntityLayer
 {
-    public abstract class AccountNumberGenerator
+    public class AccountNumberGenerator
     {
 
         public static string NewSavingAccountNumbers()

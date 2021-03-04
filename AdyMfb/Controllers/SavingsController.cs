@@ -23,7 +23,7 @@ namespace AdyMfb.Controllers
         [HttpGet]
         public IActionResult GetSavings()
         {
-            var savings= _repository.GetAll();
+            var savings= _repository.GetAllSavingsAccount();
             return Ok(savings);
         }
     }

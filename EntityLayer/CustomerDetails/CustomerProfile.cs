@@ -1,4 +1,4 @@
-﻿using EntityLayer.BankProfitAndLoss;
+﻿  using EntityLayer.BankProfitAndLoss;
 using EntityLayer.FixDeposit;
 using EntityLayer.Loans;
 using System;

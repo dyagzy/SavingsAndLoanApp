@@ -10,7 +10,7 @@ namespace EntityLayer.Loans
         public int MyProperty { get; set; }
         public decimal CalculateInterest()
         {
-
+            return 0.0m;
         }
     }
 }

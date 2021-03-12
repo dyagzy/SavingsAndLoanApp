@@ -9,7 +9,7 @@ namespace EntityLayer.Authentication
     public class MailClass
     {
         public string FromMailId { get; set; } = "daniel.oyagha@gmail.com";
-        public string FromMailIdPassword { get; set; } = "password"
+        public string FromMailIdPassword { get; set; } = "password";
         public List<string> ToMailIds { get; set; } = new List<string>();
         public string Subject { get; set; }
         public string Body { get; set; }

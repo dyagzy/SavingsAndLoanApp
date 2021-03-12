@@ -11,5 +11,14 @@ namespace EntityLayer.LoanRepositoryService
 {
     public class LoanService : ILoanService
     {
+        public decimal CalculateInterest(decimal loanAmount, float rate, float time, decimal interest)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Loan>> GetLoanByAmount(decimal amount)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

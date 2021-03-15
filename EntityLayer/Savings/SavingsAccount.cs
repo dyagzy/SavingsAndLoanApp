@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace EntityLayer
@@ -16,8 +17,12 @@ namespace EntityLayer
         public bool IsActive { get; set; }
         [Required]
         public int AccountOwnerID { get; set; }
-        public decimal InitialBal { get; set; }
 
+        [Required]
+        [Column(TypeName = "decimal(18, 6)")]
+        public decimal InitialBal { get; set; }
+        [Required]
+        [Column(TypeName = "decimal(18, 6)")]
         public decimal CurrentBalance { get; set; }
 
 

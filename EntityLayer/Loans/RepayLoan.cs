@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace EntityLayer
+namespace EntityLayer.Loans
 {
     public class RepayLoan
     {
@@ -20,8 +20,13 @@ namespace EntityLayer
 
 
         //Navigation property
+        public int LoadId { get; set; }
         public Loan Loan { get; set; }
+
+        public Tenor TenureType { get; set; }
+
         public int LoanId { get; set; }
+
         public PaymentMethod PaymentMethod { get; set; }
 
     }

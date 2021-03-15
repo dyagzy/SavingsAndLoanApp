@@ -17,5 +17,16 @@ namespace EntityLayer.Loans
         public Loan Loans { get; set; }
         public int LoanId { get; set; }
 
+<<<<<<< HEAD
+        //Navigation Property
+
+        public  Loan Loan { get; set; }
+
+
+
+
+
+=======
+>>>>>>> 990fe90084514b7631032ab0f149a0dfd896ba32
     }
 }

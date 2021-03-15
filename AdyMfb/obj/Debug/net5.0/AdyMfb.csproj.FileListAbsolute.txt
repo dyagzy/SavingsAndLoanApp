@@ -131,3 +131,10 @@ C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\AdyMfb\bin\Debug\net5.0\run
 C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\AdyMfb\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
 C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\AdyMfb\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\DanielOyagha\Documents\MfbGrpProject\adyapp\AdyMfb\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\AdyMfb\bin\Debug\net5.0\Dapper.dll
+C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\AdyMfb\bin\Debug\net5.0\System.Data.SqlClient.dll
+C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\AdyMfb\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\AdyMfb\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\AdyMfb\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\AdyMfb\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\ChiamakaUzuegbu\source\repos\MicroFinance\AdyMfb\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

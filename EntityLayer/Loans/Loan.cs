@@ -20,7 +20,7 @@ namespace EntityLayer.Loans
 
         //Navigation properties
 
-<<<<<<< HEAD
+
 
         public RepayLoan RepayLoan { get; set; }
         public PaymentRecord PaymentRecord { get; set; }
@@ -29,14 +29,14 @@ namespace EntityLayer.Loans
         //public PaymentMethod PaymentMethod { get; set; }
         public int CustomerProfileId { get; set; }
         public CustomerProfile CustomerProfile { get; set; }
-=======
-        public RepayLoan RepayLoan { get; set; }
-        public PaymentRecord PaymentRecord { get; set; }
-        public LoanType LoanType { get; set; }
+
+     
+     
+        
         public PaymentMethod PaymentMethod { get; set; }
-        public CustomerProfile CustomerProfile { get; set; }
-        public int CustomerProfileId  { get; set; }
->>>>>>> 990fe90084514b7631032ab0f149a0dfd896ba32
+        
+        
+
 
     }
 }

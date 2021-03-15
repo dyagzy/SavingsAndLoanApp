@@ -11,52 +11,14 @@ namespace EntityLayer.LoanRepositoryService
 {
     public class LoanService : ILoanService
     {
-        private readonly ApplicationDbContext _dB;
-        
-
-        public LoanService(ApplicationDbContext dB)
-        {
-           _dB  = dB;
-        }
-        public Task CreatLoanAysnc()
-        {
-
-            
-            throw new NotImplementedException();
-        }
-
-        public Task Delete(int id)
+        public decimal CalculateInterest(decimal loanAmount, float rate, float time, decimal interest)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Loan> GetAllLoan()
+        public Task<IEnumerable<Loan>> GetLoanByAmount(decimal amount)
         {
             throw new NotImplementedException();
         }
-
-        public Loan GetLoanByAmount(decimal amount)
-        {
-           var loanAmount =  _dB.Loans.Where(f => f.LoanAmount == amount).FirstOrDefault();
-            return loanAmount;
-        }
-
-        public Loan GetLoanById(int loanId)
-        {
-            var loan = _dB.Loans.Where(a => a.Id == loanId).FirstOrDefault();
-
-            return loan;
-        }
-
-        public Task UpdateLoanAsync(Loan loan)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdateLoanAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-        
     }
 }

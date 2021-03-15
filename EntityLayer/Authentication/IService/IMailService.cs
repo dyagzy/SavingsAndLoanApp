@@ -9,6 +9,6 @@ namespace EntityLayer.Authentication.IService
    public interface IMailService
     {
         Task<string> SendMail(MailClass oMailClass);
-        Task<string> GetMailBody(LoginInfo oLoginInfo);
+        string GetMailBody(LoginInfo oLoginInfo);
     }
 }

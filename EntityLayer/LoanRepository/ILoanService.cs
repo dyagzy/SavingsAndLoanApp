@@ -8,12 +8,10 @@ namespace EntityLayer.LoanRepository
 {
     public interface ILoanService
     {
-       Task CreatLoanAysnc();
-       Loan GetLoanById();
-       IEnumerable<Loan> GetAllLoan();
-       Task UpdateLoanAsync(Loan loan);
-       Task UpdateLoanAsync(int id);
-       Task Delete(int id);
+     
+       Task<IEnumerable<Loan>> GetLoanByAmount(decimal amount);
+       decimal CalculateInterest(decimal loanAmount, float rate, float time, decimal interest);
+
 
             
     }

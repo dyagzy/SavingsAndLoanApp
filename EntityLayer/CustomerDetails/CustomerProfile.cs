@@ -55,13 +55,16 @@ namespace EntityLayer.CustomerDetails
         /// <summary>
         /// Navigation property
         /// </summary>
+
+        //Navigation Properties
         public SavingsAccount SavingsAccounts { get; set; }
         public Loan Loans { get; set; }
-        
         public IEnumerable <DomCustomer> DomCustomers { get; set; }
-        public FixedDeposit FixedDeposits { get; set; }
+        public  FixedDeposit FixedDeposits { get; set; }
+        public IEnumerable <BankDebit> BankDebits { get; set; }
+       
         public RoundUpSaving RoundupSavings { get; set; } 
-        public BankDebit BankDebits { get; set; }
+ 
         public IEnumerable<BankCredit> BankCredits { get; set; }
         public IEnumerable<DebitCardIssuance> DebitCardIssuances { get; set; }
         public IEnumerable<CashDeposit> CashDeposits { get; set; }

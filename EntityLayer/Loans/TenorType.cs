@@ -6,7 +6,7 @@ using System.Text;
 namespace EntityLayer
 {
 
-    public class Tenor
+    public class TenorType
 
     {
         public int Id { get; set; }
@@ -16,10 +16,12 @@ namespace EntityLayer
         public DateTime Year { get; set; }
 
 
-        //Navigation properties
-
-        public Loan Loan { get; set; }
+        //Navigation Properties
         public int LoanId { get; set; }
+        public Loan Loan  { get; set; }
+
+
+
 
     }
 }

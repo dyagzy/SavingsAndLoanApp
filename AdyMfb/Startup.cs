@@ -1,3 +1,4 @@
+using EntityLayer.Authentication.Common;
 using EntityLayer.DataAccess;
 using EntityLayer.SavingsRepository;
 using EntityLayer.SavingsRepository.ISavingsRepositorys;
@@ -36,7 +37,10 @@ namespace AdyMfb
             services.AddControllers();
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddScoped<ISavingsRepository, SavingsRepositoryImplementation>();           
+            services.AddScoped<ISavingsRepository, SavingsRepositoryImplementation>();
+            Global.ConnectionString = Configuration.GetConnectionString("DefaultConnection");
+            Global.DomainName = Configuration["DomainName"];
+
               services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AdyMfb", Version = "v1" });

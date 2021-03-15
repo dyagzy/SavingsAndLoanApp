@@ -9,7 +9,7 @@ namespace EntityLayer.FixDeposit
 {
     public class FixedDeposit 
     {
-        //[ForeignKey("CustomerProfile")]
+        
         public int Id { get; set; }
         [Required]
         [Column(TypeName = "decimal(18, 6)")]
@@ -25,8 +25,10 @@ namespace EntityLayer.FixDeposit
         [Column(TypeName = "decimal(18, 6)")]
         public decimal Interest { get; set; }
 
-        //navigation propertes
-        public CustomerProfile CustomerProfiles { get; set; }
+     
+        //Navigation properties
         public int CustomerProfileId { get; set; }
+        public  CustomerProfile CustomerProfiles { get; set; }
+
     }
 }

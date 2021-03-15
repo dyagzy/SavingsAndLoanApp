@@ -6,5 +6,11 @@ namespace EntityLayer.Loans
 {
    public class LoanCalculator
     {
+        Loan ld = new Loan();
+        public int MyProperty { get; set; }
+        public decimal CalculateInterest()
+        {
+            return 0.0m;
+        }
     }
 }

@@ -11,12 +11,14 @@ namespace EntityLayer
         public string SurName { get; set; }
         public string LastName { get; set; }
         public string OtherNames { get; set; }
-       // public int MyProperty { get; set; }
+        
 
 
         //Navigation properties
+
+        public int LoadId { get; set; }
         public Loan Loan { get; set; }
-        public int LoanId { get; set; }
+
 
 
     }

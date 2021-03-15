@@ -37,7 +37,7 @@ namespace EntityLayer.Loans
      
         
         public PaymentMethod PaymentMethod { get; set; }
-       // public PaymentRecord paymentRecord { get; set; }
+       
 
 
 

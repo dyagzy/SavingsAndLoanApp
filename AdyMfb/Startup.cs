@@ -1,4 +1,6 @@
 using EntityLayer.Authentication.Common;
+using EntityLayer.Authentication.IService;
+using EntityLayer.Authentication.Service;
 using EntityLayer.DataAccess;
 using EntityLayer.SavingsRepository;
 using EntityLayer.SavingsRepository.ISavingsRepositorys;
@@ -38,6 +40,10 @@ namespace AdyMfb
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<ISavingsRepository, SavingsRepositoryImplementation>();
+            services.AddScoped<ILoginService, LoginService>();
+            services.AddScoped<IMailService, MailService>();
+
+
             Global.ConnectionString = Configuration.GetConnectionString("DefaultConnection");
             Global.DomainName = Configuration["DomainName"];
 

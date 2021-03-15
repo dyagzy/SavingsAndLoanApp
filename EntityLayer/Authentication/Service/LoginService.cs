@@ -14,9 +14,46 @@ namespace EntityLayer.Authentication.Service
     public class LoginService : ILoginService
     {
         LoginInfo _oLoginInfo = new LoginInfo();
-        public Task<string> ConfirmPassword(string username)
+        public async Task<string> ConfirmMail(string username)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (string.IsNullOrEmpty(username)) return "Invalid Username";
+                LoginInfo oLoginInfo = new LoginInfo()
+                {
+                    UserName = username
+                };
+                LoginInfo loginInfo = await this.CheckRecordExistence(oLoginInfo);
+                if (loginInfo == null)
+                {
+                    return Message.InvalidUser;
+                }
+                else
+                {
+                    using (IDbConnection con = new SqlConnection(Global.ConnectionString))
+                    {
+                        if (con.State == ConnectionState.Closed) con.Open();
+
+                        var oLoginInfos = await con.QueryAsync<LoginInfo>("sys.xp_logininfo",
+                                this.SetParamerters(oLoginInfo, (int)OperationType.UpdateConfirmed)
+                                , commandType: CommandType.StoredProcedure);
+
+                        if (oLoginInfos != null && oLoginInfos.Count() > 0)
+                        {
+                            _oLoginInfo = oLoginInfos.FirstOrDefault();
+                        }
+                        return "Mail Confirmed";
+
+
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
         }
 
         public async Task<LoginInfo> SignUp(LoginInfo oLoginInfo)
@@ -31,10 +68,23 @@ namespace EntityLayer.Authentication.Service
                     {
                         if (con.State == ConnectionState.Closed) con.Open();
                         {
-                            var oLoginInfos = await con.QueryAsync<LoginInfo>("");
+                            var oLoginInfos = await con.QueryAsync<LoginInfo>("sys.xp_logininfo", 
+                                this.SetParamerters(oLoginInfo, (int)OperationType.SignUp)
+                                , commandType: CommandType.StoredProcedure);
+
+                            if (oLoginInfos != null && oLoginInfos.Count() > 0) 
+                            {
+                                _oLoginInfo = oLoginInfos.FirstOrDefault();
+                            }
+                            _oLoginInfo.Message = Message.Success;
                         }
+                        
                     }
 
+                }
+                else
+                {
+                    _oLoginInfo = loginInfo;
                 }
             }
             catch (Exception ex)
@@ -86,5 +136,18 @@ namespace EntityLayer.Authentication.Service
             return _oLoginInfo;
         }
 
+        private DynamicParameters SetParamerters(LoginInfo ologinInfo, int nOperationType)
+        {
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("@UserInfoId", _oLoginInfo.UserInfoId);
+            parameters.Add("@EmailId", _oLoginInfo.EmailId);
+            parameters.Add("@Username", _oLoginInfo.UserName);
+            parameters.Add("@Password", _oLoginInfo.Password);
+            parameters.Add("@IsMailConfirmed", _oLoginInfo.IsMailConfirmed);
+            parameters.Add("@UserInfoId", nOperationType);
+            return parameters;
+
+        }
+        
     }
 }

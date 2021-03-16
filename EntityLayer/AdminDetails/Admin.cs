@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.AdminDetails
 {
-    class Admin
+    public  class Admin
     {
         public int id { get; set; }
         public int StaffId { get; set; }

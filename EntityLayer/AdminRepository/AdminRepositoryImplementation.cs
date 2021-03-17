@@ -31,7 +31,7 @@ namespace EntityLayer.AdminRepository
             return await _appDbContext.Admins.FirstOrDefaultAsync(x => x.id == id);
         }
 
-        public async Task<List<Admin>> GetAllSavingsAccount()
+        public async Task<List<Admin>> GetAllAdmin()
         {
             List<Admin> result = new List<Admin>();
             try

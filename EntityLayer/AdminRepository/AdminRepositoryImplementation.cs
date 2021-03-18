@@ -1,5 +1,6 @@
 ﻿using EntityLayer.AdminDetails;
 using EntityLayer.DataAccess;
+using EntityLayer.IAdminRepositorys;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.AdminRepository
 {
-    public class AdminRepositoryImplementation
+    public class AdminRepositoryImplementation :IAdminRepository
     {
 
         private readonly ApplicationDbContext _appDbContext;

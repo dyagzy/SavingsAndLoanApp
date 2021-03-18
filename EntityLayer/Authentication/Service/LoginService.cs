@@ -14,7 +14,7 @@ namespace EntityLayer.Authentication.Service
     public class LoginService : ILoginService
     {
         LoginInfo _oLoginInfo = new LoginInfo();
-        public Task<string> ConfirmPassword(string username)
+        public Task<string> ConfirmMail(string username)
         {
             throw new NotImplementedException();
         }
@@ -75,8 +75,8 @@ namespace EntityLayer.Authentication.Service
             {
                 if (con.State == ConnectionState.Closed) con.Open();
 
-                string sSQL = "SELECT * FROM  LogInFo WHERE 1 = 1";
-                if (!string.IsNullOrEmpty(username)) sSQL += "AND Username " + username + "";
+                string sSQL = "SELECT * FROM  LoginInfos WHERE 1 = 1 ";
+                if (!string.IsNullOrEmpty(username)) sSQL += "AND Username=" +"'" + username + "'";
                 var oLoginInfos = (await con.QueryAsync<LoginInfo>(sSQL)).ToList();
                 if (oLoginInfos != null && oLoginInfos.Count > 0) _oLoginInfo = oLoginInfos.SingleOrDefault();
                 else return null;

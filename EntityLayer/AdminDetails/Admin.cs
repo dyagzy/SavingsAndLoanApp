@@ -10,7 +10,8 @@ namespace EntityLayer.AdminDetails
     {
         public int id { get; set; }
         public int StaffId { get; set; }
-        public byte ProfilePicture { get; set; }
+        
+        public byte[]? ProfilePicture { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
         //public string Password { get; set; }

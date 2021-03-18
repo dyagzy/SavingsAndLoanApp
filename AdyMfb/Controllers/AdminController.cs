@@ -1,5 +1,6 @@
 ﻿using EntityLayer.AdminDetails;
 using EntityLayer.DataAccess;
+using EntityLayer.IAdminRepositorys;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -19,12 +20,33 @@ namespace AdyMfb.Controllers
         {
             _repository = repository;
         }
-            [HttpGet]
-            public IActionResult GetAdmin()
-            {
-                var Admin = _repository.GetAllAdmin();
-                return Ok(Admin);
-            }
-        
-   }
+
+
+        [HttpGet]
+        public async Task<IActionResult> GetAdmin()
+        {
+
+
+            var Admin = await _repository.GetAllAdmin();
+            return Ok(Admin);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateAdmin()
+        {
+            var Admin = await _repository.GetAllAdmin();
+            return Ok(Admin);
+        }
+
+        // PUT api/<ValuesController>/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, string value)
+        {
+            var Admin = await _repository.GetAllAdmin();
+            return Ok(Admin);
+        }
+
+
+    }
 }

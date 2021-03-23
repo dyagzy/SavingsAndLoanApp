@@ -1,7 +1,10 @@
+using AdyMfb.Controllers;
+using EntityLayer.AdminRepository;
 using EntityLayer.Authentication.Common;
 using EntityLayer.Authentication.IService;
 using EntityLayer.Authentication.Service;
 using EntityLayer.DataAccess;
+using EntityLayer.IAdminRepositorys;
 using EntityLayer.SavingsRepository;
 using EntityLayer.SavingsRepository.ISavingsRepositorys;
 using Microsoft.AspNetCore.Builder;
@@ -36,14 +39,23 @@ namespace AdyMfb
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling
+            = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
+            services.AddScoped<ILoginService, LoginService>();
+            services.AddScoped<IMailService, MailService>();
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddScoped<ISavingsRepository, SavingsRepositoryImplementation>();
+<<<<<<< HEAD
             services.AddScoped<ILoginService, LoginService>();
             services.AddScoped<IMailService, MailService>();
 
 
+=======
+            services.AddScoped<IAdminRepository, AdminRepositoryImplementation>();
+>>>>>>> c25a47e37451c557c00693761f6a5f67f92fba30
             Global.ConnectionString = Configuration.GetConnectionString("DefaultConnection");
             Global.DomainName = Configuration["DomainName"];
 

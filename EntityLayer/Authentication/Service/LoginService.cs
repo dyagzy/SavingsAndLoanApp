@@ -14,7 +14,11 @@ namespace EntityLayer.Authentication.Service
     public class LoginService : ILoginService
     {
         LoginInfo _oLoginInfo = new LoginInfo();
+<<<<<<< HEAD
         public async Task<string> ConfirmMail(string username)
+=======
+        public Task<string> ConfirmMail(string username)
+>>>>>>> c25a47e37451c557c00693761f6a5f67f92fba30
         {
             try
             {
@@ -125,8 +129,8 @@ namespace EntityLayer.Authentication.Service
             {
                 if (con.State == ConnectionState.Closed) con.Open();
 
-                string sSQL = "SELECT * FROM  LogInFo WHERE 1 = 1";
-                if (!string.IsNullOrEmpty(username)) sSQL += "AND Username " + username + "";
+                string sSQL = "SELECT * FROM  LoginInfos WHERE 1 = 1 ";
+                if (!string.IsNullOrEmpty(username)) sSQL += "AND Username=" +"'" + username + "'";
                 var oLoginInfos = (await con.QueryAsync<LoginInfo>(sSQL)).ToList();
                 if (oLoginInfos != null && oLoginInfos.Count > 0) _oLoginInfo = oLoginInfos.SingleOrDefault();
                 else return null;

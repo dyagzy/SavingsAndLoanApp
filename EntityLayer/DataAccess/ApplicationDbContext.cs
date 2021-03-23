@@ -1,4 +1,6 @@
-﻿using EntityLayer.BankProfitAndLoss;
+﻿using EntityLayer.AdminDetails;
+using EntityLayer.Authentication;
+using EntityLayer.BankProfitAndLoss;
 using EntityLayer.CustomerDetails;
 using EntityLayer.FixDeposit;
 using EntityLayer.Loans;
@@ -29,6 +31,8 @@ namespace EntityLayer.DataAccess
         public DbSet<SavingsAccount> SavingsAccounts { get; set; }
         public DbSet<DomCustomer> DomCustomers { get; set; }
         public DbSet<TransactionHistory> TransactionHistories { get; set; }
+        public DbSet<LoginInfo> LoginInfos { get; set; }
+        public DbSet <Admin> Admins { get; set; }
 
 
     }

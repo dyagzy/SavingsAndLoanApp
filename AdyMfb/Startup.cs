@@ -42,7 +42,14 @@ namespace AdyMfb
 
            
 
+<<<<<<< HEAD
             
+=======
+            services.AddCors(options => options.AddPolicy("AllowEverthing", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
+
+            services.AddScoped<ILoginService, LoginService>();
+            services.AddScoped<IMailService, MailService>();
+>>>>>>> 71e9257d990c7732bee77a791c50726d5fe7f7f8
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -68,6 +75,7 @@ namespace AdyMfb
 
             app.UseHttpsRedirection();
 
+            app.UseCors("AllowEverthing");
             app.UseRouting();
 
             app.UseAuthorization();

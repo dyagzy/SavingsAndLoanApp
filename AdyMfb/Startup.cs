@@ -42,6 +42,8 @@ namespace AdyMfb
             services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling
             = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
+            services.AddCors(options => options.AddPolicy("AllowEverthing", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
+
             services.AddScoped<ILoginService, LoginService>();
             services.AddScoped<IMailService, MailService>();
             services.AddDbContext<ApplicationDbContext>(options =>
@@ -70,6 +72,7 @@ namespace AdyMfb
 
             app.UseHttpsRedirection();
 
+            app.UseCors("AllowEverthing");
             app.UseRouting();
 
             app.UseAuthorization();

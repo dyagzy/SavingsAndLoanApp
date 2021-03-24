@@ -25,8 +25,13 @@ namespace AdyMfb.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAdmin()
         {
+            var Admin = await _repository.GetAllAdmin();
+            return Ok(Admin);
+        }
 
-
+        [HttpGet("{id}")]
+        public async Task<IActionResult>GetOneAdmin (int id)
+        {
             var Admin = await _repository.GetAllAdmin();
             return Ok(Admin);
         }
@@ -36,6 +41,7 @@ namespace AdyMfb.Controllers
         public async Task<IActionResult> UpdateAdmin()
         {
             var Admin = await _repository.GetAllAdmin();
+            await _repository.SaveAllChangesAsync();
             return Ok(Admin);
         }
 
@@ -45,6 +51,14 @@ namespace AdyMfb.Controllers
         {
             var Admin = await _repository.GetAllAdmin();
             return Ok(Admin);
+        }
+
+
+        // DELETE api/<ValuesController>/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+            ;
         }
 
 

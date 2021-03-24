@@ -18,7 +18,7 @@ namespace EntityLayer.Authentication.Service
         public async Task<string> ConfirmMail(string username)
 =======
         public Task<string> ConfirmMail(string username)
->>>>>>> c25a47e37451c557c00693761f6a5f67f92fba30
+
         {
             try
             {

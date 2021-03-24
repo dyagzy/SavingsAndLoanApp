@@ -31,6 +31,7 @@ namespace AdyMfb
             Configuration = configuration;
         }
 
+
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -39,25 +40,15 @@ namespace AdyMfb
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling
-            = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+           
 
-            services.AddScoped<ILoginService, LoginService>();
-            services.AddScoped<IMailService, MailService>();
+            
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<ISavingsRepository, SavingsRepositoryImplementation>();
-<<<<<<< HEAD
-            services.AddScoped<ILoginService, LoginService>();
-            services.AddScoped<IMailService, MailService>();
 
-
-=======
             services.AddScoped<IAdminRepository, AdminRepositoryImplementation>();
->>>>>>> c25a47e37451c557c00693761f6a5f67f92fba30
-            Global.ConnectionString = Configuration.GetConnectionString("DefaultConnection");
-            Global.DomainName = Configuration["DomainName"];
 
               services.AddSwaggerGen(c =>
             {

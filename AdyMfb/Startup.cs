@@ -1,25 +1,27 @@
 using AdyMfb.Controllers;
 using EntityLayer.AdminRepository;
-using EntityLayer.Authentication.Common;
-using EntityLayer.Authentication.IService;
-using EntityLayer.Authentication.Service;
 using EntityLayer.DataAccess;
 using EntityLayer.IAdminRepositorys;
 using EntityLayer.SavingsRepository;
 using EntityLayer.SavingsRepository.ISavingsRepositorys;
+using EntityLayer.SignUp.Configuration;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace AdyMfb
@@ -40,16 +42,7 @@ namespace AdyMfb
         public void ConfigureServices(IServiceCollection services)
         {
 
-           
 
-<<<<<<< HEAD
-            
-=======
-            services.AddCors(options => options.AddPolicy("AllowEverthing", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
-
-            services.AddScoped<ILoginService, LoginService>();
-            services.AddScoped<IMailService, MailService>();
->>>>>>> 71e9257d990c7732bee77a791c50726d5fe7f7f8
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -57,9 +50,39 @@ namespace AdyMfb
 
             services.AddScoped<IAdminRepository, AdminRepositoryImplementation>();
 
-              services.AddSwaggerGen(c =>
+
+            services.Configure<JwtConfig>(Configuration.GetSection("JwtConfig"));
+
+            services.AddAuthentication(opt =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AdyMfb", Version = "v1" });
+                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+
+            }).AddJwtBearer(jwt =>
+            {
+                var key = Encoding.ASCII.GetBytes(Configuration["JwtConfig:Secret"]);
+                jwt.SaveToken = true;
+                jwt.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ValidateLifetime = true,
+                    RequireExpirationTime = false
+                };
+
+            });
+
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                
+               .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+
+            services.AddSwaggerGen(c =>
+            {
+              c.SwaggerDoc("v1", new OpenApiInfo { Title = "AdyMfb", Version = "v1" });
             });
         }
 
@@ -77,6 +100,7 @@ namespace AdyMfb
 
             app.UseCors("AllowEverthing");
             app.UseRouting();
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

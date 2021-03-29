@@ -18,5 +18,7 @@ namespace EntityLayer.Dto
 
         [Required]
         public string Password { get; set; }
+
+        public string ConfirmPassword { get; set; }
     }
 }

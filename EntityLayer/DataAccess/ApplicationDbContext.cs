@@ -1,9 +1,10 @@
 ﻿using EntityLayer.AdminDetails;
-using EntityLayer.Authentication;
+
 using EntityLayer.BankProfitAndLoss;
 using EntityLayer.CustomerDetails;
 using EntityLayer.FixDeposit;
 using EntityLayer.Loans;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.DataAccess
 {
-    public class ApplicationDbContext: DbContext
+    public class ApplicationDbContext: IdentityDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
@@ -31,7 +32,7 @@ namespace EntityLayer.DataAccess
         public DbSet<SavingsAccount> SavingsAccounts { get; set; }
         public DbSet<DomCustomer> DomCustomers { get; set; }
         public DbSet<TransactionHistory> TransactionHistories { get; set; }
-        public DbSet<LoginInfo> LoginInfos { get; set; }
+        
         public DbSet <Admin> Admins { get; set; }
 
 

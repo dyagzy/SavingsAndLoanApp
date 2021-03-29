@@ -32,17 +32,17 @@ namespace AdyMfb.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult>GetOneAdmin (int id)
         {
-            var Admin = await _repository.GetAllAdmin();
+            var Admin = await _repository.GetOneAdmin(id);
             return Ok(Admin);
         }
 
 
         [HttpPost]
-        public async Task<IActionResult> UpdateAdmin()
+        public async Task<IActionResult> UpdateAdmin(Admin newAdminData)
         {
-            var Admin = await _repository.GetAllAdmin();
+            await _repository.Add(newAdminData);
             await _repository.SaveAllChangesAsync();
-            return Ok(Admin);
+            return Ok(newAdminData);
         }
 
         // PUT api/<ValuesController>/5
@@ -58,7 +58,7 @@ namespace AdyMfb.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            ;
+            
         }
 
 

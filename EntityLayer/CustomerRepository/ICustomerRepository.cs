@@ -1,4 +1,5 @@
 ﻿using EntityLayer.CustomerDetails;
+using EntityLayer.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,7 @@ namespace EntityLayer.CustomerRepository
     {
         //CRUD
         //create 
-        CustomerProfile CreateCustomer(CustomerProfile customerdetials);
-
-        //Read .... GetbyName, GetById, GetAll
+        Task<CustomerProfile> CreateCustomerAsync(CustomerProfile customer);
 
         CustomerProfile GetCustomerByName(CustomerProfile name);
         CustomerProfile GetCustomerById(CustomerProfile Id);

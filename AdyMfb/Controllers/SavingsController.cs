@@ -20,11 +20,19 @@ namespace AdyMfb.Controllers
         }
 
 
-        [HttpGet]
-        public IActionResult GetSavings()
-        {
-            var savings= _repository.GetAllSavingsAccount();
-            return Ok(savings);
-        }
+        //[HttpGet]
+        //public IActionResult GetSavings()
+        //{
+        //    var savings= _repository.GetAllSavingsAccount();
+        //    return Ok(savings);
+        //}
+
+        //[HttpPost]
+        //public async Task<IActionResult> CreateSavings()
+        //{
+        //    var savings = await _repository.GetAllSavingsAccount();
+        //    await _repository.SaveAllChangesAsync();
+        //    return Ok(savings);
+        //}
     }
 }

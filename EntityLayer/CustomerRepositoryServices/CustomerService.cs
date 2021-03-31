@@ -1,5 +1,7 @@
 ﻿using EntityLayer.CustomerDetails;
 using EntityLayer.CustomerRepository;
+using EntityLayer.DataAccess;
+using EntityLayer.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +12,27 @@ namespace EntityLayer.CustomerRepositoryServices
 {
     public class CustomerService : ICustomerRepository
     {
-        public CustomerProfile CreatCustomer(CustomerProfile customerdetials)
+        private readonly ApplicationDbContext _dbContext;
+
+        public CustomerService(ApplicationDbContext dbContext) 
+        {
+            _dbContext = dbContext;
+        }
+        
+        public async Task<CustomerProfile> CreatCustomerAsync(CustomerProfile customer)
+        {
+             await _dbContext.AddAsync (customer);
+           await  _dbContext.SaveChangesAsync();
+            return customer;
+            
+        }
+
+        public CustomerProfile CreateCustomer(CustomerProfile customerdetials)
         {
             throw new NotImplementedException();
         }
 
-        public CustomerProfile CreateCustomer(CustomerProfile customerdetials)
+        public Task CreateCustomerAsync(CustomerProfile customer)
         {
             throw new NotImplementedException();
         }
@@ -65,6 +82,11 @@ namespace EntityLayer.CustomerRepositoryServices
         }
 
         public CustomerProfile UpdateCustomer(CustomerProfile customerDetails)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<CustomerProfile> ICustomerRepository.CreateCustomerAsync(CustomerProfile customer)
         {
             throw new NotImplementedException();
         }

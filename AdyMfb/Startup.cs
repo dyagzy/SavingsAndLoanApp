@@ -1,5 +1,7 @@
 using AdyMfb.Controllers;
 using EntityLayer.AdminRepository;
+using EntityLayer.CustomerRepository;
+using EntityLayer.CustomerRepositoryServices;
 using EntityLayer.DataAccess;
 using EntityLayer.IAdminRepositorys;
 using EntityLayer.SavingsRepository;
@@ -47,8 +49,10 @@ namespace AdyMfb
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<ISavingsRepository, SavingsRepositoryImplementation>();
+            services.AddScoped<ICustomerRepository, CustomerService>();
 
             services.AddScoped<IAdminRepository, AdminRepositoryImplementation>();
+            services.AddAutoMapper(typeof(Startup));
 
 
             services.Configure<JwtConfig>(Configuration.GetSection("JwtConfig"));

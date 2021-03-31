@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "mjcqp6aahmkm1ep/nBxDa/KQbJv+zrRZqL7K5agh9ZqBKt2BVWDkferBtiyoeKcrKiGN5WMh3Clqr2En94ssLA==",
+  "dgSpecHash": "0Y4R2CPxaN3Cya1xFgnGwlgtwc60tpZemMw9N8NFzFZ2XvQUhX7hirT6F7pG9J0l1syHMJC4ij/3tiQbD9r4Ow==",
   "success": true,
   "projectFilePath": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\AdyMfb\\AdyMfb.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
     "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
@@ -106,7 +108,7 @@
     "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\system.private.datacontractserialization\\4.3.0\\system.private.datacontractserialization.4.3.0.nupkg.sha512",
     "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\system.private.uri\\4.3.2\\system.private.uri.4.3.2.nupkg.sha512",
     "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
-    "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
+    "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
     "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\system.reflection.emit.lightweight\\4.3.0\\system.reflection.emit.lightweight.4.3.0.nupkg.sha512",
     "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\system.reflection.extensions\\4.3.0\\system.reflection.extensions.4.3.0.nupkg.sha512",

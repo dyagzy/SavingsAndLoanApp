@@ -26,7 +26,7 @@ namespace EntityLayer.DataAccess
         public DbSet<Loan> Loans { get; set; }
         public DbSet<Tenor> Tenors { get; set; }
         public DbSet<PaymentRecord> PaymentRecords { get; set; }
-        public DbSet<DebitCardIssuance> debitCardIssuances { get; set; }
+        public DbSet<DebitCardIssuance> DebitCardIssuances { get; set; }
         public DbSet<RoundUpSaving> RoundUpSavings { get; set; }
         public DbSet<CashDeposit> CashDeposits { get; set; }
         public DbSet<SavingsAccount> SavingsAccounts { get; set; }

@@ -34,10 +34,12 @@ namespace EntityLayer.Loans
         public TenorType TenorType { get; set; }
         public int CustomerProfileId { get; set; }
         public CustomerProfile CustomerProfile { get; set; }
+        public ApproveLoan ApproveLoan { get; set; }
+        public int ApproveLoanId { get; set; }
 
-     
-     
-        
+
+
+
         public PaymentMethod PaymentMethod { get; set; }
        
 

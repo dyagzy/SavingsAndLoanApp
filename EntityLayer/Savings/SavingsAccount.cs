@@ -1,4 +1,5 @@
 ﻿using EntityLayer.CustomerDetails;
+using EntityLayer.Loans;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -31,5 +32,7 @@ namespace EntityLayer
         /// </summary>
         public CustomerProfile Customerprofiles { get; set; }
         public int CustomerProfileId { get; set; }
+        public ApproveLoan ApproveLoan { get; set; }
+        public int ApproveLoanId { get; set; }
     }
 }

@@ -31,6 +31,8 @@ namespace EntityLayer.DataAccess
         public DbSet<CashDeposit> CashDeposits { get; set; }
         public DbSet<SavingsAccount> SavingsAccounts { get; set; }
         public DbSet<DomCustomer> DomCustomers { get; set; }
+        public DbSet<ApproveLoan> ApproveLoan { get; set; }
+        public DbSet<RepayLoan> RepayLoans { get; set; }
         public DbSet<TransactionHistory> TransactionHistories { get; set; }
         
         public DbSet <Admin> Admins { get; set; }

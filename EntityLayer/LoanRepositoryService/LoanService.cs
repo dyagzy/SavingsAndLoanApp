@@ -3,6 +3,7 @@ using EntityLayer.DataAccess;
 using EntityLayer.LoanRepository;
 using EntityLayer.Loans;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,14 +15,25 @@ namespace EntityLayer.LoanRepositoryService
     public class LoanService : ILoanService
     {
         private readonly ApplicationDbContext _appDbContext;
-        public LoanService(ApplicationDbContext appDbContext)
+        private readonly ILogger<LoanService> _logger;
+        public LoanService(ApplicationDbContext appDbContext, ILogger<LoanService> logger)
         {
             _appDbContext = appDbContext;
+            _logger = logger;
         }
         public decimal CalculateInterest(decimal loanAmount, float rate, float time, decimal interest)
         {
             throw new NotImplementedException();
         }
+
+        public Task<IQueryable<Loan>> GetAllCustomerByLoan()
+        {
+            _logger.LogInformation($"Gets all the customers whose loan has been approved");
+            _appDbContext.Loans
+            throw new NotImplementedException();
+        }
+
+       
 
         //Returns all list of loans
         public async Task<IEnumerable<Loan>> GetAllLoan()
@@ -30,7 +42,7 @@ namespace EntityLayer.LoanRepositoryService
         }
 
         //Get lists of customers who have taken a loan alongside their names and loans collected by firstname
-        public async Task<IEnumerable<Loan>> GetCustomerByLoan(int loanId)
+        public async Task<IEnumerable<Loan>> GetOneCustomerByLoan(int loanId)
         {
 
            IQueryable<Loan> query = (IQueryable <Loan>) _appDbContext.Loans
@@ -53,7 +65,22 @@ namespace EntityLayer.LoanRepositoryService
             throw new NotImplementedException();
         }
 
-        public bool IsLoanExisting(CustomerProfile customer, Loan hasLoan, )
+        
+
+        public Task<IQueryable<RepayLoan>> GetRepayLoanByCustomer(string firstName, string lastName)
+        {
+            _logger.LogInformation($"Gets list of customers who have are paying back Loan{firstName.GetType()}");
+            // complete this method after Amaka has run a migrtaion for you
+            throw new NotImplementedException();
+        }
+
+        public Task<IQueryable<RepayLoan>> GetRepayLoanByCustomer(string phone)
+        {
+            // complete this method after Amaka has run a migrtaion for you
+            throw new NotImplementedException();
+        }
+
+        public bool IsLoanExisting(CustomerProfile customer, Loan hasLoan)
         {
             try
             {
@@ -82,6 +109,16 @@ namespace EntityLayer.LoanRepositoryService
             
                 return _appDbContext.Loans.Any(c => c.Id == customerId);
            
+        }
+
+        public bool ApproveLoan(CustomerProfile customer)
+        {
+            bool isApproved = false;
+            if (customer.SavingsAccounts.IsActive)
+            {
+                isApproved = true;
+            }
+            return isApproved;
         }
     }
 }

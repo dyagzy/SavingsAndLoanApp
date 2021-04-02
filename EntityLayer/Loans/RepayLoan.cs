@@ -25,12 +25,10 @@ namespace EntityLayer.Loans
 
 
         //Navigation property
-        public int LoadId { get; set; }
+        public int LoanId { get; set; }
         public Loan Loan { get; set; }
 
         public Tenor TenureType { get; set; }
-
-        public int LoanId { get; set; }
 
         public PaymentMethod PaymentMethod { get; set; }
 

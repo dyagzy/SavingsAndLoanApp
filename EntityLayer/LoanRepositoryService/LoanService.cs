@@ -26,11 +26,19 @@ namespace EntityLayer.LoanRepositoryService
             throw new NotImplementedException();
         }
 
-        public Task<IQueryable<Loan>> GetAllCustomerByLoan()
+        public async Task<IQueryable<CustomerProfile>> GetAllCustomerByLoan()
         {
             _logger.LogInformation($"Gets all the customers whose loan has been approved");
-            _appDbContext.Loans
-            throw new NotImplementedException();
+          
+            IQueryable<CustomerProfile> approvedLoan = (IQueryable<CustomerProfile >) await _appDbContext.CustomerProfiles
+                .Include(c => c.ApproveLoan)
+                .Include(d => d.Loans)
+                .OrderBy(a => a.FirstName)
+                .ToListAsync();
+            return approvedLoan;
+
+                
+               
         }
 
        
@@ -111,14 +119,6 @@ namespace EntityLayer.LoanRepositoryService
            
         }
 
-        public bool ApproveLoan(CustomerProfile customer)
-        {
-            bool isApproved = false;
-            if (customer.SavingsAccounts.IsActive)
-            {
-                isApproved = true;
-            }
-            return isApproved;
-        }
+        
     }
 }

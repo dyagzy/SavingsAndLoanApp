@@ -56,6 +56,8 @@ namespace EntityLayer.CustomerDetails
         // Repayloan can be done by a Customer while a 
         public int RepayLoanId { get; set; }
         public RepayLoan RepayLoan { get; set; }
+        public int ApproveLoanId { get; set; }
+        public ApproveLoan ApproveLoan { get; set; }
 
 
     }

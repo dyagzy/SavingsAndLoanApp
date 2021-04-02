@@ -14,6 +14,7 @@ namespace EntityLayer.SavingsRepository.ISavingsRepositorys
         void Delete<T>(T entity) where T : class;
         Task<bool> SaveAllChangesAsync();
         void Update<T>(T entity) where T : class;
+        bool SavingsAccountExits(int id);
 
         Task<CashDeposit> GetOneCashDeposit(int id);
         Task<List<CashDeposit>> GetAllCashDeposit();

@@ -1,4 +1,5 @@
-﻿using EntityLayer.Loans;
+﻿using EntityLayer.CustomerDetails;
+using EntityLayer.Loans;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -32,6 +33,9 @@ namespace EntityLayer.Loans
         public int LoanId { get; set; }
 
         public PaymentMethod PaymentMethod { get; set; }
+
+        // Repayloan can be done by a Customer while a 
+        public CustomerProfile CustomerProfile { get; set; }
 
     }
 }

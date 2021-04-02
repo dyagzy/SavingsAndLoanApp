@@ -123,5 +123,16 @@ namespace EntityLayer.SavingsRepository
 
             return result;
         }
+
+        //checks if a savings account exit or if a customer already has a savings account
+        public bool SavingsAccountExits(int id)
+        {
+            if (id == 0 )
+            
+                throw new NotImplementedException(nameof(id));
+            return _appDbContext.SavingsAccounts.Any(s => s.Id == id);
+        }
+
+       
     }
 }

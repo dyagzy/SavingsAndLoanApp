@@ -17,6 +17,7 @@ namespace EntityLayer.Loans
 
         public int LoanId { get; set; }
         public  Loan Loan { get; set; }
+        public LoanCustomer LoanCustomer { get; set; }
 
     }
 }

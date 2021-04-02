@@ -26,19 +26,18 @@ namespace EntityLayer.LoanRepositoryService
             throw new NotImplementedException();
         }
 
-        public async Task<IQueryable<CustomerProfile>> GetAllCustomerByLoan()
+        public async Task<IQueryable<CustomerProfile>> GetAllCustomerWithApprovedLoan()
         {
             _logger.LogInformation($"Gets all the customers whose loan has been approved");
           
-            IQueryable<CustomerProfile> approvedLoan = (IQueryable<CustomerProfile >) await _appDbContext.CustomerProfiles
+            IQueryable<CustomerProfile> approvedLoan = (IQueryable<CustomerProfile>) await _appDbContext.CustomerProfiles
                 .Include(c => c.ApproveLoan)
                 .Include(d => d.Loans)
                 .OrderBy(a => a.FirstName)
                 .ToListAsync();
+                   
             return approvedLoan;
-
-                
-               
+ 
         }
 
        
@@ -78,6 +77,7 @@ namespace EntityLayer.LoanRepositoryService
         public Task<IQueryable<RepayLoan>> GetRepayLoanByCustomer(string firstName, string lastName)
         {
             _logger.LogInformation($"Gets list of customers who have are paying back Loan{firstName.GetType()}");
+           //_appDbContext.CustomerProfiles
             // complete this method after Amaka has run a migrtaion for you
             throw new NotImplementedException();
         }
@@ -92,21 +92,18 @@ namespace EntityLayer.LoanRepositoryService
         {
             try
             {
-                _appDbContext.CustomerProfiles.
+                //_appDbContext.CustomerProfiles.
 
             }
             catch (Exception ex)
             {
 
-                throw ex.Message ;
+                throw ex;
             }
             throw new NotImplementedException();
         }
 
-        public bool IsLoanExisting(CustomerProfile customer, Loan hasLoan)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public bool LoanExists(int customerId)
         {

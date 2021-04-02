@@ -15,7 +15,7 @@ namespace EntityLayer.LoanRepository
         Task<Loan> GetLoanById(int loandId);
         Task<IEnumerable<Loan>> GetAllLoan();
         Task<IEnumerable<Loan>> GetOneCustomerByLoan(int loanId);
-        Task<IQueryable<CustomerProfile>> GetAllCustomerByLoan();
+        Task<IQueryable<CustomerProfile>> GetAllCustomerWithApprovedLoan();
         Task<IQueryable<RepayLoan>> GetRepayLoanByCustomer(string firstName, string lastName);
         Task<IQueryable<RepayLoan>> GetRepayLoanByCustomer(string phone);
        

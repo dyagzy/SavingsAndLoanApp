@@ -21,6 +21,33 @@ namespace EntityLayer.DataAccess
 
         }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            /* The foolowing fleutn Api configuration helps to specify a ON DELETE CASCADE nehavior in the entities below where
+              it was cofigured on*/
+
+            builder.Entity<Loan>()
+                .HasOne(l => l.ApproveLoan)
+                .WithOne(l => l.Loan)
+                .OnDelete(DeleteBehavior.ClientCascade);
+
+
+            builder.Entity<RepayLoan>()
+                .HasOne(r => r.Loan)
+                .WithOne(r => r.RepayLoan)
+                .OnDelete(DeleteBehavior.ClientCascade);
+
+            builder.Entity<ApproveLoan>()
+                .HasOne(a => a.LoanType)
+                .WithOne(a => a.ApproveLoan)
+                .OnDelete(DeleteBehavior.ClientCascade);
+
+
+
+        }
+
         public DbSet<CustomerProfile> CustomerProfiles { get; set; }
         public DbSet<FixedDeposit> FixedDeposits { get; set; }
         public DbSet<Loan> Loans { get; set; }

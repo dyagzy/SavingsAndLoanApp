@@ -4,6 +4,7 @@ using EntityLayer.Loans;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace EntityLayer.CustomerDetails
@@ -53,11 +54,13 @@ namespace EntityLayer.CustomerDetails
         public IEnumerable<BankCredit> BankCredits { get; set; }
         public IEnumerable<DebitCardIssuance> DebitCardIssuances { get; set; }
         public IEnumerable<CashDeposit> CashDeposits { get; set; }
+
         // Repayloan can be done by a Customer while a 
-        public int RepayLoanId { get; set; }
-        public RepayLoan RepayLoan { get; set; }
-        public int ApproveLoanId { get; set; }
-        public ApproveLoan ApproveLoan { get; set; }
+        //public int RepayLoanId { get; set; }
+        //public RepayLoan RepayLoan { get; set; }
+
+        //[ForeignKey("ApproveLoanId")]
+        //public ApproveLoan ApproveLoan { get; set; }
 
 
     }

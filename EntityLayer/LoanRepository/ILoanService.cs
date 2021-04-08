@@ -24,6 +24,7 @@ namespace EntityLayer.LoanRepository
         bool LoanExists(int customerId);
 
         bool IsLoanExisting(CustomerProfile customer, Loan hasLoan);
+        decimal CalculateCharge(decimal amount);
     
 
 

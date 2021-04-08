@@ -41,6 +41,7 @@ namespace EntityLayer.Loans
         public Loan Loan { get; set; }
         public int LoanTypeId { get; set; }
         public LoanType LoanType { get; set; }
+        public int CustomerProfileId { get; set; }
         public CustomerProfile CustomerProfile { get; set; }
 
 

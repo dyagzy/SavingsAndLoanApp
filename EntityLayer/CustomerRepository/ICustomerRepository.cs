@@ -12,7 +12,8 @@ namespace EntityLayer.CustomerRepository
     {
         //CRUD
         //create 
-        Task<CustomerProfile> CreateCustomerAsync(CustomerProfile customer);
+        Task<CustomerDto> CreateCustomerAsync(CustomerProfile customer);
+        Task<CustomerDto> CreateCustomerAsync2(CustomerDto customerDto);
 
         CustomerProfile GetCustomerByName(CustomerProfile name);
         CustomerProfile GetCustomerById(CustomerProfile Id);

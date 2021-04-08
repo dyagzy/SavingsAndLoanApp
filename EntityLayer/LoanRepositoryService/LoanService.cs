@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,18 +30,18 @@ namespace EntityLayer.LoanRepositoryService
         public async Task<IQueryable<CustomerProfile>> GetAllCustomerWithApprovedLoan()
         {
             _logger.LogInformation($"Gets all the customers whose loan has been approved");
-          
-            IQueryable<CustomerProfile> approvedLoan = (IQueryable<CustomerProfile>) await _appDbContext.CustomerProfiles
-                .Include(c => c.ApproveLoan)
+
+            IQueryable<CustomerProfile> approvedLoan = (IQueryable<CustomerProfile>)await _appDbContext.CustomerProfiles
+                //.Include(c => c.ApproveLoan)
                 .Include(d => d.Loans)
                 .OrderBy(a => a.FirstName)
                 .ToListAsync();
-                   
+
             return approvedLoan;
- 
+
         }
 
-       
+
 
         //Returns all list of loans
         public async Task<IEnumerable<Loan>> GetAllLoan()
@@ -116,6 +117,10 @@ namespace EntityLayer.LoanRepositoryService
            
         }
 
-        
+        public decimal CalculateCharge(decimal amount)
+        {
+            throw new NotImplementedException();
+        }
     }
+
 }

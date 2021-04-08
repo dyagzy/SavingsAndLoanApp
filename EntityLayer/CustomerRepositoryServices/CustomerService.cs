@@ -22,30 +22,24 @@ namespace EntityLayer.CustomerRepositoryServices
             _mapper = mapper;
         }
 
-        public async Task<CustomerDto> CreatCustomerAsync(CustomerProfile customer)
-        {
+        //public async Task<CustomerDto> CreatCustomerAsync(CustomerProfile customer)
+        //{
              
-            var newCustomer = await _dbContext.AddAsync (customer);
-            var newCustomerDto = _mapper.Map<CustomerDto>(newCustomer);
-           await  _dbContext.SaveChangesAsync();
-            return newCustomerDto;
+        //    var newCustomer = await _dbContext.AddAsync (customer);
+        //    var newCustomerDto = _mapper.Map<CustomerDto>(newCustomer);
+        //   await  _dbContext.SaveChangesAsync();
+        //    return newCustomerDto;
             
-        }
+        //}
 
         
-
-        public Task CreateCustomerAsync(CustomerProfile customer)
+        public async Task<CustomerDto> CreateCustomerAsync(CustomerDto customerDto)
         {
-            throw new NotImplementedException();
-        }
-
-        public async Task<CustomerDto> CreateCustomerAsync2(CustomerDto customerDto)
-        {
-           var ccProf = _mapper.Map<CustomerProfile>(customerDto);
-            await  _dbContext.CustomerProfiles.AddAsync(ccProf);
+           var newCustomer = _mapper.Map<CustomerProfile>(customerDto);
+            await  _dbContext.CustomerProfiles.AddAsync(newCustomer);
            await _dbContext.SaveChangesAsync();
-           var Dto =  _mapper.Map<CustomerDto>(ccProf);
-            return Dto;
+           var convertedCustomerdto =  _mapper.Map<CustomerDto>(newCustomer);
+            return convertedCustomerdto;
             
         }
 
@@ -103,9 +97,6 @@ namespace EntityLayer.CustomerRepositoryServices
         //    throw new NotImplementedException();
         //}
 
-        Task<CustomerDto> ICustomerRepository.CreateCustomerAsync(CustomerProfile customer)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

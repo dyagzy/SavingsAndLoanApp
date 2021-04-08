@@ -40,8 +40,8 @@ namespace AdyMfb.Controllers
         [HttpPost]
         public async Task<ActionResult<CustomerDto>> OpenAccount2([FromBody] CustomerDto customerDto)
         {
-           var dd =   await _repository.CreateCustomerAsync2(customerDto);
-            return Ok(dd);
+           var customer =   await _repository.CreateCustomerAsync(customerDto);
+            return Ok(customer);
         }
 
     }

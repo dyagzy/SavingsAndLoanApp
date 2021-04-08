@@ -9,11 +9,13 @@ namespace EntityLayer
 
         public static string NewSavingAccountNumbers()
         {
-            var savingsIdentifier = "01";
+            var start = "SA-01";
+            var end = "AD";
             var random = new Random();
             var otherdigits = random.Next(10000000, 99999999);
+            
 
-            var accountNumber = savingsIdentifier + otherdigits.ToString();
+            var accountNumber = (start + otherdigits + end).ToString();
             return accountNumber;
         }
 

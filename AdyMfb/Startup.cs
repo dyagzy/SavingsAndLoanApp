@@ -50,9 +50,10 @@ namespace AdyMfb
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddAutoMapper(typeof(CustomerMapper));
+            services.AddAutoMapper(typeof(SavingsAccountMapper));
 
 
-            services.AddScoped<ISavingsRepository, SavingsRepositoryImplementation>();
+            services.AddScoped<ISavingsRepository, SavingsRepo>();
             services.AddScoped<ICustomerRepository, CustomerService>();
 
             services.AddScoped<IAdminRepository, AdminRepositoryImplementation>();

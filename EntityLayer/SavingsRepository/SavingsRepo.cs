@@ -135,23 +135,27 @@ namespace EntityLayer.SavingsRepository
         //checks if a savings account exit or if a customer already has a savings account
         public bool SavingsAccountExits(int id)
         {
-            if (id == 0 )
-            
-                throw new NotImplementedException(nameof(id));
+            if (id == 0 ) throw new NotImplementedException(nameof(id));
+
             return _appDbContext.SavingsAccounts.Any(s => s.Id == id);
         }
 
         public async Task<SavingsAccountDto> OpenSavingsAccount(SavingsAccountDto savingsAccount)
         {
             //savingsAccount.AccountNumber = AccountNumberGenerator.NewSavingAccountNumbers();
-            var savings =   _mapper.Map<SavingsAccount>(savingsAccount);
-            
-           // _appDbContext.SavingsAccounts.Include(s => s.AccountNumber == accountNumber);
-           await  _appDbContext.SavingsAccounts.AddAsync(savings);
-           await _appDbContext.SaveChangesAsync();
+            //await _appDbContext.CustomerProfiles.AddAsync(savingsAccount.Customerprofiles);
+            var savings = _mapper.Map<SavingsAccount>(savingsAccount);
+
+            // _appDbContext.SavingsAccounts.Include(s => s.AccountNumber == accountNumber);
+            await _appDbContext.SavingsAccounts.AddAsync(savings);
+            await _appDbContext.SaveChangesAsync();
 
             return savingsAccount;
-           
+
         }
+
+
+
+        
     }
 }

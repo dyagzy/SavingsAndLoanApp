@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EntityLayer.Dto;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,8 +10,8 @@ namespace EntityLayer
 
         public static string NewSavingAccountNumbers()
         {
-            var start = "SA-01";
-            var end = "AD";
+            var start = "01";
+            var end = "";
             var random = new Random();
             var otherdigits = random.Next(10000000, 99999999);
             
@@ -29,5 +30,18 @@ namespace EntityLayer
             return accountNumber;
         }
 
+
+        //This method just displays a welcome message and the savings account of the customer
+        public static string SavingsAccountWelcomeMessage()
+        {
+            SavingsAccountDto savingsDto = new SavingsAccountDto();
+
+            string message;
+            message = string.Format($"Your savings account number is : {savingsDto.AccountNumber}");
+
+            return message;
+        }
+
+       
     }
 }

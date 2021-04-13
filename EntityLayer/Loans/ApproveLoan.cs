@@ -53,10 +53,10 @@ namespace EntityLayer.Loans
         {
             CustomerProfile customer = new CustomerProfile();
             bool isApproved = false;
-            if (customer.SavingsAccounts.IsActive)
-            {
-                isApproved = true;
-            }
+            //if (customer.SavingsAccounts.IsActive)
+            //{
+            //    isApproved = true;
+            //}
             return isApproved;
         }
     }

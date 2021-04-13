@@ -51,6 +51,7 @@ namespace AdyMfb
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddAutoMapper(typeof(CustomerMapper));
             services.AddAutoMapper(typeof(SavingsAccountMapper));
+            services.AddAutoMapper(typeof(LoanMapper));
 
 
             services.AddScoped<ISavingsRepository, SavingsRepo>();

@@ -1,5 +1,7 @@
-﻿using EntityLayer.CustomerDetails;
+﻿using AutoMapper;
+using EntityLayer.CustomerDetails;
 using EntityLayer.DataAccess;
+using EntityLayer.Dto;
 using EntityLayer.LoanRepository;
 using EntityLayer.Loans;
 using Microsoft.EntityFrameworkCore;
@@ -17,10 +19,13 @@ namespace EntityLayer.LoanRepositoryService
     {
         private readonly ApplicationDbContext _appDbContext;
         private readonly ILogger<LoanService> _logger;
-        public LoanService(ApplicationDbContext appDbContext, ILogger<LoanService> logger)
+        private readonly IMapper _mapper;
+
+        public LoanService(ApplicationDbContext appDbContext, ILogger<LoanService> logger, IMapper mapper)
         {
             _appDbContext = appDbContext;
             _logger = logger;
+            _mapper = mapper;
         }
         public decimal CalculateInterest(decimal loanAmount, float rate, float time, decimal interest)
         {
@@ -120,6 +125,19 @@ namespace EntityLayer.LoanRepositoryService
         public decimal CalculateCharge(decimal amount)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<LoanDto> CreateLoan(LoanDto loanDto)
+        {
+            var loan = _mapper.Map<Loan>(loanDto);
+           await  _appDbContext.AddAsync(loan);
+
+           var loanConverted =  _mapper.Map<LoanDto>(loan);
+            await _appDbContext.SaveChangesAsync();
+
+            return loanConverted;
+
+         
         }
     }
 

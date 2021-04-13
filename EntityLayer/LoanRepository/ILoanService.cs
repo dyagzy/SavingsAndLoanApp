@@ -1,4 +1,5 @@
 ﻿using EntityLayer.CustomerDetails;
+using EntityLayer.Dto;
 using EntityLayer.Loans;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace EntityLayer.LoanRepository
         Task<IQueryable<CustomerProfile>> GetAllCustomerWithApprovedLoan();
         Task<IQueryable<RepayLoan>> GetRepayLoanByCustomer(string firstName, string lastName);
         Task<IQueryable<RepayLoan>> GetRepayLoanByCustomer(string phone);
+        Task<LoanDto> CreateLoan(LoanDto loanDto);
        
 
         decimal CalculateInterest(decimal loanAmount, float rate, float time, decimal interest);

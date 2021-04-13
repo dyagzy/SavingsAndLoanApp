@@ -1,4 +1,5 @@
 ﻿using EntityLayer.CustomerDetails;
+using EntityLayer.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -35,7 +36,7 @@ namespace EntityLayer.Dto
         public decimal CurrentBalance { get; set; }
         public string Message
         {
-            get { return AccountNumberGenerator.SavingsAccountWelcomeMessage(); }
+            get { return HelperMethods.SavingsAccountWelcomeMessage(); }
         }
 
     }

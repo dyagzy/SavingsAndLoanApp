@@ -154,8 +154,11 @@ namespace EntityLayer.SavingsRepository
 
         }
 
-
-
-        
+        public async Task<DepositDto> SaveMoney(DepositDto deposit)
+        {
+           var saveMoney = _mapper.Map<DepositeFunds>(deposit);
+           await _appDbContext.DepositeFunds.AddAsync(saveMoney);
+            return deposit;
+        }
     }
 }

@@ -52,6 +52,8 @@ namespace AdyMfb
             services.AddAutoMapper(typeof(CustomerMapper));
             services.AddAutoMapper(typeof(SavingsAccountMapper));
             services.AddAutoMapper(typeof(LoanMapper));
+            services.AddAutoMapper(typeof(DepositMapper));
+            
 
 
             services.AddScoped<ISavingsRepository, SavingsRepo>();

@@ -44,6 +44,9 @@ namespace EntityLayer.DataAccess
                 .WithOne(a => a.ApproveLoan)
                 .OnDelete(DeleteBehavior.ClientCascade);
 
+            builder.Entity<DepositeFunds>()
+                .HasNoKey();
+
 
 
         }
@@ -61,7 +64,7 @@ namespace EntityLayer.DataAccess
         public DbSet<ApproveLoan> ApproveLoan { get; set; }
         public DbSet<RepayLoan> RepayLoans { get; set; }
         public DbSet<TransactionHistory> TransactionHistories { get; set; }
-        
+        public DbSet<DepositeFunds> DepositeFunds { get; set; }
         public DbSet <Admin> Admins { get; set; }
 
 

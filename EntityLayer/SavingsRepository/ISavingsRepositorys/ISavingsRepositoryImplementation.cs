@@ -11,6 +11,7 @@ namespace EntityLayer.SavingsRepository.ISavingsRepositorys
     {
         Task Add<T>(T entity) where T : class;
         Task<SavingsAccountDto> OpenSavingsAccount(SavingsAccountDto savingsAccount);
+        Task<DepositDto> SaveMoney(DepositDto deposit);
         Task<SavingsAccount> GetOneSavingsAccount(int id);
         Task<List<SavingsAccount>> GetAllSavingsAccount();
         void Delete<T>(T entity) where T : class;

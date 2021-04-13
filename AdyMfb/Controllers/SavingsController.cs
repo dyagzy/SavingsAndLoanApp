@@ -29,17 +29,19 @@ namespace AdyMfb.Controllers
             await _repository.OpenSavingsAccount(savingsDto);
             return Ok(savingsDto);
 
-            //return Ok(new { savingsDto, AccountNumber = AccountNumberGenerator.NewSavingAccountNumbers() });
+            
         }
 
 
-        //[HttpPost("OpenSavingsAccount")]
-        //public async Task<ActionResult<SavingsAccountDto>> OpenAccount2([FromBody] SavingsAccountDto savingsDto)
-        //{
-        //   await  _repository.OpenSavingsAccount(savingsDto);
-        //    return Ok();
-        //}
+        [HttpPost("Deposit")]
+        public async Task<ActionResult<DepositDto>> DepositFunds([FromBody] DepositDto deposit )
+        {
+           await _repository.SaveMoney(deposit);
+            return Ok(deposit);
+        }
 
+
+        
 
     }
 }

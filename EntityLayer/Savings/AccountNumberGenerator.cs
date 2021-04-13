@@ -31,16 +31,7 @@ namespace EntityLayer
         }
 
 
-        //This method just displays a welcome message and the savings account of the customer
-        public static string SavingsAccountWelcomeMessage()
-        {
-            SavingsAccountDto savingsDto = new SavingsAccountDto();
-
-            string message;
-            message = string.Format($"Your savings account number is : {savingsDto.AccountNumber}");
-
-            return message;
-        }
+       
 
        
     }

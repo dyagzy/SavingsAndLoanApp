@@ -2035,6 +2035,22 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Adyb.Banking/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "EntityLayer": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Adyb.Banking.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Adyb.Banking.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "EntityLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -6979,6 +6995,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Adyb.Banking/1.0.0": {
+      "type": "project",
+      "path": "../Adyb.Banking/Adyb.Banking.csproj",
+      "msbuildProject": "../Adyb.Banking/Adyb.Banking.csproj"
+    },
     "EntityLayer/1.0.0": {
       "type": "project",
       "path": "../EntityLayer/EntityLayer.csproj",
@@ -6987,6 +7008,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Adyb.Banking >= 1.0.0",
       "EntityLayer >= 1.0.0",
       "Microsoft.AspNetCore.Identity.UI >= 5.0.3",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.3",
@@ -7025,6 +7047,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "C:\\Users\\DanielOyagha\\Documents\\MfbGrpProject\\adyapp\\Adyb.Banking\\Adyb.Banking.csproj": {
+              "projectPath": "C:\\Users\\DanielOyagha\\Documents\\MfbGrpProject\\adyapp\\Adyb.Banking\\Adyb.Banking.csproj"
+            },
             "C:\\Users\\DanielOyagha\\Documents\\MfbGrpProject\\adyapp\\EntityLayer\\EntityLayer.csproj": {
               "projectPath": "C:\\Users\\DanielOyagha\\Documents\\MfbGrpProject\\adyapp\\EntityLayer\\EntityLayer.csproj"
             }

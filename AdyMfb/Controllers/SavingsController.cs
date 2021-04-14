@@ -27,7 +27,7 @@ namespace AdyMfb.Controllers
         {
 
             await _repository.OpenSavingsAccount(savingsDto);
-            return Ok(savingsDto);
+            return new JsonResult(savingsDto);
 
             
         }

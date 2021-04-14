@@ -25,6 +25,7 @@
     ".NETCoreApp,Version=v5.0": {
       "AdyMfb/1.0.0": {
         "dependencies": {
+          "Adyb.Banking": "1.0.0",
           "EntityLayer": "1.0.0",
           "Microsoft.AspNetCore.Identity.UI": "5.0.3",
           "Microsoft.EntityFrameworkCore.Design": "5.0.3",
@@ -1678,6 +1679,17 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
+        }
+      },
+      "Adyb.Banking/1.0.0": {
+        "dependencies": {
+          "EntityLayer": "1.0.0"
+        },
+        "runtime": {
+          "Adyb.Banking.dll": {}
+        },
+        "compile": {
+          "Adyb.Banking.dll": {}
         }
       },
       "EntityLayer/1.0.0": {
@@ -4349,6 +4361,11 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "Adyb.Banking/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "EntityLayer/1.0.0": {
       "type": "project",

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using EntityLayer.Dto;
+using EntityLayer.LoanRepository;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,11 +13,21 @@ namespace AdyMfb.Controllers
     [ApiController]
     public class LoanController : ControllerBase
     {
-        public LoanController()
-        {
+        private readonly ILoanService _loanService;
 
+        public LoanController(ILoanService loanService)
+        {
+            _loanService = loanService;
         }
 
+
+        [HttpPost("ApplyforLoan")]
+        public async Task< ActionResult<LoanDto>> ApplyforLoan([FromBody] LoanDto loanDto)
+        {
+            var loan = await _loanService.CreateLoan(loanDto);
+            return Ok(loan);
+
+        }
 
         [HttpGet("interest")]
         public IActionResult CalculateLoan()

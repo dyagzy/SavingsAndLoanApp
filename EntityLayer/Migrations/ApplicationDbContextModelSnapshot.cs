@@ -101,8 +101,8 @@ namespace EntityLayer.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte[]>("ProfilePicture")
-                        .HasColumnType("varbinary(max)");
+                    b.Property<byte?>("ProfilePicture")
+                        .HasColumnType("tinyint");
 
                     b.Property<int>("StaffId")
                         .HasColumnType("int");
@@ -198,7 +198,6 @@ namespace EntityLayer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AccountType")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Address")
@@ -211,51 +210,43 @@ namespace EntityLayer.Migrations
                         .HasColumnType("tinyint");
 
                     b.Property<string>("DateOfBirth")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NameOfNextOfKin")
-                        .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Occupation")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("OtherNames")
-                        .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumberOfNextOfKin")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Signature")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SurName")
-                        .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("CustomerProfiles");
+                });
+
+            modelBuilder.Entity("EntityLayer.DataAccess.DepositeFunds", b =>
+                {
+                    b.ToTable("DepositeFunds");
                 });
 
             modelBuilder.Entity("EntityLayer.DebitCardIssuance", b =>
@@ -282,7 +273,7 @@ namespace EntityLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("debitCardIssuances");
+                    b.ToTable("DebitCardIssuances");
                 });
 
             modelBuilder.Entity("EntityLayer.DomCustomer", b =>
@@ -394,12 +385,55 @@ namespace EntityLayer.Migrations
                     b.ToTable("FixedDeposits");
                 });
 
+            modelBuilder.Entity("EntityLayer.Loans.ApproveLoan", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("ApprovalDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("CustomerProfileId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("LoanTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("LoanValue")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int?>("SavingsAccountId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerProfileId");
+
+                    b.HasIndex("LoanTypeId")
+                        .IsUnique();
+
+                    b.HasIndex("SavingsAccountId");
+
+                    b.ToTable("ApproveLoan");
+                });
+
             modelBuilder.Entity("EntityLayer.Loans.Loan", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ApproveLoanId")
+                        .HasColumnType("int");
 
                     b.Property<int>("CustomerProfileId")
                         .HasColumnType("int");
@@ -430,12 +464,33 @@ namespace EntityLayer.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ApproveLoanId")
+                        .IsUnique();
+
                     b.HasIndex("CustomerProfileId")
                         .IsUnique();
 
                     b.HasIndex("PaymentRecordId");
 
                     b.ToTable("Loans");
+                });
+
+            modelBuilder.Entity("EntityLayer.Loans.LoanCustomer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LoanCustomer");
                 });
 
             modelBuilder.Entity("EntityLayer.Loans.LoanType", b =>
@@ -454,6 +509,9 @@ namespace EntityLayer.Migrations
                     b.Property<string>("Housing")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("LoanCustomerId")
+                        .HasColumnType("int");
+
                     b.Property<int>("LoanId")
                         .HasColumnType("int");
 
@@ -464,6 +522,9 @@ namespace EntityLayer.Migrations
                         .HasColumnType("float");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("LoanCustomerId")
+                        .IsUnique();
 
                     b.HasIndex("LoanId");
 
@@ -486,7 +547,7 @@ namespace EntityLayer.Migrations
                     b.Property<string>("ChequeNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LoadId")
+                    b.Property<int?>("CustomerProfileId")
                         .HasColumnType("int");
 
                     b.Property<int>("LoanId")
@@ -512,12 +573,14 @@ namespace EntityLayer.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CustomerProfileId");
+
                     b.HasIndex("LoanId")
                         .IsUnique();
 
                     b.HasIndex("TenureTypeId");
 
-                    b.ToTable("RepayLoan");
+                    b.ToTable("RepayLoans");
                 });
 
             modelBuilder.Entity("EntityLayer.PaymentRecord", b =>
@@ -587,9 +650,7 @@ namespace EntityLayer.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("AccountNumber")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("AccountOwnerID")
                         .HasColumnType("int");
@@ -606,9 +667,6 @@ namespace EntityLayer.Migrations
 
                     b.Property<decimal>("InitialBal")
                         .HasColumnType("decimal(18,6)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -987,8 +1045,39 @@ namespace EntityLayer.Migrations
                     b.Navigation("CustomerProfiles");
                 });
 
+            modelBuilder.Entity("EntityLayer.Loans.ApproveLoan", b =>
+                {
+                    b.HasOne("EntityLayer.CustomerDetails.CustomerProfile", "CustomerProfile")
+                        .WithMany()
+                        .HasForeignKey("CustomerProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EntityLayer.Loans.LoanType", "LoanType")
+                        .WithOne("ApproveLoan")
+                        .HasForeignKey("EntityLayer.Loans.ApproveLoan", "LoanTypeId")
+                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .IsRequired();
+
+                    b.HasOne("EntityLayer.SavingsAccount", "SavingsAccount")
+                        .WithMany()
+                        .HasForeignKey("SavingsAccountId");
+
+                    b.Navigation("CustomerProfile");
+
+                    b.Navigation("LoanType");
+
+                    b.Navigation("SavingsAccount");
+                });
+
             modelBuilder.Entity("EntityLayer.Loans.Loan", b =>
                 {
+                    b.HasOne("EntityLayer.Loans.ApproveLoan", "ApproveLoan")
+                        .WithOne("Loan")
+                        .HasForeignKey("EntityLayer.Loans.Loan", "ApproveLoanId")
+                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .IsRequired();
+
                     b.HasOne("EntityLayer.CustomerDetails.CustomerProfile", "CustomerProfile")
                         .WithOne("Loans")
                         .HasForeignKey("EntityLayer.Loans.Loan", "CustomerProfileId")
@@ -999,6 +1088,8 @@ namespace EntityLayer.Migrations
                         .WithMany()
                         .HasForeignKey("PaymentRecordId");
 
+                    b.Navigation("ApproveLoan");
+
                     b.Navigation("CustomerProfile");
 
                     b.Navigation("PaymentRecord");
@@ -1006,6 +1097,12 @@ namespace EntityLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Loans.LoanType", b =>
                 {
+                    b.HasOne("EntityLayer.Loans.LoanCustomer", "LoanCustomer")
+                        .WithOne("LoanTypes")
+                        .HasForeignKey("EntityLayer.Loans.LoanType", "LoanCustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("EntityLayer.Loans.Loan", "Loan")
                         .WithMany("LoanType")
                         .HasForeignKey("LoanId")
@@ -1013,19 +1110,27 @@ namespace EntityLayer.Migrations
                         .IsRequired();
 
                     b.Navigation("Loan");
+
+                    b.Navigation("LoanCustomer");
                 });
 
             modelBuilder.Entity("EntityLayer.Loans.RepayLoan", b =>
                 {
+                    b.HasOne("EntityLayer.CustomerDetails.CustomerProfile", "CustomerProfile")
+                        .WithMany()
+                        .HasForeignKey("CustomerProfileId");
+
                     b.HasOne("EntityLayer.Loans.Loan", "Loan")
                         .WithOne("RepayLoan")
                         .HasForeignKey("EntityLayer.Loans.RepayLoan", "LoanId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
 
                     b.HasOne("EntityLayer.Tenor", "TenureType")
                         .WithMany()
                         .HasForeignKey("TenureTypeId");
+
+                    b.Navigation("CustomerProfile");
 
                     b.Navigation("Loan");
 
@@ -1140,6 +1245,11 @@ namespace EntityLayer.Migrations
                     b.Navigation("SavingsAccounts");
                 });
 
+            modelBuilder.Entity("EntityLayer.Loans.ApproveLoan", b =>
+                {
+                    b.Navigation("Loan");
+                });
+
             modelBuilder.Entity("EntityLayer.Loans.Loan", b =>
                 {
                     b.Navigation("LoanType");
@@ -1147,6 +1257,16 @@ namespace EntityLayer.Migrations
                     b.Navigation("RepayLoan");
 
                     b.Navigation("TenorType");
+                });
+
+            modelBuilder.Entity("EntityLayer.Loans.LoanCustomer", b =>
+                {
+                    b.Navigation("LoanTypes");
+                });
+
+            modelBuilder.Entity("EntityLayer.Loans.LoanType", b =>
+                {
+                    b.Navigation("ApproveLoan");
                 });
 #pragma warning restore 612, 618
         }

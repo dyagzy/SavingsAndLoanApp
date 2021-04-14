@@ -35,9 +35,10 @@ namespace EntityLayer.Loans
         public int CustomerProfileId { get; set; }
         public CustomerProfile CustomerProfile { get; set; }
 
-     
-     
-        
+        [ForeignKey("ApproveLoanId")]
+        public ApproveLoan ApproveLoan { get; set; }
+        public int ApproveLoanId { get; set; }
+
         public PaymentMethod PaymentMethod { get; set; }
        
 

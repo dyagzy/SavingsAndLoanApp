@@ -9,7 +9,8 @@ namespace EntityLayer.AutoMapperProfile
         public CustomerMapper()
         {
             
-            CreateMap<CustomerDto, CustomerProfile>().ReverseMap();
+            CreateMap<CustomerProfile,CustomerDto>();
+            CreateMap<CustomerDto,CustomerProfile>();
 
         }
     }

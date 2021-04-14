@@ -21,6 +21,36 @@ namespace EntityLayer.DataAccess
 
         }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            /* The foolowing fleutn Api configuration helps to specify a ON DELETE CASCADE nehavior in the entities below where
+              it was cofigured on*/
+
+            builder.Entity<Loan>()
+                .HasOne(l => l.ApproveLoan)
+                .WithOne(l => l.Loan)
+                .OnDelete(DeleteBehavior.ClientCascade);
+
+
+            builder.Entity<RepayLoan>()
+                .HasOne(r => r.Loan)
+                .WithOne(r => r.RepayLoan)
+                .OnDelete(DeleteBehavior.ClientCascade);
+
+            builder.Entity<ApproveLoan>()
+                .HasOne(a => a.LoanType)
+                .WithOne(a => a.ApproveLoan)
+                .OnDelete(DeleteBehavior.ClientCascade);
+
+            builder.Entity<DepositeFunds>()
+                .HasNoKey();
+
+
+
+        }
+
         public DbSet<CustomerProfile> CustomerProfiles { get; set; }
         public DbSet<FixedDeposit> FixedDeposits { get; set; }
         public DbSet<Loan> Loans { get; set; }
@@ -31,8 +61,10 @@ namespace EntityLayer.DataAccess
         public DbSet<CashDeposit> CashDeposits { get; set; }
         public DbSet<SavingsAccount> SavingsAccounts { get; set; }
         public DbSet<DomCustomer> DomCustomers { get; set; }
+        public DbSet<ApproveLoan> ApproveLoan { get; set; }
+        public DbSet<RepayLoan> RepayLoans { get; set; }
         public DbSet<TransactionHistory> TransactionHistories { get; set; }
-        
+        public DbSet<DepositeFunds> DepositeFunds { get; set; }
         public DbSet <Admin> Admins { get; set; }
 
 

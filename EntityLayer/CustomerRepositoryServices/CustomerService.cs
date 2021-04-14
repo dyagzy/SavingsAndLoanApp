@@ -1,4 +1,5 @@
-﻿using EntityLayer.CustomerDetails;
+﻿using AutoMapper;
+using EntityLayer.CustomerDetails;
 using EntityLayer.CustomerRepository;
 using EntityLayer.DataAccess;
 using EntityLayer.Dto;
@@ -13,28 +14,33 @@ namespace EntityLayer.CustomerRepositoryServices
     public class CustomerService : ICustomerRepository
     {
         private readonly ApplicationDbContext _dbContext;
+        private readonly IMapper _mapper;
 
-        public CustomerService(ApplicationDbContext dbContext) 
+        public CustomerService(ApplicationDbContext dbContext, IMapper mapper) 
         {
             _dbContext = dbContext;
+            _mapper = mapper;
         }
-        
-        public async Task<CustomerProfile> CreatCustomerAsync(CustomerProfile customer)
-        {
-             await _dbContext.AddAsync (customer);
-           await  _dbContext.SaveChangesAsync();
-            return customer;
+
+        //public async Task<CustomerDto> CreatCustomerAsync(CustomerProfile customer)
+        //{
+             
+        //    var newCustomer = await _dbContext.AddAsync (customer);
+        //    var newCustomerDto = _mapper.Map<CustomerDto>(newCustomer);
+        //   await  _dbContext.SaveChangesAsync();
+        //    return newCustomerDto;
             
-        }
+        //}
 
-        public CustomerProfile CreateCustomer(CustomerProfile customerdetials)
+        
+        public async Task<CustomerDto> CreateCustomerAsync(CustomerDto customerDto)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task CreateCustomerAsync(CustomerProfile customer)
-        {
-            throw new NotImplementedException();
+           var newCustomer = _mapper.Map<CustomerProfile>(customerDto);
+            await  _dbContext.CustomerProfiles.AddAsync(newCustomer);
+           await _dbContext.SaveChangesAsync();
+           var convertedCustomerdto =  _mapper.Map<CustomerDto>(newCustomer);
+            return convertedCustomerdto;
+            
         }
 
         public CustomerProfile DeleteCustomer(CustomerProfile name)
@@ -86,9 +92,11 @@ namespace EntityLayer.CustomerRepositoryServices
             throw new NotImplementedException();
         }
 
-        Task<CustomerProfile> ICustomerRepository.CreateCustomerAsync(CustomerProfile customer)
-        {
-            throw new NotImplementedException();
-        }
+        //Task<CustomerProfile> ICustomerRepository.CreateCustomerAsync(CustomerProfile customer)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+       
     }
 }

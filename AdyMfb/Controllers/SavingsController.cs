@@ -1,4 +1,6 @@
-﻿using EntityLayer.SavingsRepository.ISavingsRepositorys;
+﻿using EntityLayer;
+using EntityLayer.Dto;
+using EntityLayer.SavingsRepository.ISavingsRepositorys;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -19,20 +21,27 @@ namespace AdyMfb.Controllers
            _repository = repository;
         }
 
+        [HttpPost("OpenSavingsAccount")]
 
-        //[HttpGet]
-        //public IActionResult GetSavings()
-        //{
-        //    var savings= _repository.GetAllSavingsAccount();
-        //    return Ok(savings);
-        //}
+        public async Task<ActionResult<SavingsAccountDto>> OpenSavingsAccount([FromBody] SavingsAccountDto savingsDto)
+        {
 
-        //[HttpPost]
-        //public async Task<IActionResult> CreateSavings()
-        //{
-        //    var savings = await _repository.GetAllSavingsAccount();
-        //    await _repository.SaveAllChangesAsync();
-        //    return Ok(savings);
-        //}
+            await _repository.OpenSavingsAccount(savingsDto);
+            return new JsonResult(savingsDto);
+
+            
+        }
+
+
+        [HttpPost("Deposit")]
+        public async Task<ActionResult<DepositDto>> DepositFunds([FromBody] DepositDto deposit )
+        {
+           await _repository.SaveMoney(deposit);
+            return Ok(deposit);
+        }
+
+
+        
+
     }
 }

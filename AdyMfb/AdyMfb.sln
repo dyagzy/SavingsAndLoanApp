@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdyMfb", "AdyMfb.csproj", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityLayer", "..\EntityLayer\EntityLayer.csproj", "{012ACE16-5F53-4540-A5A1-487FB18D1717}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject1", "..\XUnitTestProject1\XUnitTestProject1.csproj", "{3DB56F0C-3DB7-4C96-A8D8-3253966EAD99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTestProject1", "..\XUnitTestProject1\XUnitTestProject1.csproj", "{3DB56F0C-3DB7-4C96-A8D8-3253966EAD99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adyb.Banking", "..\Adyb.Banking\Adyb.Banking.csproj", "{B1A8C51B-C9E6-4BB8-B74E-FFCCA7788064}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{3DB56F0C-3DB7-4C96-A8D8-3253966EAD99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DB56F0C-3DB7-4C96-A8D8-3253966EAD99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DB56F0C-3DB7-4C96-A8D8-3253966EAD99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1A8C51B-C9E6-4BB8-B74E-FFCCA7788064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1A8C51B-C9E6-4BB8-B74E-FFCCA7788064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1A8C51B-C9E6-4BB8-B74E-FFCCA7788064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1A8C51B-C9E6-4BB8-B74E-FFCCA7788064}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

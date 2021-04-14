@@ -1,7 +1,10 @@
-﻿using EntityLayer.DataAccess;
+﻿using AutoMapper;
+using EntityLayer.DataAccess;
+using EntityLayer.Dto;
 using EntityLayer.SavingsRepository.ISavingsRepositorys;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +15,18 @@ using System.Threading.Tasks;
 namespace EntityLayer.SavingsRepository
 {
 
-    public class SavingsRepositoryImplementation : ISavingsRepository
+    public class SavingsRepo : ISavingsRepository
     {
 
         private readonly ApplicationDbContext _appDbContext;
-        public SavingsRepositoryImplementation(ApplicationDbContext appDbContext)
+        private readonly IMapper _mapper;
+       // private readonly ILogger logger;
+
+        public SavingsRepo(ApplicationDbContext appDbContext, IMapper mapper)
         {
             _appDbContext = appDbContext;
+            _mapper = mapper;
+         
         }
 
         // CREATE
@@ -122,6 +130,35 @@ namespace EntityLayer.SavingsRepository
             }
 
             return result;
+        }
+
+        //checks if a savings account exit or if a customer already has a savings account
+        public bool SavingsAccountExits(int id)
+        {
+            if (id == 0 ) throw new NotImplementedException(nameof(id));
+
+            return _appDbContext.SavingsAccounts.Any(s => s.Id == id);
+        }
+
+        public async Task<SavingsAccountDto> OpenSavingsAccount(SavingsAccountDto savingsAccount)
+        {
+            //savingsAccount.AccountNumber = AccountNumberGenerator.NewSavingAccountNumbers();
+            //await _appDbContext.CustomerProfiles.AddAsync(savingsAccount.Customerprofiles);
+            var savings = _mapper.Map<SavingsAccount>(savingsAccount);
+
+            // _appDbContext.SavingsAccounts.Include(s => s.AccountNumber == accountNumber);
+            await _appDbContext.SavingsAccounts.AddAsync(savings);
+            await _appDbContext.SaveChangesAsync();
+
+            return savingsAccount;
+
+        }
+
+        public async Task<DepositDto> SaveMoney(DepositDto deposit)
+        {
+           var saveMoney = _mapper.Map<DepositeFunds>(deposit);
+           await _appDbContext.DepositeFunds.AddAsync(saveMoney);
+            return deposit;
         }
     }
 }

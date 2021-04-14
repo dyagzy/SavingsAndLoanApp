@@ -27,13 +27,20 @@ namespace AdyMfb.Controllers
         // GET: api/<CustomerController>
        
 
-        [HttpPost]
-        public async Task<IActionResult> OpenAccount([FromBody] CustomerDto customerDto)
-        {
+        //[HttpPost]
+        //public async Task<ActionResult<CustomerProfile>> OpenAccount([FromBody] CustomerDto customerDto)
+        //{
+        //    CustomerProfile nn = new CustomerProfile();
+        //  var myMap =   _mapper.Map(customerDto, nn);
+        //   //var customer = _mapper.Map<CustomerProfile>(customerDto);
+        //   await _repository.CreateCustomerAsync(myMap);
+        //    return Ok(myMap);
+        //}
 
-            
-           var customer = _mapper.Map<CustomerProfile>(customerDto);
-           await _repository.CreateCustomerAsync(customer);
+        [HttpPost]
+        public async Task<ActionResult<CustomerDto>> OpenAccount2([FromBody] CustomerDto customerDto)
+        {
+           var customer =   await _repository.CreateCustomerAsync(customerDto);
             return Ok(customer);
         }
 

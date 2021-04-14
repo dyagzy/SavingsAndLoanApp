@@ -1,4 +1,5 @@
-﻿using EntityLayer.Loans;
+﻿using EntityLayer.CustomerDetails;
+using EntityLayer.Loans;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -24,14 +25,15 @@ namespace EntityLayer.Loans
 
 
         //Navigation property
-        public int LoadId { get; set; }
+        public int LoanId { get; set; }
         public Loan Loan { get; set; }
 
         public Tenor TenureType { get; set; }
 
-        public int LoanId { get; set; }
-
         public PaymentMethod PaymentMethod { get; set; }
+
+        // Repayloan can be done by a Customer while a 
+        public CustomerProfile CustomerProfile { get; set; }
 
     }
 }

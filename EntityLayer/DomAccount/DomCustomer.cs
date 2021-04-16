@@ -23,7 +23,7 @@ namespace EntityLayer
         public string OtherNames { get; set; }
 
         [Required]
-        public string DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
         [Required, Phone]
         public string PhoneNumber { get; set; }

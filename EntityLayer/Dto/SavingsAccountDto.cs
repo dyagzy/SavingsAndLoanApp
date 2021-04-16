@@ -24,7 +24,8 @@ namespace EntityLayer.Dto
         [Required]
         public DateTime AccountCreationDate { get; set; }
         public int CustomerProfileId { get; set; }
-        public bool IsActive { get; set; }
+        //public bool IsActive { get; set; }
+
         [Required]
         public int AccountOwnerID { get; set; }
 

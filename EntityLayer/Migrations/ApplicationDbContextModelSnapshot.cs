@@ -209,8 +209,8 @@ namespace EntityLayer.Migrations
                     b.Property<byte>("CustomerImage")
                         .HasColumnType("tinyint");
 
-                    b.Property<string>("DateOfBirth")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
@@ -242,11 +242,6 @@ namespace EntityLayer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CustomerProfiles");
-                });
-
-            modelBuilder.Entity("EntityLayer.DataAccess.DepositeFunds", b =>
-                {
-                    b.ToTable("DepositeFunds");
                 });
 
             modelBuilder.Entity("EntityLayer.DebitCardIssuance", b =>
@@ -306,9 +301,8 @@ namespace EntityLayer.Migrations
                     b.Property<int?>("CustomerProfilesId")
                         .HasColumnType("int");
 
-                    b.Property<string>("DateOfBirth")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -735,6 +729,28 @@ namespace EntityLayer.Migrations
                         .IsUnique();
 
                     b.ToTable("TenorType");
+                });
+
+            modelBuilder.Entity("EntityLayer.Transaction.DepositMoney", b =>
+                {
+                    b.Property<string>("AccountNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("CurrentBalance")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("CustomerProfileId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.HasIndex("CustomerProfileId");
+
+                    b.ToTable("DepositMoney");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -1179,6 +1195,17 @@ namespace EntityLayer.Migrations
                         .IsRequired();
 
                     b.Navigation("Loan");
+                });
+
+            modelBuilder.Entity("EntityLayer.Transaction.DepositMoney", b =>
+                {
+                    b.HasOne("EntityLayer.CustomerDetails.CustomerProfile", "CustomerProfile")
+                        .WithMany()
+                        .HasForeignKey("CustomerProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CustomerProfile");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

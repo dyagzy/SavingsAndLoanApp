@@ -2,6 +2,7 @@
 using EntityLayer.DataAccess;
 using EntityLayer.Dto;
 using EntityLayer.SavingsRepository.ISavingsRepositorys;
+using EntityLayer.Transaction;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -156,8 +157,10 @@ namespace EntityLayer.SavingsRepository
 
         public async Task<DepositDto> SaveMoney(DepositDto deposit)
         {
-           var saveMoney = _mapper.Map<DepositeFunds>(deposit);
-           await _appDbContext.DepositeFunds.AddAsync(saveMoney);
+           var saveMoney = _mapper.Map<DepositMoney>(deposit);
+
+            await _appDbContext.DepositMoney.AddAsync(saveMoney);
+            
             return deposit;
         }
     }

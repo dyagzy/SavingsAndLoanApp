@@ -13,7 +13,7 @@ namespace EntityLayer.AutoMapperProfile
     {
         public DepositMapper()
         {
-            CreateMap<DepositFunds, DepositDto>().ReverseMap();
+            CreateMap<DepositMoney, DepositDto>().ReverseMap();
         }
     }
 }

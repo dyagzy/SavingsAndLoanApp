@@ -4,6 +4,7 @@ using EntityLayer.BankProfitAndLoss;
 using EntityLayer.CustomerDetails;
 using EntityLayer.FixDeposit;
 using EntityLayer.Loans;
+using EntityLayer.Transaction;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -44,7 +45,7 @@ namespace EntityLayer.DataAccess
                 .WithOne(a => a.ApproveLoan)
                 .OnDelete(DeleteBehavior.ClientCascade);
 
-            builder.Entity<DepositeFunds>()
+            builder.Entity<DepositMoney>()
                 .HasNoKey();
 
 
@@ -64,7 +65,7 @@ namespace EntityLayer.DataAccess
         public DbSet<ApproveLoan> ApproveLoan { get; set; }
         public DbSet<RepayLoan> RepayLoans { get; set; }
         public DbSet<TransactionHistory> TransactionHistories { get; set; }
-        public DbSet<DepositeFunds> DepositeFunds { get; set; }
+        public DbSet<DepositMoney> DepositMoney { get; set; }
         public DbSet <Admin> Admins { get; set; }
 
 

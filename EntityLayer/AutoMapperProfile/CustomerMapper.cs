@@ -11,6 +11,7 @@ namespace EntityLayer.AutoMapperProfile
             
             CreateMap<CustomerProfile,CustomerDto>();
             CreateMap<CustomerDto,CustomerProfile>();
+           
 
         }
     }

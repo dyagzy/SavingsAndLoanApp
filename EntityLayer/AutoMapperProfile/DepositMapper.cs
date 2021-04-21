@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.AutoMapperProfile
 {
-    public class DepositMapper : Profile
-    {
-        public DepositMapper()
-        {
-            CreateMap<DepositMoney, DepositDto>().ReverseMap();
-        }
-    }
+    //public class DepositMapper : Profile
+    //{
+    //    public DepositMapper()
+    //    {
+    //        CreateMap<DepositMoney, DepositDto>().ReverseMap();
+    //    }
+    //}
 }

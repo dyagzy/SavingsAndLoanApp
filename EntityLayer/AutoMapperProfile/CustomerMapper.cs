@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using EntityLayer.CustomerDetails;
 using EntityLayer.Dto;
+using EntityLayer.Loans;
+using EntityLayer.Transaction;
 
 namespace EntityLayer.AutoMapperProfile
 {
@@ -11,7 +13,13 @@ namespace EntityLayer.AutoMapperProfile
             
             CreateMap<CustomerProfile,CustomerDto>();
             CreateMap<CustomerDto,CustomerProfile>();
-           
+            CreateMap<SavingsAccount, SavingsAccountDto>().ReverseMap();
+            CreateMap<Loan, LoanDto>().ReverseMap();
+            CreateMap<DepositMoney, DepositDto>().ReverseMap()
+                .ForMember(dest => dest.AccountHolder,
+                opt => opt.MapFrom(src => src.BeneficiaryAccountName));
+                
+
 
         }
     }

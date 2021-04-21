@@ -11,7 +11,7 @@ namespace EntityLayer.Utility
     {
 
         //Handles deposit of funds by counter draft
-        public static decimal Deposit(decimal amount)
+        public static decimal DepositFunds(decimal amount)
         {
 
             decimal initialBal = 0.00m;

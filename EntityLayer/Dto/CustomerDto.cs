@@ -28,7 +28,12 @@ namespace EntityLayer.Dto
         [Required, Display(Name = "Date of Birth")]
         public DateTime DateOfBirth { get; set; }
 
-        [Required, Display(Name = "Pnone Number")]
+
+        [Required, Display(Name = "Phone Number")]
+        //[RegularExpression(@"[0]{1}[0-9]{10}$")] //  works well accepts normla numbers like 08060335875
+
+        [RegularExpression(@"^([0]{1})([0-9]{10})$")]  //  works well accepts normla numbers like 08060335875, ^ ==> it must start with a particular charater
+        //[RegularExpression(@"^\+([0-9]{3})([0-9]{10}) | ^\([0]{1})([0-9]{10})$")] // throw
         public string PhoneNumber { get; set; }
 
         [Required, DataType(DataType.EmailAddress)]
@@ -40,6 +45,7 @@ namespace EntityLayer.Dto
         public string NameOfNextOfKin { get; set; }
 
         [Required]
+        [RegularExpression(@"^[0]{1}[0-9]{10}$")] 
         public string PhoneNumberOfNextOfKin { get; set; }
         public string AddressOfNextOfKin { get; set; }
 

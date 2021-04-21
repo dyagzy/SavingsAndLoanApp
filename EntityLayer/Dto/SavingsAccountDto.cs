@@ -35,6 +35,14 @@ namespace EntityLayer.Dto
         [Required]
         [Column(TypeName = "decimal(18, 6)")]
         public decimal CurrentBalance { get; set; }
+        //public decimal Debit { get; set; }
+        //public decimal Credit
+        //{
+        //    get
+        //    {
+        //        return this.am
+        //    }
+        //}
         public string Message
         {
             get { return HelperMethods.SavingsAccountWelcomeMessage(); }

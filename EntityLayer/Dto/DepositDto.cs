@@ -15,28 +15,37 @@ namespace EntityLayer.Dto
         [Required]
         [Column(TypeName = "decimal(18, 6)")]
         public decimal Amount { get; set; }
-        //[Required]
-        //[Column(TypeName = "decimal(18, 6)")]
-        //public decimal CurrentBalance { get; set; }
-
+       
         [Required, Display(Name ="Account Number")]
         public string AccountNumber { get; set; }
 
-        [Display(Name ="Deposite Date")]
+        [Display(Name ="Deposit Date")]
         public DateTime DepositDate { get; set; }
-        public int CustomerProfileId { get; set; }
+      
+        [Required, MinLength(3), MaxLength(40)]
 
-        [Display(Name ="Last Name")]
-        public string SurName { get; set; }
+        [Display(Name ="Name of Depositor")]
+        public string NameOfDepositor { get; set; }
+
+        [Required, MinLength(3), MaxLength(40)]
+
+        [Display(Name = "Name of Account Holder")]
+        public string BeneficiaryAccountName { get; set; }
 
         [Required, MinLength(3), MaxLength(40)]
         public string FirstName { get; set; }
+        
+
+        [Required, Display(Name = "Phone Number")]
+        [RegularExpression(@"^([0]{1})([0-9]{10})$")]
+        public string PhoneOfDepositor { get; set; }
 
         [Display(Name = "Account Balance")]
         public decimal CurrentBalance   // property
         {
-            get { return HelperMethods.Deposit(this.Amount); }
+            get { return HelperMethods.DepositFunds(this.Amount); }
 
         }
+        public int SavingsAccountId { get; set; }
     }
 }

@@ -10,9 +10,9 @@ namespace EntityLayer.AutoMapperProfile
 {
     public class SavingsAccountMapper : Profile
     {
-        public SavingsAccountMapper()
-        {
-            CreateMap<SavingsAccount, SavingsAccountDto>().ReverseMap();
-        }
+        //public SavingsAccountMapper()
+        //{
+        //    //CreateMap<SavingsAccount, SavingsAccountDto>().ReverseMap();
+        //}
     }
 }

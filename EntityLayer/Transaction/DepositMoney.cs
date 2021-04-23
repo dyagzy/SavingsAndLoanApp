@@ -19,18 +19,11 @@ namespace EntityLayer.Transaction
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        //public string AccountNumber
-        //{
-        //    get
-        //    { 
-        //        return account.AccountNumber;
-        //    }
-        //}
         public string NameofDepositor { get; set; }
         public decimal CurrentBalance { get; set; }
         public string AccountHolder => account.FullName;
        
-        public DateTime DateofDeposit { get; set; }
+        public DateTime DepositDate { get; set; }
         public string PhoneOfDepositor { get; set; }
 
         //Navigation  property

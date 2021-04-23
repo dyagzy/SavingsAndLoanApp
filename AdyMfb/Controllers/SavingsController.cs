@@ -60,21 +60,33 @@ namespace AdyMfb.Controllers
         [HttpGet("TransactionHistory")]
         public async Task<ActionResult> GetAllHistory()
         {
-            return new JsonResult(await _repository.GetAllTransactionHistory());
+            return Ok(await _repository.GetAllTransactionHistory());
         }
 
         [HttpGet("GetTransactionById")]
         public async Task<ActionResult> GetOneHistory(int transactionId)
         {
-          var transactionHistory = await  _repository.GetOneTransactionHistory(transactionId);
-            return new JsonResult(transactionHistory);
+
+            if (!ModelState.IsValid) NotFound();
+
+            var transactionHistory = await  _repository.GetOneTransactionHistory(transactionId);
+            if (transactionHistory == null)
+            {
+                return NotFound();
+            }
+            return Ok(transactionHistory);
         }
 
         [HttpGet("GetTransactionByAmount")]
         public async Task<ActionResult> GetOneHistory(decimal amount)
         {
+            if (!ModelState.IsValid) NotFound();
             var transactionHistory = await _repository.GetOneTransactionHistory(amount);
-            return new JsonResult(transactionHistory);
+            if (transactionHistory == null)
+            {
+                return NotFound();
+            }
+            return Ok(transactionHistory);
         }
 
 

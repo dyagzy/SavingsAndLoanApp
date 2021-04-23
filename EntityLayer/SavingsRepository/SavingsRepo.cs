@@ -222,9 +222,48 @@ namespace EntityLayer.SavingsRepository
             return deposit;
         }
 
-        public async Task<IEnumerable<TranscationHistoryDto>> GetAllTransactionHistory()
 
+        //Gets all transcation histories i.e debit and credit histories and projects into one list
+        public async Task<IEnumerable<TranscationHistoryDto>> GetAllTransactionHistory()
         {
+            //selects all the entire records in the DepositmONEY table
+            List<DepositMoney> allCreditHistory = await  _appDbContext.DepositMonies.ToListAsync();
+
+
+            //filter all the entire records in the DepositmONEY table to select the fields that I 
+            //need using an anonymous object to project the actual fields I needed
+
+            var credit =  from creditHistory in allCreditHistory 
+                        select new {creditHistory.NameofDepositor, creditHistory.Amount, creditHistory.DepositDate};
+
+            //selects all the entire records in the Withdarw Money table
+            List<WithdrawMoney> allDebitHistory =   await _appDbContext.WithdrawMoney.ToListAsync();
+
+
+            //filter all the entire records in the Withdarw Money table to select the fields that I 
+            //need using an anonymous object to project the actual fields I needed
+
+
+            var debit = from debitHistory in allDebitHistory
+                        select new {debitHistory.Narrative, debitHistory.AmountWithdraw,debitHistory.WithdrawlDate};
+
+            //Joins the two separate list above into one single histroy list
+
+            var transactionHistory = (from cre in allCreditHistory
+                            join deb in allDebitHistory
+                            on cre.Id equals deb.DepositMoneyId
+                            orderby cre.DepositDate
+                            select new
+                            {
+                                cre.NameofDepositor,
+                                cre.Amount,
+                                cre.DepositDate,
+                                deb.Narrative,
+                                deb.AmountWithdraw,
+                                deb.WithdrawlDate
+
+                            }).ToList();
+               
              var transactHistory =  await _appDbContext.TransactionHistories.ToListAsync();
             
            return _mapper.Map<IEnumerable<TranscationHistoryDto>>(transactHistory);
@@ -233,6 +272,8 @@ namespace EntityLayer.SavingsRepository
 
         public async Task<TranscationHistoryDto> GetOneTransactionHistory(int transactionId)
         {
+
+           
            return _mapper.Map<TranscationHistoryDto>(await _appDbContext.TransactionHistories
                .Where(t => t.Id == transactionId).FirstOrDefaultAsync());
         }

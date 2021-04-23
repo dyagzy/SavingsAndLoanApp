@@ -12,6 +12,7 @@ namespace EntityLayer.Transaction
         public int Id { get; set; }
         public decimal AmountWithdraw { get; set; }
         public decimal CurrentBalance { get; set; }
+        public string Narrative { get; set; }
         //public decimal ClosingBalance { get; set; }
         public string FirstName { get; set; }
       

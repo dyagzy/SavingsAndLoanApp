@@ -14,6 +14,7 @@ namespace EntityLayer.Dto
         [Column(TypeName = "decimal(18, 2)")]
         
         public decimal AmountWithdraw { get; set; }
+        public string Narrative { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]

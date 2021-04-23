@@ -13,14 +13,16 @@ namespace EntityLayer.Dto
         public string NameOfDepositor { get; set; }
         [Required]
 
-        public decimal Credit { get; set; }
+        public decimal[] Credit { get; set; }
         [Required]
-        public decimal Debit { get; set; }
+        public decimal[] Debit { get; set; }
         public decimal CurrentBalance { get; set; }
         [Required]
         public string Narrative { get; set; }
+        public DateTime DepositDate { get; set; }
 
-      
+
+
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 

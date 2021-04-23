@@ -9,9 +9,9 @@ namespace EntityLayer
     {
 
         public int Id { get; set; }
-        public string NameOfDepositor { get; set; }
-        public decimal Credit { get; set; }
-        public decimal Debit { get; set; }
+        //public string NameOfDepositor { get; set; }
+        public decimal[] Credit { get; set; }
+        public decimal[] Debit { get; set; }
         public decimal CurrentBalance { get; set; }
 
         public string Narrative { get; set; }

@@ -231,7 +231,19 @@ namespace EntityLayer.SavingsRepository
 
         }
 
-        
+        public async Task<TranscationHistoryDto> GetOneTransactionHistory(int transactionId)
+        {
+           return _mapper.Map<TranscationHistoryDto>(await _appDbContext.TransactionHistories
+               .Where(t => t.Id == transactionId).FirstOrDefaultAsync());
+        }
+
+        public Task<TranscationHistoryDto> GetOneTransactionHistory(decimal amount)
+        {
+            //return _mapper.Map<TranscationHistoryDto>(await _appDbContext.TransactionHistories
+            //   .Where(t => t. == transactionId).FirstOrDefaultAsync());
+
+            return null;
+        }
     }
 
 

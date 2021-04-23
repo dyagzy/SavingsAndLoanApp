@@ -14,6 +14,8 @@ namespace EntityLayer.SavingsRepository.ISavingsRepositorys
         Task<DepositDto> SaveMoney(DepositDto deposit );
         Task<DepositDto> WithdrawFunds(WithdrawDto withdraw);
         Task<IEnumerable<TranscationHistoryDto>> GetAllTransactionHistory();
+        Task<TranscationHistoryDto> GetOneTransactionHistory(int id);
+        Task<TranscationHistoryDto> GetOneTransactionHistory(decimal amount);
 
 
 
@@ -22,7 +24,7 @@ namespace EntityLayer.SavingsRepository.ISavingsRepositorys
 
 
 
-        Task<SavingsAccount> GetOneSavingsAccount(int id);
+        Task<SavingsAccount> GetOneSavingsAccount(int transactionId);
         Task<List<SavingsAccount>> GetAllSavingsAccount();
         void Delete<T>(T entity) where T : class;
         Task<bool> SaveAllChangesAsync();

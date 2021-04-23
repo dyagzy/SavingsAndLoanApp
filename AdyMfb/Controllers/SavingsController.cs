@@ -50,18 +50,31 @@ namespace AdyMfb.Controllers
         [HttpPost("WithdrawMoney")]
         public async Task<ActionResult<DepositDto>> Withdraws([FromBody] WithdrawDto withdraw)
         {
-            if (ModelState.IsValid)
-            {
-                await _repository.WithdrawFunds(withdraw);
-            }
-           
+            if (!ModelState.IsValid) NotFound();
+            
+            await _repository.WithdrawFunds(withdraw);
+
             return Ok(withdraw);
         }
 
         [HttpGet("TransactionHistory")]
-        public async Task<ActionResult> GetBalance()
+        public async Task<ActionResult> GetAllHistory()
         {
             return new JsonResult(await _repository.GetAllTransactionHistory());
+        }
+
+        [HttpGet("GetTransactionById")]
+        public async Task<ActionResult> GetOneHistory(int transactionId)
+        {
+          var transactionHistory = await  _repository.GetOneTransactionHistory(transactionId);
+            return new JsonResult(transactionHistory);
+        }
+
+        [HttpGet("GetTransactionByAmount")]
+        public async Task<ActionResult> GetOneHistory(decimal amount)
+        {
+            var transactionHistory = await _repository.GetOneTransactionHistory(amount);
+            return new JsonResult(transactionHistory);
         }
 
 

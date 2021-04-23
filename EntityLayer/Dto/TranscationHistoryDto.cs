@@ -18,8 +18,11 @@ namespace EntityLayer.Dto
         public decimal Debit { get; set; }
         public decimal CurrentBalance { get; set; }
         [Required]
-        public string WithdrawRemark { get; set; }
+        public string Narrative { get; set; }
 
-        public DateTime TransactionDate { get; set; }
+      
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+
     }
 }

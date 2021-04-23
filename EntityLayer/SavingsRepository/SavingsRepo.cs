@@ -48,7 +48,9 @@ namespace EntityLayer.SavingsRepository
             List<SavingsAccount> result = new List<SavingsAccount>();
             try
             {
-                 result =  await _appDbContext.SavingsAccounts.ToListAsync();
+                 result =  await _appDbContext.SavingsAccounts
+                    .OrderBy(s => s.FirstName)
+                    .ToListAsync();
             }
             catch(SqlException )
             {
@@ -135,20 +137,26 @@ namespace EntityLayer.SavingsRepository
         }
 
         //checks if a savings account exit or if a customer already has a savings account
-        public bool SavingsAccountExits(int id)
+        public bool IsSavingsAccountExits(int SavingsId)
         {
-            if (id == 0 ) throw new NotImplementedException(nameof(id));
+            SavingsAccount savings = new SavingsAccount();
+            if (SavingsId == 0)
+            {
+                //Console.WriteLine("Customer Does not exists");
+                throw new ArgumentNullException(nameof(SavingsId));
+            }
+           
 
-            return _appDbContext.SavingsAccounts.Any(s => s.Id == id);
+            return _appDbContext.SavingsAccounts.Any(s => s.Id == SavingsId);
         }
 
         public async Task<SavingsAccountDto> OpenSavingsAccount(SavingsAccountDto savingsAccount)
         {
-            //savingsAccount.AccountNumber = AccountNumberGenerator.NewSavingAccountNumbers();
-            //await _appDbContext.CustomerProfiles.AddAsync(savingsAccount.Customerprofiles);
+            
+            //var depositValue = HelperMethods.DepositFunds(savingsAccount.CurrentBalance);
             var savings = _mapper.Map<SavingsAccount>(savingsAccount);
 
-            // _appDbContext.SavingsAccounts.Include(s => s.AccountNumber == accountNumber);
+          
             await _appDbContext.SavingsAccounts.AddAsync(savings);
             await _appDbContext.SaveChangesAsync();
 
@@ -156,14 +164,52 @@ namespace EntityLayer.SavingsRepository
 
         }
 
-        public async Task<DepositDto> SaveMoney(DepositDto deposit)
+        public async Task<DepositDto> SaveMoney( DepositDto deposit )
         {
-           var depositValue = HelperMethods.DepositFunds(deposit.Amount);
-           var saveMoney = _mapper.Map<DepositMoney>(deposit);
-          
-            await _appDbContext.DepositMoney.AddAsync(saveMoney);
+            SavingsAccount savings = new SavingsAccount();
+            if (deposit.AccountNumber != savings.AccountNumber && deposit.FirstName != savings.FirstName)
+            {
+                Console.WriteLine("Wrong account number or wrong account name");
+                Console.WriteLine("Please ask custmer to double check the account holder details again");
+                //throw new ArgumentNullException(nameof(deposit.AccountNumber));
+            }
+            var initialBalance = _appDbContext.SavingsAccounts
+                 .Where(s => s.Id == deposit.SavingsAccountId)
+                 .Select(x => x.InitialBal).FirstOrDefault();
+
+            var currentBalance = initialBalance + HelperMethods.DepositFunds(deposit.Amount);
+            deposit.CurrentBalance = currentBalance;
+            var saveMoney = _mapper.Map<DepositMoney>(deposit);
             
+            await _appDbContext.DepositMonies.AddAsync(saveMoney);
+            await _appDbContext.SaveChangesAsync();
+
             return deposit;
         }
+
+        public async Task<DepositDto> WithdrawFunds(WithdrawDto withdraw)
+        {
+            DepositDto deposit = new DepositDto();
+            decimal availableBalance = _appDbContext.DepositMonies.Where(d => d.SavingsAccountId == deposit.SavingsAccountId)
+                .Select(d => d.CurrentBalance).FirstOrDefault();
+
+            if (availableBalance >= withdraw.AmountWithdraw)
+            { 
+                availableBalance -= withdraw.AmountWithdraw;
+                deposit.CurrentBalance = availableBalance;
+            } 
+            
+            else Console.WriteLine("Insufficent Funds");
+
+           var withdrawls=  _mapper.Map<DepositMoney>(deposit);
+             _appDbContext.DepositMonies.Update(withdrawls);
+              
+            return deposit;
+        }
+
+        
     }
+
+
+    
 }

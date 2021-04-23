@@ -653,7 +653,7 @@ namespace EntityLayer.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("CurrentBalance")
-                        .HasColumnType("decimal(18,6)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("CustomerProfileId")
                         .HasColumnType("int");
@@ -669,7 +669,7 @@ namespace EntityLayer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("InitialBal")
-                        .HasColumnType("decimal(18,6)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("OtherNames")
                         .HasColumnType("nvarchar(max)");
@@ -748,14 +748,25 @@ namespace EntityLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Transaction.DepositMoney", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("CurrentBalance")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("DateofDeposit")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NameofDepositor")
                         .HasColumnType("nvarchar(max)");
@@ -766,9 +777,12 @@ namespace EntityLayer.Migrations
                     b.Property<int>("SavingsAccountId")
                         .HasColumnType("int");
 
-                    b.HasIndex("SavingsAccountId");
+                    b.HasKey("Id");
 
-                    b.ToTable("DepositMoney");
+                    b.HasIndex("SavingsAccountId")
+                        .IsUnique();
+
+                    b.ToTable("DepositMonies");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -1217,13 +1231,13 @@ namespace EntityLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Transaction.DepositMoney", b =>
                 {
-                    b.HasOne("EntityLayer.SavingsAccount", "Savings")
-                        .WithMany()
-                        .HasForeignKey("SavingsAccountId")
+                    b.HasOne("EntityLayer.SavingsAccount", "SavingsAccount")
+                        .WithOne("DepositMoney")
+                        .HasForeignKey("EntityLayer.Transaction.DepositMoney", "SavingsAccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Savings");
+                    b.Navigation("SavingsAccount");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -1312,6 +1326,11 @@ namespace EntityLayer.Migrations
             modelBuilder.Entity("EntityLayer.Loans.LoanType", b =>
                 {
                     b.Navigation("ApproveLoan");
+                });
+
+            modelBuilder.Entity("EntityLayer.SavingsAccount", b =>
+                {
+                    b.Navigation("DepositMoney");
                 });
 #pragma warning restore 612, 618
         }

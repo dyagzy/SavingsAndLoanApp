@@ -1,5 +1,6 @@
 ﻿using EntityLayer.CustomerDetails;
 using EntityLayer.Loans;
+using EntityLayer.Transaction;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -38,10 +39,10 @@ namespace EntityLayer
         public decimal Credit { get; set; }
 
         [Required]
-        [Column(TypeName = "decimal(18, 6)")]
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal InitialBal { get; set; }
         [Required]
-        [Column(TypeName = "decimal(18, 6)")]
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal CurrentBalance { get; set; }
 
 
@@ -50,6 +51,7 @@ namespace EntityLayer
         /// </summary>
         public CustomerProfile Customerprofiles { get; set; }
         public int CustomerProfileId { get; set; }
+        public DepositMoney DepositMoney { get; set; }
 
 
     }

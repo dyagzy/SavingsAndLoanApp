@@ -11,30 +11,21 @@ namespace EntityLayer.Dto
    public  class WithdrawDto
     {
         [Required]
-        [Column(TypeName = "decimal(18, 6)")]
-        public decimal Amount { get; set; }
-        //[Required]
-        //[Column(TypeName = "decimal(18, 6)")]
-        //public decimal CurrentBalance { get; set; }
-
-        [Required, Display(Name = "Account Number")]
-        public string AccountNumber { get; set; }
-
-        [Display(Name = "Deposite Date")]
-        public DateTime DepositDate { get; set; }
-        public int CustomerProfileId { get; set; }
-
-        [Display(Name = "Last Name")]
-        public string SurName { get; set; }
-
-        [Required, MinLength(3), MaxLength(40)]
+        [Column(TypeName = "decimal(18, 2)")]
+        
+        public decimal AmountWithdraw { get; set; }
+        [Required]
         public string FirstName { get; set; }
+        [Required]
+        public string LastName { get; set; }
 
-        //[Display(Name = "Account Balance")]
-        //public decimal CurrentBalance   // property
-        //{
-        //    get { return HelperMethods.Deposit(this.Amount); }
+        [Required]
+        public DateTime WithdrawlDate { get; set; }
+        public int DepositMoneyId { get; set; }
 
-        //}
+
+
+
+
     }
 }

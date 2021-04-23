@@ -16,15 +16,18 @@ namespace EntityLayer.Transaction
         public int Id { get; set; }
         
         public decimal Amount { get; set; }
-     
-        public string AccountNumber
-        {
-            get
-            { 
-                return account.AccountNumber;
-            }
-        }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
+        //public string AccountNumber
+        //{
+        //    get
+        //    { 
+        //        return account.AccountNumber;
+        //    }
+        //}
         public string NameofDepositor { get; set; }
+        public decimal CurrentBalance { get; set; }
         public string AccountHolder => account.FullName;
        
         public DateTime DateofDeposit { get; set; }
@@ -32,9 +35,10 @@ namespace EntityLayer.Transaction
 
         //Navigation  property
         public int SavingsAccountId { get; set; }
-        public SavingsAccount Savings { get; set; }
+        public SavingsAccount SavingsAccount { get; set; }
+        public WithdrawMoney WithdrawMoney { get; set; }
 
-      
+
 
 
     }

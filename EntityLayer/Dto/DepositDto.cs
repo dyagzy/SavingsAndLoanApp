@@ -26,7 +26,6 @@ namespace EntityLayer.Dto
 
         [Display(Name ="Name of Depositor")]
         public string NameOfDepositor { get; set; }
-
         [Required, MinLength(3), MaxLength(40)]
 
         [Display(Name = "Name of Account Holder")]
@@ -41,11 +40,8 @@ namespace EntityLayer.Dto
         public string PhoneOfDepositor { get; set; }
 
         [Display(Name = "Account Balance")]
-        public decimal CurrentBalance   // property
-        {
-            get { return HelperMethods.DepositFunds(this.Amount); }
-
-        }
+        public decimal CurrentBalance { get; set; } // property
+        
         public int SavingsAccountId { get; set; }
     }
 }

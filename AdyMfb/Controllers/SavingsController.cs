@@ -25,8 +25,11 @@ namespace AdyMfb.Controllers
 
         public async Task<ActionResult<SavingsAccountDto>> OpenSavingsAccount([FromBody] SavingsAccountDto savingsDto)
         {
+            if (ModelState.IsValid)
+            {
+                await _repository.OpenSavingsAccount(savingsDto);
+            }
 
-            await _repository.OpenSavingsAccount(savingsDto);
             return new JsonResult(savingsDto);
 
             
@@ -36,8 +39,29 @@ namespace AdyMfb.Controllers
         [HttpPost("Deposit")]
         public async Task<ActionResult<DepositDto>> DepositFunds([FromBody] DepositDto deposit)
         {
-            await _repository.SaveMoney(deposit);
+            if (ModelState.IsValid)
+            {
+                await _repository.SaveMoney(deposit);
+            }
+
             return Ok(deposit);
+        }
+
+        [HttpPost("WithdrawMoney")]
+        public async Task<ActionResult<DepositDto>> Withdraws([FromBody] WithdrawDto withdraw)
+        {
+            if (ModelState.IsValid)
+            {
+                await _repository.WithdrawFunds(withdraw);
+            }
+           
+            return Ok(withdraw);
+        }
+
+        [HttpGet("TransactionHistory")]
+        public async Task<ActionResult> GetBalance()
+        {
+            return new JsonResult(await _repository.GetAllTransactionHistory());
         }
 
 

@@ -22,13 +22,13 @@ namespace EntityLayer.SavingsRepository
 
         private readonly ApplicationDbContext _appDbContext;
         private readonly IMapper _mapper;
-       // private readonly ILogger logger;
+        // private readonly ILogger logger;
 
         public SavingsRepo(ApplicationDbContext appDbContext, IMapper mapper)
         {
             _appDbContext = appDbContext;
             _mapper = mapper;
-         
+
         }
 
         // CREATE
@@ -36,11 +36,11 @@ namespace EntityLayer.SavingsRepository
         {
             await _appDbContext.AddAsync(entity);
         }
-        
+
         //READING A SINGLE DATA FROM THE DB
         public async Task<SavingsAccount> GetOneSavingsAccount(int id)
         {
-            return await _appDbContext.SavingsAccounts.FirstOrDefaultAsync(x=>x.Id == id);
+            return await _appDbContext.SavingsAccounts.FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<List<SavingsAccount>> GetAllSavingsAccount()
@@ -48,20 +48,20 @@ namespace EntityLayer.SavingsRepository
             List<SavingsAccount> result = new List<SavingsAccount>();
             try
             {
-                 result =  await _appDbContext.SavingsAccounts
-                    .OrderBy(s => s.FirstName)
-                    .ToListAsync();
+                result = await _appDbContext.SavingsAccounts
+                   .OrderBy(s => s.FirstName)
+                   .ToListAsync();
             }
-            catch(SqlException )
+            catch (SqlException)
             {
                 throw;
             }
-            catch (Exception )
+            catch (Exception)
             {
 
                 throw;
             }
-           
+
             return result;
         }
 
@@ -70,7 +70,6 @@ namespace EntityLayer.SavingsRepository
         {
             _appDbContext.Entry(entity).State = EntityState.Modified;
         }
-
         public async Task<bool> SaveAllChangesAsync()
         {
             if (await _appDbContext.SaveChangesAsync() > 0)
@@ -135,7 +134,6 @@ namespace EntityLayer.SavingsRepository
 
             return result;
         }
-
         //checks if a savings account exit or if a customer already has a savings account
         public bool IsSavingsAccountExits(int SavingsId)
         {
@@ -145,26 +143,40 @@ namespace EntityLayer.SavingsRepository
                 //Console.WriteLine("Customer Does not exists");
                 throw new ArgumentNullException(nameof(SavingsId));
             }
-           
+
 
             return _appDbContext.SavingsAccounts.Any(s => s.Id == SavingsId);
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public async Task<SavingsAccountDto> OpenSavingsAccount(SavingsAccountDto savingsAccount)
         {
-            
+
             //var depositValue = HelperMethods.DepositFunds(savingsAccount.CurrentBalance);
             var savings = _mapper.Map<SavingsAccount>(savingsAccount);
 
-          
+
             await _appDbContext.SavingsAccounts.AddAsync(savings);
             await _appDbContext.SaveChangesAsync();
 
             return savingsAccount;
 
         }
-
-        public async Task<DepositDto> SaveMoney( DepositDto deposit )
+        public async Task<DepositDto> SaveMoney(DepositDto deposit)
         {
             SavingsAccount savings = new SavingsAccount();
             if (deposit.AccountNumber != savings.AccountNumber && deposit.FirstName != savings.FirstName)
@@ -180,7 +192,7 @@ namespace EntityLayer.SavingsRepository
             var currentBalance = initialBalance + HelperMethods.DepositFunds(deposit.Amount);
             deposit.CurrentBalance = currentBalance;
             var saveMoney = _mapper.Map<DepositMoney>(deposit);
-            
+
             await _appDbContext.DepositMonies.AddAsync(saveMoney);
             await _appDbContext.SaveChangesAsync();
 
@@ -190,21 +202,33 @@ namespace EntityLayer.SavingsRepository
         public async Task<DepositDto> WithdrawFunds(WithdrawDto withdraw)
         {
             DepositDto deposit = new DepositDto();
-            decimal availableBalance = _appDbContext.DepositMonies.Where(d => d.SavingsAccountId == deposit.SavingsAccountId)
+            DepositMoney dp = new DepositMoney();
+
+            decimal availableBalance = _appDbContext.DepositMonies.Where(d => d.Id == withdraw.DepositMoneyId)
                 .Select(d => d.CurrentBalance).FirstOrDefault();
 
             if (availableBalance >= withdraw.AmountWithdraw)
-            { 
+            {
                 availableBalance -= withdraw.AmountWithdraw;
                 deposit.CurrentBalance = availableBalance;
-            } 
-            
+            }
+
             else Console.WriteLine("Insufficent Funds");
 
-           var withdrawls=  _mapper.Map<DepositMoney>(deposit);
-             _appDbContext.DepositMonies.Update(withdrawls);
-              
+            var withdrawls = _mapper.Map<DepositMoney>(deposit);
+            await _appDbContext.DepositMonies.AddAsync(withdrawls);
+            await _appDbContext.SaveChangesAsync();
+
             return deposit;
+        }
+
+        public async Task<IEnumerable<TranscationHistoryDto>> GetAllTransactionHistory()
+
+        {
+             var transactHistory =  await _appDbContext.TransactionHistories.ToListAsync();
+            
+           return _mapper.Map<IEnumerable<TranscationHistoryDto>>(transactHistory);
+
         }
 
         

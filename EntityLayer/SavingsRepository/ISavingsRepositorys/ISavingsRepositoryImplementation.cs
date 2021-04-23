@@ -13,6 +13,15 @@ namespace EntityLayer.SavingsRepository.ISavingsRepositorys
         Task<SavingsAccountDto> OpenSavingsAccount(SavingsAccountDto savingsAccount);
         Task<DepositDto> SaveMoney(DepositDto deposit );
         Task<DepositDto> WithdrawFunds(WithdrawDto withdraw);
+        Task<IEnumerable<TranscationHistoryDto>> GetAllTransactionHistory();
+
+
+
+
+
+
+
+
         Task<SavingsAccount> GetOneSavingsAccount(int id);
         Task<List<SavingsAccount>> GetAllSavingsAccount();
         void Delete<T>(T entity) where T : class;

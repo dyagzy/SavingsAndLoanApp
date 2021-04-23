@@ -19,6 +19,7 @@ namespace EntityLayer.AutoMapperProfile
                 .ForMember(dest => dest.AccountHolder,
                 opt => opt.MapFrom(src => src.BeneficiaryAccountName));
             CreateMap<WithdrawMoney, WithdrawDto>().ReverseMap();
+            CreateMap<TransactionHistory, TranscationHistoryDto>().ReverseMap();
                 
 
 

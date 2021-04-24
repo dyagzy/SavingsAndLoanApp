@@ -9,15 +9,42 @@ namespace EntityLayer
     {
 
         public int Id { get; set; }
-        //public string NameOfDepositor { get; set; }
-        public decimal[] Credit { get; set; }
-        public decimal[] Debit { get; set; }
-        public decimal CurrentBalance { get; set; }
-
+        public string NameOfDepositor { get; set; }
+        public decimal Amount { get; set; }
+        public DateTime DepositDate { get; set; }
         public string Narrative { get; set; }
+        public decimal AmountWithdraw { get; set; }
+        public DateTime WithdrawlDate { get; set; }
 
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public string NameOfDepositor { get; set; }
+        //public decimal[] Credit { get; set; }
+        //public decimal[] Debit { get; set; }
+        //public decimal CurrentBalance { get; set; }
+
+        //public string Narrative { get; set; }
+
+        //public DateTime StartDate { get; set; }
+        //public DateTime EndDate { get; set; }
 
 
 

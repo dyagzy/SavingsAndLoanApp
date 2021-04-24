@@ -226,64 +226,100 @@ namespace EntityLayer.SavingsRepository
         //Gets all transcation histories i.e debit and credit histories and projects into one list
         public async Task<IEnumerable<TranscationHistoryDto>> GetAllTransactionHistory()
         {
-            //selects all the entire records in the DepositmONEY table
-            List<DepositMoney> allCreditHistory = await  _appDbContext.DepositMonies.ToListAsync();
+            /*selects all the entire records in the DepositmONEY table*/
+            //List<DepositMoney> allCreditHistory = await  _appDbContext.DepositMonies.ToListAsync();
 
 
-            //filter all the entire records in the DepositmONEY table to select the fields that I 
-            //need using an anonymous object to project the actual fields I needed
+            /*filter all the entire records in the DepositmONEY table to select the fields that I 
+            need using an anonymous object to project the actual fields I needed*/
 
-            var credit =  from creditHistory in allCreditHistory 
-                        select new {creditHistory.NameofDepositor, creditHistory.Amount, creditHistory.DepositDate};
+            //var credit =  from creditHistory in allCreditHistory 
+                        //select new {creditHistory.NameofDepositor, creditHistory.Amount, creditHistory.DepositDate};
 
-            //selects all the entire records in the Withdarw Money table
-            List<WithdrawMoney> allDebitHistory =   await _appDbContext.WithdrawMoney.ToListAsync();
+            /*selects all the entire records in the Withdarw Money table*/
 
-
-            //filter all the entire records in the Withdarw Money table to select the fields that I 
-            //need using an anonymous object to project the actual fields I needed
+            //List<WithdrawMoney> allDebitHistory =   await _appDbContext.WithdrawMoney.ToListAsync();
 
 
-            var debit = from debitHistory in allDebitHistory
-                        select new {debitHistory.Narrative, debitHistory.AmountWithdraw,debitHistory.WithdrawlDate};
+            /*filter all the entire records in the Withdarw Money table to select the fields that I 
+            need using an anonymous object to project the actual fields I needed*/
 
-            //Joins the two separate list above into one single histroy list
 
-            var transactionHistory = (from cre in allCreditHistory
-                            join deb in allDebitHistory
-                            on cre.Id equals deb.DepositMoneyId
-                            orderby cre.DepositDate
+            //var debit = from debitHistory in allDebitHistory
+                        //select new {debitHistory.Narrative, debitHistory.AmountWithdraw,debitHistory.WithdrawlDate};
+
+            /*Joins the two separate list above into one single histroy list*/
+
+            var transactionHistory = await (from credit in _appDbContext.DepositMonies
+                                      join debit in _appDbContext.WithdrawMoney
+                            on credit.Id equals debit.DepositMoneyId
+                            orderby credit.DepositDate
                             select new
                             {
-                                cre.NameofDepositor,
-                                cre.Amount,
-                                cre.DepositDate,
-                                deb.Narrative,
-                                deb.AmountWithdraw,
-                                deb.WithdrawlDate
+                                credit.NameofDepositor,
+                                credit.Amount,
+                                credit.DepositDate,
+                                debit.Narrative,
+                                debit.AmountWithdraw,
+                                debit.WithdrawlDate
 
-                            }).ToList();
+                            }).ToListAsync();
                
-             var transactHistory =  await _appDbContext.TransactionHistories.ToListAsync();
+            //var transactHistory =  await _appDbContext.TransactionHistories.ToListAsync();
             
-           return _mapper.Map<IEnumerable<TranscationHistoryDto>>(transactHistory);
+           return  _mapper.Map<IEnumerable<TranscationHistoryDto>>(transactionHistory);
 
         }
 
-        public async Task<TranscationHistoryDto> GetOneTransactionHistory(int transactionId)
+        public async Task<IEnumerable<TranscationHistoryDto>> GetTransactionHistory(int transactionId)
         {
 
-           
-           return _mapper.Map<TranscationHistoryDto>(await _appDbContext.TransactionHistories
-               .Where(t => t.Id == transactionId).FirstOrDefaultAsync());
+            return _mapper.Map<IEnumerable<TranscationHistoryDto>>(await _appDbContext.TransactionHistories
+                .Where(t => t.Id == transactionId).FirstOrDefaultAsync());
+
+
+           //var d =  _appDbContext.CustomerProfiles.Where(c => c.SavingsAccounts.Id == transactionId)
+               // .Select(c => c.FixedDeposits);
+            
         }
 
-        public Task<TranscationHistoryDto> GetOneTransactionHistory(decimal amount)
+        public async Task<IEnumerable<TranscationHistoryDto>> GetTransactionHistory(DateTime date)
         {
-            //return _mapper.Map<TranscationHistoryDto>(await _appDbContext.TransactionHistories
-            //   .Where(t => t. == transactionId).FirstOrDefaultAsync());
 
-            return null;
+            return _mapper.Map<IEnumerable<TranscationHistoryDto>>(await _appDbContext.TransactionHistories
+                .Where(t => t.WithdrawlDate == date || t.DepositDate == date).FirstOrDefaultAsync());
+               
+
+
+            //var d =  _appDbContext.CustomerProfiles.Where(c => c.SavingsAccounts.Id == transactionId)
+            // .Select(c => c.FixedDeposits);
+
+        }
+
+        public async Task<IEnumerable<TranscationHistoryDto>> GetTransactionHistory(decimal amount)
+        {
+            
+            TransactionHistory transHistory = await _appDbContext.TransactionHistories
+               .Where(t =>t .Amount == amount || t.AmountWithdraw == amount)
+               .FirstOrDefaultAsync();
+            
+
+           return  _mapper.Map <IEnumerable<TranscationHistoryDto>>(transHistory);
+                
+            
+        }
+
+        public async Task<IEnumerable<TranscationHistoryDto>> GetOneTransactionHistory(int transactionId, decimal amount, string name)
+        {
+
+            TransactionHistory transHistory = await _appDbContext.TransactionHistories
+               .Where(t => t.Amount == amount || t.AmountWithdraw == amount ||
+               t.NameOfDepositor == name || t.Narrative == name || t.Id == transactionId)
+               .FirstOrDefaultAsync();
+
+            return _mapper.Map <IEnumerable<TranscationHistoryDto>>(transHistory);
+
+
         }
     }
 

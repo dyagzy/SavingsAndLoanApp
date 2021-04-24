@@ -50,43 +50,109 @@ namespace AdyMfb.Controllers
         [HttpPost("WithdrawMoney")]
         public async Task<ActionResult<DepositDto>> Withdraws([FromBody] WithdrawDto withdraw)
         {
-            if (!ModelState.IsValid) NotFound();
+            try
+            {
+                if (!ModelState.IsValid) NotFound();
+
+                await _repository.WithdrawFunds(withdraw);
+            }
+            catch (Exception)
+            {
+
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
+            }
+
+
             
-            await _repository.WithdrawFunds(withdraw);
 
             return Ok(withdraw);
         }
 
-        [HttpGet("TransactionHistory")]
-        public async Task<ActionResult> GetAllHistory()
-        {
-            return Ok(await _repository.GetAllTransactionHistory());
-        }
+        //[HttpGet("AllTransactionHistory")]
+        //public async Task<ActionResult> GetAllHistory()
+        //{
+        //    try
+        //    {
+        //        return Ok(await _repository.GetAllTransactionHistory());
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        return this.StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
+        //    }
+
+          
+        //}
 
         [HttpGet("GetTransactionById")]
-        public async Task<ActionResult> GetOneHistory(int transactionId)
+        public async Task<ActionResult> GetTransactionHistory(int transactionId)
         {
-
             if (!ModelState.IsValid) NotFound();
-
-            var transactionHistory = await  _repository.GetOneTransactionHistory(transactionId);
-            if (transactionHistory == null)
+            try
             {
-                return NotFound();
+                var transactionHistory = await _repository.GetTransactionHistory(transactionId);
+                if (transactionHistory == null)
+                {
+                    return NotFound();
+                }
+                return Ok(transactionHistory);
             }
-            return Ok(transactionHistory);
+            catch (Exception)
+            {
+
+               return this.StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
+            }
+
         }
 
         [HttpGet("GetTransactionByAmount")]
-        public async Task<ActionResult> GetOneHistory(decimal amount)
+        public async Task<ActionResult> GetTransactionHistory(decimal amount)
         {
+
             if (!ModelState.IsValid) NotFound();
-            var transactionHistory = await _repository.GetOneTransactionHistory(amount);
-            if (transactionHistory == null)
+            try
             {
-                return NotFound();
+                var transactionHistoryByAmount = await _repository.GetTransactionHistory(amount);
+                if (transactionHistoryByAmount == null)
+                {
+                    return NotFound();
+                }
+                return Ok(transactionHistoryByAmount);
             }
-            return Ok(transactionHistory);
+            catch (Exception)
+            {
+
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
+            }
+
+
+           
+
+
+        }
+
+        [HttpGet("AllTransactionHistory")]
+        public async Task<ActionResult> GetTransactionHistory()
+        {
+
+            if (!ModelState.IsValid) NotFound();
+            try
+            {
+                var alltransactionHistory = await _repository.GetAllTransactionHistory();
+                if (alltransactionHistory == null)
+                {
+                    return NotFound();
+                }
+                return Ok(alltransactionHistory);
+            }
+            catch (Exception)
+            {
+
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
+            }
+
+
+
         }
 
 

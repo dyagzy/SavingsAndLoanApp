@@ -11,20 +11,31 @@ namespace EntityLayer.Dto
     {
         [Required]
         public string NameOfDepositor { get; set; }
+        
         [Required]
-
-        public decimal[] Credit { get; set; }
-        [Required]
-        public decimal[] Debit { get; set; }
-        public decimal CurrentBalance { get; set; }
-        [Required]
-        public string Narrative { get; set; }
+        public decimal Amount { get; set; }
         public DateTime DepositDate { get; set; }
 
+        [Required]
+        public string Narrative { get; set; }
+        [Required]
+        public decimal AmountWithdraw { get; set; }
+        [Required]
+        public DateTime WithdrawlDate { get; set; }
 
 
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+
+
+
+        //[Required]
+        //public decimal[] Debit { get; set; }
+        //public decimal CurrentBalance { get; set; }
+        //[Required]
+
+        //public decimal[] Credit { get; set; }
+
+        //public DateTime StartDate { get; set; }
+        //public DateTime EndDate { get; set; }
 
     }
 }

@@ -785,39 +785,6 @@ namespace EntityLayer.Migrations
                     b.ToTable("DepositMonies");
                 });
 
-            modelBuilder.Entity("EntityLayer.Transaction.WithdrawMoney", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<decimal>("AmountWithdraw")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<decimal>("CurrentBalance")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("DepositMoneyId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("WithdrawlDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DepositMoneyId")
-                        .IsUnique();
-
-                    b.ToTable("WithdrawMoney");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -1273,17 +1240,6 @@ namespace EntityLayer.Migrations
                     b.Navigation("SavingsAccount");
                 });
 
-            modelBuilder.Entity("EntityLayer.Transaction.WithdrawMoney", b =>
-                {
-                    b.HasOne("EntityLayer.Transaction.DepositMoney", "DepositMoney")
-                        .WithOne("WithdrawMoney")
-                        .HasForeignKey("EntityLayer.Transaction.WithdrawMoney", "DepositMoneyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("DepositMoney");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -1375,11 +1331,6 @@ namespace EntityLayer.Migrations
             modelBuilder.Entity("EntityLayer.SavingsAccount", b =>
                 {
                     b.Navigation("DepositMoney");
-                });
-
-            modelBuilder.Entity("EntityLayer.Transaction.DepositMoney", b =>
-                {
-                    b.Navigation("WithdrawMoney");
                 });
 #pragma warning restore 612, 618
         }

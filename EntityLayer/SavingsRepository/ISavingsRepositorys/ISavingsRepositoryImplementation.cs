@@ -14,8 +14,10 @@ namespace EntityLayer.SavingsRepository.ISavingsRepositorys
         Task<DepositDto> SaveMoney(DepositDto deposit );
         Task<DepositDto> WithdrawFunds(WithdrawDto withdraw);
         Task<IEnumerable<TranscationHistoryDto>> GetAllTransactionHistory();
-        Task<TranscationHistoryDto> GetOneTransactionHistory(int id);
-        Task<TranscationHistoryDto> GetOneTransactionHistory(decimal amount);
+        Task<IEnumerable<TranscationHistoryDto>> GetTransactionHistory(int transactionId);
+        Task<IEnumerable<TranscationHistoryDto>> GetTransactionHistory(DateTime  date);
+        Task<IEnumerable<TranscationHistoryDto>> GetTransactionHistory(decimal amount);
+        Task<IEnumerable<TranscationHistoryDto>> GetOneTransactionHistory(int transactionId, decimal amount, string name);
 
 
 

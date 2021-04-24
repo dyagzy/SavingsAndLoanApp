@@ -19,7 +19,14 @@ namespace EntityLayer.Transaction
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public string NameofDepositor { get; set; }
+        public string NameofDepositor
+        {
+            get
+            {
+                //char convertName = FirstName[0].ToUpper();
+                return FirstName.ToUpper() + " " + LastName;
+            }
+        }
         public decimal CurrentBalance { get; set; }
         public string AccountHolder => account.FullName;
        

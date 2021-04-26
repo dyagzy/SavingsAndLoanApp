@@ -210,6 +210,7 @@ namespace EntityLayer.SavingsRepository
             if (availableBalance >= withdraw.AmountWithdraw)
             {
                 availableBalance -= withdraw.AmountWithdraw;
+                
                 deposit.CurrentBalance = availableBalance;
             }
 

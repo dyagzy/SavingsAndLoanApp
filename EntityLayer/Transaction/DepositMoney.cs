@@ -36,7 +36,11 @@ namespace EntityLayer.Transaction
         //Navigation  property
         public int SavingsAccountId { get; set; }
         public SavingsAccount SavingsAccount { get; set; }
+
+        //public IEnumerable<WithdrawMoney> WithdrawMoney { get; set; }
         public WithdrawMoney WithdrawMoney { get; set; }
+
+       // public IEnumerable<TransactionHistory> TransactionHistories { get; set; }
 
 
 

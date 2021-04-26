@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EntityLayer.Transaction;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,6 +16,12 @@ namespace EntityLayer
         public string Narrative { get; set; }
         public decimal AmountWithdraw { get; set; }
         public DateTime WithdrawlDate { get; set; }
+
+
+        //Nva
+
+        public IEnumerable<DepositMoney> DepositMoney { get; set; }
+        public IEnumerable<WithdrawMoney> WithdrawMoney { get; set; }
 
 
 

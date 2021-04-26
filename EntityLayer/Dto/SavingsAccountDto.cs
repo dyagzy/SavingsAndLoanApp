@@ -19,8 +19,7 @@ namespace EntityLayer.Dto
 
         }
 
-        //[Required, MaxLength(10), MinLength(10)]
-        // public string AccountNumber { get; set; }
+      
         [Required]
         public DateTime AccountCreationDate { get; set; }
         public int CustomerProfileId { get; set; }

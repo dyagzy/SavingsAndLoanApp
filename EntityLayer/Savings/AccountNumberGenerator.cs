@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EntityLayer.Dto;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,11 +10,13 @@ namespace EntityLayer
 
         public static string NewSavingAccountNumbers()
         {
-            var savingsIdentifier = "01";
+            var start = "01";
+            var end = "";
             var random = new Random();
             var otherdigits = random.Next(10000000, 99999999);
+            
 
-            var accountNumber = savingsIdentifier + otherdigits.ToString();
+            var accountNumber = (start + otherdigits + end).ToString();
             return accountNumber;
         }
 
@@ -27,5 +30,9 @@ namespace EntityLayer
             return accountNumber;
         }
 
+
+       
+
+       
     }
 }

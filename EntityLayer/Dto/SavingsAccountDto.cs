@@ -24,7 +24,8 @@ namespace EntityLayer.Dto
         [Required]
         public DateTime AccountCreationDate { get; set; }
         public int CustomerProfileId { get; set; }
-        public bool IsActive { get; set; }
+        //public bool IsActive { get; set; }
+
         [Required]
         public int AccountOwnerID { get; set; }
 
@@ -34,9 +35,18 @@ namespace EntityLayer.Dto
         [Required]
         [Column(TypeName = "decimal(18, 6)")]
         public decimal CurrentBalance { get; set; }
+        
         public string Message
         {
             get { return HelperMethods.SavingsAccountWelcomeMessage(); }
+        }
+
+
+        public decimal ShowBalance
+        {
+
+            get { return HelperMethods.DepositFunds(this.InitialBal); }
+
         }
 
     }

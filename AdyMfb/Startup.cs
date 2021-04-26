@@ -7,6 +7,7 @@ using EntityLayer.DataAccess;
 using EntityLayer.IAdminRepositorys;
 using EntityLayer.SavingsRepository;
 using EntityLayer.SavingsRepository.ISavingsRepositorys;
+using EntityLayer.Service.SmS;
 using EntityLayer.SignUp.Configuration;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -27,6 +28,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Twilio.Clients;
 
 namespace AdyMfb
 {
@@ -50,9 +52,9 @@ namespace AdyMfb
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddAutoMapper(typeof(CustomerMapper));
-            services.AddAutoMapper(typeof(SavingsAccountMapper));
-            services.AddAutoMapper(typeof(LoanMapper));
-            services.AddAutoMapper(typeof(DepositMapper));
+            //services.AddAutoMapper(typeof(SavingsAccountMapper));
+            //services.AddAutoMapper(typeof(LoanMapper));
+            //services.AddAutoMapper(typeof(DepositMapper));
             
 
 
@@ -60,6 +62,7 @@ namespace AdyMfb
             services.AddScoped<ICustomerRepository, CustomerService>();
 
             services.AddScoped<IAdminRepository, AdminRepositoryImplementation>();
+           // services.AddHttpClient<ITwilioRestClient, TwilioClient>();
           
 
             services.Configure<JwtConfig>(Configuration.GetSection("JwtConfig"));

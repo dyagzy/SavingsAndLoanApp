@@ -1,5 +1,6 @@
 ﻿using EntityLayer.CustomerDetails;
 using EntityLayer.Loans;
+using EntityLayer.Transaction;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -12,21 +13,36 @@ namespace EntityLayer
     {
 
         public int Id { get; set; }
-        //[Required, MaxLength(10), MinLength(10)]
-        //public string AccountNumber { get; set = AccountNumberGenerator.NewSavingAccountNumbers(); }
+      
         public string AccountNumber { get; set; }
 
         [Required]
         public DateTime AccountCreationDate { get; set; }
-        //public bool IsActive { get; set; }
+        public string SurName { get; set; }
+
+        public string FirstName { get; set; }
+        public string OtherNames { get; set; }
+
+        // Gets full name of the customer, which is a ombination of his first name initila letter of his other name and his surname 
+        //eg Daniel A. Oyagha
+        public string FullName
+        {
+            get
+            {
+                return FirstName + (string.IsNullOrEmpty(OtherNames) ? " " : (" " + (char?)OtherNames[0]) + " .").ToUpper() + SurName;
+                
+            }
+        }
         [Required]
         public int AccountOwnerID { get; set; }
+        public decimal Debit { get; set; }
+        public decimal Credit { get; set; }
 
         [Required]
-        [Column(TypeName = "decimal(18, 6)")]
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal InitialBal { get; set; }
         [Required]
-        [Column(TypeName = "decimal(18, 6)")]
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal CurrentBalance { get; set; }
 
 
@@ -35,6 +51,7 @@ namespace EntityLayer
         /// </summary>
         public CustomerProfile Customerprofiles { get; set; }
         public int CustomerProfileId { get; set; }
+        public DepositMoney DepositMoney { get; set; }
 
 
     }

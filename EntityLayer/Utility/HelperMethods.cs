@@ -10,12 +10,16 @@ namespace EntityLayer.Utility
    public class HelperMethods
     {
 
-        //Handles deposit of funds by counter draft
-        public static decimal Deposit(decimal amount)
-        {
+        SavingsAccountDto savings = new SavingsAccountDto();
 
-            decimal initialBal = 0.00m;
-            decimal currentBalance = initialBal + amount;
+        //Handles deposit of funds by counter draft
+        public static decimal DepositFunds(decimal amount)
+        {
+            decimal currentBalance = 0.00m;
+
+
+            //decimal initialBal = 0.00m;
+            currentBalance += amount;
 
             return currentBalance;
         }
@@ -31,6 +35,8 @@ namespace EntityLayer.Utility
 
             return message;
         }
+
+       
 
         //checks account balance
 

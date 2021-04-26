@@ -2125,6 +2125,22 @@
           "lib/netstandard2.0/Twilio.dll": {}
         }
       },
+      "Adyb.Banking/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "EntityLayer": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Adyb.Banking.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Adyb.Banking.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "EntityLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -7186,6 +7202,11 @@
         "twilio.nuspec"
       ]
     },
+    "Adyb.Banking/1.0.0": {
+      "type": "project",
+      "path": "../Adyb.Banking/Adyb.Banking.csproj",
+      "msbuildProject": "../Adyb.Banking/Adyb.Banking.csproj"
+    },
     "EntityLayer/1.0.0": {
       "type": "project",
       "path": "../EntityLayer/EntityLayer.csproj",
@@ -7194,7 +7215,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\Adyb.Banking\\Adyb.Banking.csproj",
+      "Adyb.Banking >= 1.0.0",
       "EntityLayer >= 1.0.0",
       "Microsoft.AspNetCore.Identity.UI >= 5.0.3",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.3",
@@ -7288,16 +7309,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for 'C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\Adyb.Banking\\Adyb.Banking.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "libraryId": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\Adyb.Banking\\Adyb.Banking.csproj",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  }
 }

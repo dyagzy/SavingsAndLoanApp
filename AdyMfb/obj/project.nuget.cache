@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "JDy8hmURWQB64wcfK7AYs1rm3nwXs6SyszG9+cwbX8ZpG36jGBbhN4dCX0ILDq0kRJaYSupeNg4DSZRgUGhzcA==",
-  "success": false,
+  "dgSpecHash": "MN7Qv9EIDn4o0xw1yb6RMNi8NzCPAvaNp5GdhmiI/rMNNhdRSlmaA6CapUof+uV+ZA8DyUtC7pHvXtLRsac1QQ==",
+  "success": true,
   "projectFilePath": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\AdyMfb\\AdyMfb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
@@ -153,15 +153,5 @@
     "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
     "C:\\Users\\ChiamakaUzuegbu\\.nuget\\packages\\twilio\\5.58.0\\twilio.5.58.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for 'C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\Adyb.Banking\\Adyb.Banking.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "libraryId": "C:\\Users\\ChiamakaUzuegbu\\source\\repos\\MicroFinance\\Adyb.Banking\\Adyb.Banking.csproj",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  "logs": []
 }

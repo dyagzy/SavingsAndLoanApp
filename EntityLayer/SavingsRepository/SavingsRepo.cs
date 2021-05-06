@@ -140,7 +140,7 @@ namespace EntityLayer.SavingsRepository
             SavingsAccount savings = new SavingsAccount();
             if (SavingsId == 0)
             {
-                //Console.WriteLine("Customer Does not exists");
+               
                 throw new ArgumentNullException(nameof(SavingsId));
             }
 
@@ -181,8 +181,7 @@ namespace EntityLayer.SavingsRepository
             SavingsAccount savings = new SavingsAccount();
             if (deposit.AccountNumber != savings.AccountNumber && deposit.FirstName != savings.FirstName)
             {
-                Console.WriteLine("Wrong account number or wrong account name");
-                Console.WriteLine("Please ask custmer to double check the account holder details again");
+                
                 //throw new ArgumentNullException(nameof(deposit.AccountNumber));
             }
             var initialBalance = _appDbContext.SavingsAccounts
@@ -214,7 +213,7 @@ namespace EntityLayer.SavingsRepository
                 deposit.CurrentBalance = availableBalance;
             }
 
-            else Console.WriteLine("Insufficent Funds");
+          
 
             var withdrawls = _mapper.Map<DepositMoney>(deposit);
             await _appDbContext.DepositMonies.AddAsync(withdrawls);

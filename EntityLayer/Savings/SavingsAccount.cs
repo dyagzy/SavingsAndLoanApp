@@ -51,6 +51,7 @@ namespace EntityLayer
         /// </summary>
         public CustomerProfile Customerprofiles { get; set; }
         public int CustomerProfileId { get; set; }
+        //public IEnumerable<DepositMoney> DepositMoney { get; set; }
         public DepositMoney DepositMoney { get; set; }
 
 

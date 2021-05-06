@@ -13,6 +13,7 @@ namespace EntityLayer.AutoMapperProfile
             
             CreateMap<CustomerProfile,CustomerDto>();
             CreateMap<CustomerDto,CustomerProfile>();
+            CreateMap<CustomerProfile, CustomerListDto>().ReverseMap();
             CreateMap<SavingsAccount, SavingsAccountDto>()
                 .ForMember(dest => dest.ShowBalance, opt => opt.MapFrom(src => src.CurrentBalance)).ReverseMap();
 

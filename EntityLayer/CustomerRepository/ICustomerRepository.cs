@@ -10,15 +10,13 @@ namespace EntityLayer.CustomerRepository
 {
     public interface ICustomerRepository
     {
-        //CRUD
-        //create 
-        //Task<CustomerDto> CreateCustomerAsync(CustomerProfile customer);
+     
         Task<CustomerDto> CreateCustomerAsync(CustomerDto customerDto);
 
         CustomerProfile GetCustomerByName(CustomerProfile name);
         CustomerProfile GetCustomerById(CustomerProfile Id);
         CustomerProfile GetCustomerByPhoneNumber(CustomerProfile phonenumber);
-        CustomerProfile GetAll();
+        Task<IEnumerable<CustomerListDto>> GetAll();
 
         //Update
         CustomerProfile UpdateCustomer(CustomerProfile Id);

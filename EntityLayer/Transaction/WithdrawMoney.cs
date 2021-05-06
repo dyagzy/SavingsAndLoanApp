@@ -22,7 +22,9 @@ namespace EntityLayer.Transaction
 
         //Navigation  property
         public int DepositMoneyId { get; set; }
-        public DepositMoney DepositMoney { get; set; }
+
+        public IEnumerable<DepositMoney> DepositMoney { get; set; }
+        //public DepositMoney DepositMoney { get; set; }
         public IEnumerable<TransactionHistory> TransactionHistories { get; set; }
 
     }

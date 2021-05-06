@@ -2,6 +2,7 @@
 using EntityLayer.CustomerDetails;
 using EntityLayer.CustomerRepository;
 using EntityLayer.Dto;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,24 @@ namespace AdyMfb.Controllers
         {
            var customer =   await _repository.CreateCustomerAsync(customerDto);
             return Ok(customer);
+        }
+
+        [HttpGet("AllCustomers")]
+        public async Task<ActionResult<IEnumerable<CustomerProfile>>> AllCustomer()
+        {
+           var customers =  await _repository.GetAll();
+            return Ok(customers);
+
+
+            //try
+            //{
+
+            //}
+            //catch (Exception)
+            //{
+
+            //    return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the database ");
+            //}
         }
 
     }

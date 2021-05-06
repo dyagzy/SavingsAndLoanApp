@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EntityLayer.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210424182725_readded transactionTable")]
-    partial class readdedtransactionTable
+    [Migration("20210506134919_added many-many table for deposit and withdraw")]
+    partial class addedmanymanytablefordepositandwithdraw
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -79,6 +79,21 @@ namespace EntityLayer.Migrations
                     b.HasIndex("DebitCardIssuancesId");
 
                     b.ToTable("CustomerProfileDebitCardIssuance");
+                });
+
+            modelBuilder.Entity("DepositMoneyWithdrawMoney", b =>
+                {
+                    b.Property<int>("DepositMoneyId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WithdrawMoneyId")
+                        .HasColumnType("int");
+
+                    b.HasKey("DepositMoneyId", "WithdrawMoneyId");
+
+                    b.HasIndex("WithdrawMoneyId");
+
+                    b.ToTable("DepositMoneyWithdrawMoney");
                 });
 
             modelBuilder.Entity("EntityLayer.AdminDetails.Admin", b =>
@@ -770,12 +785,32 @@ namespace EntityLayer.Migrations
                     b.Property<int>("SavingsAccountId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("TransactionHistoryId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("SavingsAccountId")
                         .IsUnique();
 
+                    b.HasIndex("TransactionHistoryId");
+
                     b.ToTable("DepositMonies");
+                });
+
+            modelBuilder.Entity("EntityLayer.Transaction.DepositWithdraw", b =>
+                {
+                    b.Property<int>("WithdrawMoneyId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DepositMoneyId")
+                        .HasColumnType("int");
+
+                    b.HasKey("WithdrawMoneyId", "DepositMoneyId");
+
+                    b.HasIndex("DepositMoneyId");
+
+                    b.ToTable("DepositWithdraws");
                 });
 
             modelBuilder.Entity("EntityLayer.Transaction.WithdrawMoney", b =>
@@ -807,9 +842,6 @@ namespace EntityLayer.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DepositMoneyId")
-                        .IsUnique();
 
                     b.ToTable("WithdrawMoney");
                 });
@@ -1044,6 +1076,21 @@ namespace EntityLayer.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("TransactionHistoryWithdrawMoney", b =>
+                {
+                    b.Property<int>("TransactionHistoriesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WithdrawMoneyId")
+                        .HasColumnType("int");
+
+                    b.HasKey("TransactionHistoriesId", "WithdrawMoneyId");
+
+                    b.HasIndex("WithdrawMoneyId");
+
+                    b.ToTable("TransactionHistoryWithdrawMoney");
+                });
+
             modelBuilder.Entity("BankCreditCustomerProfile", b =>
                 {
                     b.HasOne("EntityLayer.BankProfitAndLoss.BankCredit", null)
@@ -1100,6 +1147,21 @@ namespace EntityLayer.Migrations
                     b.HasOne("EntityLayer.DebitCardIssuance", null)
                         .WithMany()
                         .HasForeignKey("DebitCardIssuancesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DepositMoneyWithdrawMoney", b =>
+                {
+                    b.HasOne("EntityLayer.Transaction.DepositMoney", null)
+                        .WithMany()
+                        .HasForeignKey("DepositMoneyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EntityLayer.Transaction.WithdrawMoney", null)
+                        .WithMany()
+                        .HasForeignKey("WithdrawMoneyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -1268,18 +1330,30 @@ namespace EntityLayer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("EntityLayer.TransactionHistory", null)
+                        .WithMany("DepositMoney")
+                        .HasForeignKey("TransactionHistoryId");
+
                     b.Navigation("SavingsAccount");
                 });
 
-            modelBuilder.Entity("EntityLayer.Transaction.WithdrawMoney", b =>
+            modelBuilder.Entity("EntityLayer.Transaction.DepositWithdraw", b =>
                 {
                     b.HasOne("EntityLayer.Transaction.DepositMoney", "DepositMoney")
-                        .WithOne("WithdrawMoney")
-                        .HasForeignKey("EntityLayer.Transaction.WithdrawMoney", "DepositMoneyId")
+                        .WithMany()
+                        .HasForeignKey("DepositMoneyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EntityLayer.Transaction.WithdrawMoney", "WithdrawMoney")
+                        .WithMany()
+                        .HasForeignKey("WithdrawMoneyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("DepositMoney");
+
+                    b.Navigation("WithdrawMoney");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -1333,6 +1407,21 @@ namespace EntityLayer.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("TransactionHistoryWithdrawMoney", b =>
+                {
+                    b.HasOne("EntityLayer.TransactionHistory", null)
+                        .WithMany()
+                        .HasForeignKey("TransactionHistoriesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EntityLayer.Transaction.WithdrawMoney", null)
+                        .WithMany()
+                        .HasForeignKey("WithdrawMoneyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("EntityLayer.CustomerDetails.CustomerProfile", b =>
                 {
                     b.Navigation("DomCustomers");
@@ -1375,9 +1464,9 @@ namespace EntityLayer.Migrations
                     b.Navigation("DepositMoney");
                 });
 
-            modelBuilder.Entity("EntityLayer.Transaction.DepositMoney", b =>
+            modelBuilder.Entity("EntityLayer.TransactionHistory", b =>
                 {
-                    b.Navigation("WithdrawMoney");
+                    b.Navigation("DepositMoney");
                 });
 #pragma warning restore 612, 618
         }

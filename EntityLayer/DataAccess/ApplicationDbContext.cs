@@ -34,11 +34,13 @@ namespace EntityLayer.DataAccess
             //    .IsUnique(false);
 
 
+            //configure the composite key for the many -to- many table DepositMoneyWithdrswMoney
+            builder.Entity<DepositWithdraw>()
+                .HasKey(dw => new {dw.WithdrawMoneyId, dw.DepositMoneyId });
 
 
-       
 
-        builder.Entity<Loan>()
+            builder.Entity<Loan>()
                 .HasOne(l => l.ApproveLoan)
                 .WithOne(l => l.Loan)
                 .OnDelete(DeleteBehavior.ClientCascade);
@@ -91,6 +93,7 @@ namespace EntityLayer.DataAccess
         public DbSet<TransactionHistory> TransactionHistories { get; set; }
         public DbSet<DepositMoney> DepositMonies { get; set; }
         public DbSet<WithdrawMoney> WithdrawMoney { get; set; }
+        public DbSet<DepositWithdraw> DepositWithdraws { get; set; }
         public DbSet <Admin> Admins { get; set; }
 
 

@@ -127,11 +127,8 @@ namespace AdyMfb.Controllers
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
             }
 
-
-           
-
-
         }
+
 
         [HttpGet("AllTransactionHistory")]
         public async Task<ActionResult> GetTransactionHistory()

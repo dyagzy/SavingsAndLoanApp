@@ -3,6 +3,7 @@ using EntityLayer.CustomerDetails;
 using EntityLayer.CustomerRepository;
 using EntityLayer.DataAccess;
 using EntityLayer.Dto;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,9 +63,39 @@ namespace EntityLayer.CustomerRepositoryServices
             throw new NotImplementedException();
         }
 
-        public CustomerProfile GetAll()
+        public async Task<IEnumerable<CustomerListDto>> GetAll()
         {
-            throw new NotImplementedException();
+
+            var customers = await (from myCust in _dbContext.CustomerProfiles
+                             select new CustomerProfile
+                                {
+                                 FirstName = myCust.FirstName,
+                                 SurName = myCust.SurName,
+                                 Occupation = myCust.Occupation,
+                                 Email = myCust.Email,
+                                 PhoneNumber = myCust.PhoneNumber
+
+                                }).ToListAsync();
+
+            var allCustomer = _mapper.Map<IEnumerable<CustomerListDto>>(customers);
+
+            //var allCustomers = await _dbContext.CustomerProfiles.ToListAsync();
+            return allCustomer;
+
+            //var customerList = (from customer in allCustomers
+            //                    select new
+            //                    {
+            //                        customer.FirstName,
+            //                        customer.SurName,
+            //                        customer.Email,
+            //                        customer.PhoneNumber,
+            //                        customer.Occupation
+                                    
+            //                    }).ToListAsync();
+            ////var allCustomer = _mapper.Map<IEnumerable<CustomerLsitDto>>(customerList);
+
+
+            //return (IEnumerable<CustomerProfile>)customerList;
         }
 
         public CustomerProfile GetCustomerById(CustomerProfile Id)

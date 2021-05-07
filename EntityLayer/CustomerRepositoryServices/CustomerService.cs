@@ -66,52 +66,83 @@ namespace EntityLayer.CustomerRepositoryServices
         public async Task<IEnumerable<CustomerListDto>> GetAll()
         {
 
-            var customers = await (from myCust in _dbContext.CustomerProfiles
-                             select new CustomerProfile
-                                {
-                                 FirstName = myCust.FirstName,
-                                 SurName = myCust.SurName,
-                                 Occupation = myCust.Occupation,
-                                 Email = myCust.Email,
-                                 PhoneNumber = myCust.PhoneNumber
+            var customers = await (from cuustomer in _dbContext.CustomerProfiles
+                                   select new CustomerProfile
+                                   {
+                                       FirstName = cuustomer.FirstName,
+                                       SurName = cuustomer.SurName,
+                                       Occupation = cuustomer.Occupation,
+                                       Email = cuustomer.Email,
+                                       PhoneNumber = cuustomer.PhoneNumber
 
-                                }).ToListAsync();
+                                   }).ToListAsync();
 
             var allCustomer = _mapper.Map<IEnumerable<CustomerListDto>>(customers);
 
-            //var allCustomers = await _dbContext.CustomerProfiles.ToListAsync();
+
             return allCustomer;
 
-            //var customerList = (from customer in allCustomers
-            //                    select new
-            //                    {
-            //                        customer.FirstName,
-            //                        customer.SurName,
-            //                        customer.Email,
-            //                        customer.PhoneNumber,
-            //                        customer.Occupation
-                                    
-            //                    }).ToListAsync();
-            ////var allCustomer = _mapper.Map<IEnumerable<CustomerLsitDto>>(customerList);
 
-
-            //return (IEnumerable<CustomerProfile>)customerList;
         }
+
+        public async Task<CustomerDto> GetCustomer(string  name , string  phone , int? customerId)
+        {
+            var customerSearched = new CustomerDto();
+            if (!String.IsNullOrEmpty(name) || !String.IsNullOrEmpty(phone) || customerId.HasValue)
+            {
+
+               var customers = await (from customer in _dbContext.CustomerProfiles where
+                  customer.Id == customerId || customer.PhoneNumber == phone || customer.FirstName == name
+                  || customer.SurName == name select customer).ToListAsync();
+                
+                 customerSearched = _mapper.Map<CustomerDto>(customers);
+            }
+            return customerSearched;
+
+
+
+            // )
+            //_dbContext.CustomerProfiles
+            //    .Where(c => c.Id == id || c.PhoneNumber == phone || c.FirstName == name || c.SurName == name)
+            //    .Select( c => c.FirstName, )
+
+
+
+        }
+
+        public async Task<IEnumerable<SavingsAccountDto>> GetCustomerByPhoneNumber(string phone)
+        {
+            if (String.IsNullOrEmpty(phone))
+            {
+                
+            }
+            if (_dbContext.CustomerProfiles.Any(c => c.PhoneNumber != phone))
+            {
+                throw new NotImplementedException();
+            }
+
+            var customer = await _dbContext.CustomerProfiles.Where(c => c.PhoneNumber == phone)
+                           .Select(c => c.SavingsAccounts).OrderBy(c => c.AccountNumber).FirstOrDefaultAsync();
+
+            var allCustomer = _mapper.Map<IEnumerable<SavingsAccountDto>>(customer);
+            return allCustomer;
+
+
+        }
+
+
 
         public CustomerProfile GetCustomerById(CustomerProfile Id)
         {
             throw new NotImplementedException();
         }
 
-        public CustomerProfile GetCustomerByName(CustomerProfile name)
+        Task<CustomerDto> GetCustomer(string name)
         {
             throw new NotImplementedException();
         }
 
-        public CustomerProfile GetCustomerByPhoneNumber(CustomerProfile phonenumber)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public CustomerProfile UodateCustomer(CustomerProfile Id)
         {
@@ -123,11 +154,18 @@ namespace EntityLayer.CustomerRepositoryServices
             throw new NotImplementedException();
         }
 
+        Task<CustomerDto> ICustomerRepository.GetCustomer(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        
+
         //Task<CustomerProfile> ICustomerRepository.CreateCustomerAsync(CustomerProfile customer)
         //{
         //    throw new NotImplementedException();
         //}
 
-       
+
     }
 }

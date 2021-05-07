@@ -13,9 +13,10 @@ namespace EntityLayer.CustomerRepository
      
         Task<CustomerDto> CreateCustomerAsync(CustomerDto customerDto);
 
-        CustomerProfile GetCustomerByName(CustomerProfile name);
+        Task<CustomerDto> GetCustomer(string name);
+        Task<CustomerDto> GetCustomer(string name , string phone , int? id);
         CustomerProfile GetCustomerById(CustomerProfile Id);
-        CustomerProfile GetCustomerByPhoneNumber(CustomerProfile phonenumber);
+        Task<IEnumerable<SavingsAccountDto>> GetCustomerByPhoneNumber(string phone);
         Task<IEnumerable<CustomerListDto>> GetAll();
 
         //Update

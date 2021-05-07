@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using EntityLayer;
 using EntityLayer.CustomerDetails;
 using EntityLayer.CustomerRepository;
 using EntityLayer.Dto;
@@ -25,9 +26,8 @@ namespace AdyMfb.Controllers
             _repository = repository;
             _mapper = mapper;
         }
-        // GET: api/<CustomerController>
-       
 
+        // GET: api/<CustomerController>
         //[HttpPost]
         //public async Task<ActionResult<CustomerProfile>> OpenAccount([FromBody] CustomerDto customerDto)
         //{
@@ -39,29 +39,64 @@ namespace AdyMfb.Controllers
         //}
 
         [HttpPost]
-        public async Task<ActionResult<CustomerDto>> OpenAccount2([FromBody] CustomerDto customerDto)
+        public async Task<ActionResult<CustomerDto>> CreateCustomer([FromBody] CustomerDto customerDto)
         {
-           var customer =   await _repository.CreateCustomerAsync(customerDto);
-            return Ok(customer);
+            try
+            {
+                var customer = await _repository.CreateCustomerAsync(customerDto);
+                return Ok(customer);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the database "); ;
+            }
         }
 
         [HttpGet("AllCustomers")]
         public async Task<ActionResult<IEnumerable<CustomerProfile>>> AllCustomer()
         {
-           var customers =  await _repository.GetAll();
-            return Ok(customers);
-
-
-            //try
-            //{
-
-            //}
-            //catch (Exception)
-            //{
-
-            //    return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the database ");
-            //}
+            try
+            {
+                var customers = await _repository.GetAll();
+                return Ok(customers);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the database ");
+            }
         }
+
+        [HttpGet("GetCustomer")]
+        public async Task<ActionResult<CustomerProfile>> GetCustomer(string name, string phone, int? customerId)
+        {
+            try
+            {
+                var customer = await _repository.GetCustomer(name, phone, customerId);
+                return Ok(customer);
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the database ");
+            }
+        }
+
+        [HttpGet("GetCustomerByPhone")]
+        public async Task<ActionResult<SavingsAccount>> GetCustomers(string phone)
+        {
+            try
+            {
+               var customer =  await _repository.GetCustomerByPhoneNumber(phone);
+                return Ok(customer);
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the database ");
+            }
+        }
+
+
 
     }
 }

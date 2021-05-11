@@ -200,26 +200,28 @@ namespace EntityLayer.SavingsRepository
 
         public async Task<DepositDto> WithdrawFunds(WithdrawDto withdraw)
         {
-            DepositDto deposit = new DepositDto();
-            DepositMoney dp = new DepositMoney();
+            //DepositDto deposit = new DepositDto();
+            //DepositMoney dp = new DepositMoney();
 
-            decimal availableBalance = _appDbContext.DepositMonies.Where(d => d.Id == withdraw.DepositMoneyId)
-                .Select(d => d.CurrentBalance).FirstOrDefault();
+            //decimal availableBalance = _appDbContext.DepositMonies.Where(d => d.Id == withdraw.DepositMoneyId)
+            //    .Select(d => d.CurrentBalance).FirstOrDefault();
+         DepositMoney bankDetails  = _appDbContext.DepositMonies.Where(d => d.Id == withdraw.DepositMoneyId).FirstOrDefault();
 
-            if (availableBalance >= withdraw.AmountWithdraw)
+
+            if (bankDetails.Amount >= withdraw.Debit)
             {
-                availableBalance -= withdraw.AmountWithdraw;
-                
-                deposit.CurrentBalance = availableBalance;
+                bankDetails.Amount -= withdraw.Debit;
+                //bankDetails.Amount = availableBalance;
+                bankDetails.FirstName = withdraw.FirstName;
+                bankDetails.LastName = withdraw.LastName;
+                //availableBalance = withdraw.CurrentBalance;
+                _appDbContext.DepositMonies.Update(bankDetails);
+                await _appDbContext.SaveChangesAsync();
             }
+            var withdrawls = _mapper.Map<DepositDto>(bankDetails);
+            withdrawls.CurrentBalance = bankDetails.Amount;
 
-          
-
-            var withdrawls = _mapper.Map<DepositMoney>(deposit);
-            await _appDbContext.DepositMonies.AddAsync(withdrawls);
-            await _appDbContext.SaveChangesAsync();
-
-            return deposit;
+            return withdrawls;
         }
 
 

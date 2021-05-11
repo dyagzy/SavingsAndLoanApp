@@ -65,7 +65,6 @@ namespace EntityLayer.CustomerRepositoryServices
 
         public async Task<IEnumerable<CustomerListDto>> GetAll()
         {
-
             var customers = await (from cuustomer in _dbContext.CustomerProfiles
                                    select new CustomerProfile
                                    {
@@ -74,15 +73,9 @@ namespace EntityLayer.CustomerRepositoryServices
                                        Occupation = cuustomer.Occupation,
                                        Email = cuustomer.Email,
                                        PhoneNumber = cuustomer.PhoneNumber
-
                                    }).ToListAsync();
-
             var allCustomer = _mapper.Map<IEnumerable<CustomerListDto>>(customers);
-
-
             return allCustomer;
-
-
         }
 
         public async Task<CustomerDto> GetCustomer(string  name , string  phone , int? customerId)
@@ -90,23 +83,13 @@ namespace EntityLayer.CustomerRepositoryServices
             var customerSearched = new CustomerDto();
             if (!String.IsNullOrEmpty(name) || !String.IsNullOrEmpty(phone) || customerId.HasValue)
             {
-
                var customers = await (from customer in _dbContext.CustomerProfiles where
                   customer.Id == customerId || customer.PhoneNumber == phone || customer.FirstName == name
-                  || customer.SurName == name select customer).ToListAsync();
+                  || customer.SurName == name select customer).FirstOrDefaultAsync();
                 
                  customerSearched = _mapper.Map<CustomerDto>(customers);
             }
             return customerSearched;
-
-
-
-            // )
-            //_dbContext.CustomerProfiles
-            //    .Where(c => c.Id == id || c.PhoneNumber == phone || c.FirstName == name || c.SurName == name)
-            //    .Select( c => c.FirstName, )
-
-
 
         }
 

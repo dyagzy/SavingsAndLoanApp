@@ -31,8 +31,6 @@ namespace AdyMfb.Controllers
             }
 
             return new JsonResult(savingsDto);
-
-            
         }
 
 
@@ -50,24 +48,17 @@ namespace AdyMfb.Controllers
         [HttpPost("WithdrawMoney")]
         public async Task<ActionResult<DepositDto>> Withdraws([FromBody] WithdrawDto withdraw)
         {
-            //try
-            //{
-            //    if (!ModelState.IsValid) NotFound();
-
-            //    await _repository.WithdrawFunds(withdraw);
-            //}
-            //catch (Exception)
-            //{
-
-            //    return this.StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
-            //}
             if (!ModelState.IsValid) NotFound();
-
-            await _repository.WithdrawFunds(withdraw);
-       
-
-
-            return Ok(withdraw);
+            DepositDto withdrawal = null;
+            try
+            {
+                withdrawal = await _repository.WithdrawFunds(withdraw);
+            }
+            catch (Exception)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
+            }
+            return Ok(withdrawal);
         }
 
         //[HttpGet("AllTransactionHistory")]

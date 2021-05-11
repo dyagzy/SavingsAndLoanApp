@@ -69,31 +69,42 @@ namespace AdyMfb.Controllers
         [HttpGet("GetCustomer")]
         public async Task<ActionResult<CustomerProfile>> GetCustomer(string name, string phone, int? customerId)
         {
-            try
+            var customer = await _repository.GetCustomer(name, phone, customerId);
+            if (ModelState.IsValid)
             {
-                var customer = await _repository.GetCustomer(name, phone, customerId);
-                return Ok(customer);
+                try
+                {
+                    customer = await _repository.GetCustomer(name, phone, customerId);
+                }
+                catch (Exception)
+                {
+                    return StatusCode(StatusCodes.Status500InternalServerError, "The phone number, name of customer you supplied is invalid");
+                }
             }
-            catch (Exception)
-            {
-
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the database ");
-            }
+            return Ok(customer);
         }
 
         [HttpGet("GetCustomerByPhone")]
         public async Task<ActionResult<SavingsAccount>> GetCustomers(string phone)
         {
-            try
-            {
-               var customer =  await _repository.GetCustomerByPhoneNumber(phone);
-                return Ok(customer);
-            }
-            catch (Exception)
-            {
 
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the database ");
+            var customer = await _repository.GetCustomerByPhoneNumber(phone);
+            if (customer == null)
+            {
+                return BadRequest("The phone number you supplied is not valid");
             }
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    customer = await _repository.GetCustomerByPhoneNumber(phone);
+                }
+                catch (Exception)
+                {
+                    return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the database ");
+                }
+            }
+            return Ok(customer);
         }
 
 

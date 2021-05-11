@@ -16,8 +16,6 @@ namespace EntityLayer.Dto
         [Column(TypeName = "decimal(18, 6)")]
         public decimal Amount { get; set; }
 
-        
-
         [Required, Display(Name ="Account Number")]
         public string AccountNumber { get; set; }
         [Required]
@@ -42,13 +40,11 @@ namespace EntityLayer.Dto
         [Display(Name = "Name of Account Holder")]
         public string BeneficiaryAccountName { get; set; }
 
-
         [Required, MinLength(3), MaxLength(40)]
         public string FirstName { get; set; }
 
         [Required]
         public string LastName { get; set; }
-
 
         [Required, Display(Name = "Phone Number")]
         [RegularExpression(@"^([0]{1})([0-9]{10})$")]
@@ -56,7 +52,6 @@ namespace EntityLayer.Dto
 
         [Display(Name = "Account Balance")]
         public decimal CurrentBalance { get; set; } // property
-        
         public int SavingsAccountId { get; set; }
     }
 }
